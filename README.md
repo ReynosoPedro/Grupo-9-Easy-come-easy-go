@@ -4,6 +4,7 @@ Los productos de nuestro sitio web abarcaran lo relacionado a la compra y venta 
 
 Integrantes del Grupo:
 -Pedro Reynoso: 
+Mi nombre es Vanesa Gutierrez, tengo 24 años y vivo en Buenos Aires, Argentina. Soy Tecnica Superior en Higiene y Seguridad en el trabajo y estudiante de la carrera de Ingenieria Química. Actualmente realizando el curso de Programacion Web Full Stack en Digital House. Toco un poco de kalimba (instrumento) y me gusta escuchar música de todo tipo.
 
 
 https://www.carwow.es/#gref
@@ -12,9 +13,7 @@ https://www.karvi.com.ar/
 https://www.autocosmos.com.ar/auto/usado
 https://www.carone.com.ar/
 
-tareas para la proxx
-
 + sumar descripcion individual
 + sumar descripcion del proyecto individual
-+ describir una pagina de las inspiradas , que nos gusta de ellas
-+ sugerir nombre del proyecto para posterior votacion 
++ describir una pagina de las inspiradas , que nos gusta
++ 
