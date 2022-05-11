@@ -11,3 +11,8 @@ https://www.kavak.com/ar/
 https://www.karvi.com.ar/
 https://www.autocosmos.com.ar/auto/usado
 https://www.carone.com.ar/
+
++ sumar descripcion individual
++ sumar descripcion del proyecto individual
++ describir una pagina de las inspiradas , que nos gusta
++ 
