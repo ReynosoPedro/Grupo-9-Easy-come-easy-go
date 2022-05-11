@@ -4,3 +4,10 @@ Los productos de nuestro sitio web abarcaran lo relacionado a la compra y venta 
 
 Integrantes del Grupo:
 -Pedro Reynoso: 
+
+
+https://www.carwow.es/#gref
+https://www.kavak.com/ar/
+https://www.karvi.com.ar/
+https://www.autocosmos.com.ar/auto/usado
+https://www.carone.com.ar/
