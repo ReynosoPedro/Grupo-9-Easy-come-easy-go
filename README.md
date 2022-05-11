@@ -15,5 +15,6 @@ https://www.carone.com.ar/
 
 + sumar descripcion individual
 + sumar descripcion del proyecto individual
+...Dispondremos de vehiculos con una amplia gama de marcas y modelos, donde en cada uno de ellos se podrá visualizar sus distintas caracteristicas y precios.
 + describir una pagina de las inspiradas , que nos gusta
 + 
