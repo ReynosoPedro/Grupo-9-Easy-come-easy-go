@@ -29,11 +29,7 @@ https://www.kavak.com/ar/
 https://www.karvi.com.ar/
 https://www.autocosmos.com.ar/auto/usado
 https://www.carone.com.ar/
-Car One, Muestra en su sitio web el producto y/o servicio que vamos a estar ofreciendo nosotros. 
-Inpendientemente de no tomar la totalidad del sitio como referencia, nos pareció
-agradable a la vista las secciones definidas que se muestran y como el cliente
-podria setirse más comodo. La sección de los servicios tambien nos parecio buena
-opcion por como se muestran, claras y simples.
+Car One, Muestra en su sitio web el producto y/o servicio que vamos a estar ofreciendo nosotros. Inpendientemente de no tomar la totalidad del sitio como referencia, nos pareció agradable a la vista las secciones definidas que se muestran y como el cliente podria setirse más comodo. La sección de los servicios tambien nos parecio buena opcion por como se muestran, claras y simples.
 
 
 
