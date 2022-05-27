@@ -1,0 +1,35 @@
+body{
+    background-color: #595959;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.contenedor-productos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+.productos{
+    border:  solid black;
+    color: black;
+    padding: 10;
+    
+}
+
+footer{
+    text-align: center;
+}
+
+#busqueda{
+    background-color: #ebebeb;
+    color: #666;
+    text-align: center;
+    
+    padding-left: 25px;
+    padding-right: 25px;
+    border: solid;
+
+}
+
+
+
