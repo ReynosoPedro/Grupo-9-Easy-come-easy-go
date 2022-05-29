@@ -1,18 +1,29 @@
+header{
+
+}
+
 body{
     background-color: #595959;
     font-family: 'Roboto', sans-serif;
+    align-items: center;
+    text-align: center;
     
 }
+
 .contenedor-productos{
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding: 5px;
     
 }
 .productos{
-    border:  solid black;
+    border:  solid gray;    
+    border-radius: 20px;
     color: black;
     padding: 10;
+    background-color: white;
+    margin: 15px;
     
 }
 
@@ -23,13 +34,24 @@ footer{
 #busqueda{
     background-color: #ebebeb;
     color: #666;
-    text-align: center;
-    
+    text-align: center;    
     padding-left: 25px;
     padding-right: 25px;
+    padding-bottom: 0px;
     border: solid;
-
+    font-size: 40px;
+    
 }
+.filtros{
+    color:white;
+    border: solid gray;
+    
+}
+img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 
 
 
