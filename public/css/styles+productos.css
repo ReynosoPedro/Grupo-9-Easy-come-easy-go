@@ -1,11 +1,27 @@
 header{
-    box-sizing: border-box;
+    background-color: black;
     display: flex;
-    height: 5%;
-    width: 100vp;
-    align-items: stretch;
+    width: 100%;
+    box-sizing:border-box;
+    padding: 15px;
+    color: white;
+    align-items: center;
+
 }
 
+header img{
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: scale-down;
+}
+header span{
+    width: 80%;
+    visibility:hidden;
+}
+.propaganda{
+    width: 100%;
+    height: 15%;
+}
 body{
     background-color: #595959;
     font-family: 'Roboto', sans-serif;
@@ -31,24 +47,36 @@ body{
     margin: 15px;
     
 }
-
 footer{
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    background-color: black;
+    color: white;
 }
-
 #busqueda{
-    background-color: #ebebeb;
-    color: #666;
-    text-align: center;    
+    display: flex;
+    background-color: cornflowerblue;  
     padding-bottom: 0px;
     margin-bottom: 5px;
-    border: solid;
+    justify-content: center;
     font-size: auto;
-    
+
+}
+#busqueda h4{
+    border-radius: 5px;
+    width: 90%;   
+    background-color: white;
+    text-align: center;
+    color: gray;
+    margin: 5px;
+}
+#paginas-mobile{
+    padding-bottom: 10px;
 }
 .filtros-mobile{
-    color:white;
+    color:black;
     border: solid gray;
     
 }
@@ -57,6 +85,9 @@ img{
     border-top-right-radius: 20px;
 }
 .filtros{
+    display: none;
+}
+.headerfiltros{
     display: none;
 }
 @media (min-width: 556px) {
@@ -83,18 +114,50 @@ img{
         max-height: 63%;
         object-fit: scale-down;
     }
+    header span{
+        display: flex;
+        visibility:visible;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
 
 }
 @media (min-width: 768px) {
     .filtros-mobile{
         display: none;
     }
+    .headerfiltros{
+        padding-top: 5px;
+        display: flex;
+        margin-bottom: 5px;
+        align-items: flex-start;
+
+    }
+    #titular-filtro{
+        color: white;
+        background-color: cornflowerblue;
+        border-radius: 5px;
+        width: 17%;
+
+    }
+    #titular-orden{
+        width: 30%;   
+        text-align: right; 
+        padding-right: 30px;
+
+    }
+    #titular-seleccion{
+        width: 60%;  
+        text-align: left; 
+        padding-left: 30px;
+
+    }
     .filtros{
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         width: 15%;
-        border: solid gray;
         text-align: justify;
         font-size: 10vp;
         background-color: #ebebeb;

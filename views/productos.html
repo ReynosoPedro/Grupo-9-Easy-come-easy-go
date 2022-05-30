@@ -9,12 +9,23 @@
     </head>
     <body>
         <header>
-            <span><img src="..\public\images\logo-infinity cars.png " style='height: 100%; width: 100%; object-fit: fill'></span>
-            <span><i class="fas fa-bars  fa-3x" ></i></span>
+            <img src="..\public\images\logo-infinity cars.png" style='height: 100%; width: 100%; object-fit: fill' > 
+            <span>Comprá un auto</span>
+            <span>Vende un auto</span> 
+            <span>Nosotros</span>
+            <span><i class="fa-solid fa-basket-shopping"></i></span>
+            <span><i class="fa-solid fa-user"></i> Mi cuenta </span>  
+            <i class="fa-solid fa-bars"></i>          
         </header>
-        <main>           
-            <p id="busqueda"> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </p>
-
+        <main>   
+            <div id="busqueda">     
+            <h4> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </h4>
+            </div>
+            <div class="headerfiltros">
+                <span id="titular-filtro">FILTRO</span>
+                <span id="titular-seleccion"> |Reset all| Filtros aplicados x |</span>
+                <span id="titular-orden"> Ordenar: Mas relevante <i class="fa-solid fa-arrow-down"></i></span>
+            </div>
             <section id="marketplace">
             <div class="filtros-mobile">
                 <span>Tipo  |</span>
@@ -105,7 +116,7 @@
                 </div>
             </section>
             </section>
-            <div class="paginas-mobile">
+            <div id="paginas-mobile">
                 <span><i class="fa-solid fa-chevron-left"></i></span>
                 <span> 1 de 1 </span>
                 <span><i class="fa-solid fa-chevron-right"></i> </span>
