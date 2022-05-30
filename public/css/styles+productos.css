@@ -1,5 +1,9 @@
 header{
-
+    box-sizing: border-box;
+    display: flex;
+    height: 5%;
+    width: 100vp;
+    align-items: stretch;
 }
 
 body{
@@ -9,8 +13,8 @@ body{
     text-align: center;
     
 }
-
 .contenedor-productos{
+    box-sizing:border-box;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,6 +22,7 @@ body{
     
 }
 .productos{
+    box-sizing:border-box;
     border:  solid gray;    
     border-radius: 20px;
     color: black;
@@ -28,21 +33,21 @@ body{
 }
 
 footer{
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
 }
 
 #busqueda{
     background-color: #ebebeb;
     color: #666;
     text-align: center;    
-    padding-left: 25px;
-    padding-right: 25px;
     padding-bottom: 0px;
+    margin-bottom: 5px;
     border: solid;
-    font-size: 40px;
+    font-size: auto;
     
 }
-.filtros{
+.filtros-mobile{
     color:white;
     border: solid gray;
     
@@ -50,6 +55,85 @@ footer{
 img{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+}
+.filtros{
+    display: none;
+}
+@media (min-width: 556px) {
+    .contenedor-productos{    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        
+    }
+    .productos{
+        flex-basis:35%;
+        flex-grow: 2;
+        flex-direction: row;
+        background-color: white;
+        font-size: 20ph;
+        line-height: 1px;    
+        
+    }
+    .productos img{
+
+        max-width: 100%;
+        max-height: 63%;
+        object-fit: scale-down;
+    }
+
+}
+@media (min-width: 768px) {
+    .filtros-mobile{
+        display: none;
+    }
+    .filtros{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        width: 15%;
+        border: solid gray;
+        text-align: justify;
+        font-size: 10vp;
+        background-color: #ebebeb;
+        
+
+    }
+    ul{
+        list-style-type: none;
+        text-align: center;
+        color: black;
+        margin: 0;
+        padding: 0;
+        line-height: 20px;
+    }
+    li{
+        text-align: left;
+        color: gray;
+        margin-left: 10px;
+    }
+    .contenedor-productos{
+        width: 85%;
+        padding-top: 0%;
+    }
+    .productos{
+        margin-top: 0%;
+    }
+    #marketplace{
+        display: flex;
+        align-items: stretch;
+    }
+    
+}
+@media (min-width: 900px) {
+    .productos{
+        flex-basis:30%;
+    }
+}
+@media (min-width: 1200px) {
+
 }
 
 
