@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+}
+
+header {
+    background-color: black;
+    display: flex;
+    width: 100%;
+    box-sizing:border-box;
+    padding: 15px;
+    color: white;
+    align-items: center;
+}
+
+body {
+    background-color: #595959;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
+#logo {
+    width: 25%;
+}
+
+#burger-menu {
+    font-size: 50px;
+    text-align: right;
+}
+
+#formulario {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    background-color: black;
+    color: white;
+}

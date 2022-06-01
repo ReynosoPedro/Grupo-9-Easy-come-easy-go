@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log in</title>
+    <meta name="viewport" content="width=device-wid th">
+    <meta charset="utf-8">
+    <link href="../public/css/sltyles+register.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="..\public\images\logo-infinity cars.png">
+        <i id="burger-menu" class="fa-solid fa-bars"></i>
+    </header>
+    <main>
+        <section id="formulario">
+            <form action="/registro" method="POST">
+                <div>
+                    <label for="nombre-completo">Nombre completo:</label>
+                    <input type="text" name="nombre-completo" id="nombre-completo">
+                </div>
+                <div>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" id="usuario">
+                </div>
+                <div>
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="text" name="contraseña" id="contraseña">
+                </div>
+                <div>
+                    <label for="confirmar-contraseña">Confirmar contraseña:</label>
+                    <input type="text" name="confirmar-contraseña" id="confirmar-contraseña">
+                </div>
+                <div>
+                    <label for="fecha-de-nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" name="fecha-de-nacimiento" id="fecha-de-nacimiento">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div>
+                    <span>
+                        <label for="celular">Celular:</label>
+                        <input type="tel" name="celular" id="celular">
+                    </span>
+                </div>
+                <div>
+                    <label for="terminos">Acepto los <a href="https://www.facebook.com">terminos y condiciones</a></label>
+                    <input type="checkbox" name="terminos">
+                </div>
+                <div>
+                    <label for="newsletter">Deseo recibir ofertas</label>
+                    <input type="checkbox" name="newsletter">
+                </div>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p>
+                Ya tenes cuenta? <a href="https://www.facebook.com">Log in</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <section> 
+            <p>Compra tu auto</p>
+            <p>Financiamiento </p>
+            <p>Preguntas frecuentes </p>
+            <p>Contacto </p>
+        </section>
+        <section>
+            <p>Redes sociales</p>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram-square"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </section>
+        <section>
+            <p>Politicas de Privacidad  Terminos y condiciones</p>
+        </section>
+    </footer>
+</body>
+
+</html>
