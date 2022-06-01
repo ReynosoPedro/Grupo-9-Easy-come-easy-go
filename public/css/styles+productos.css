@@ -27,7 +27,6 @@ body{
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
-    
 }
 .contenedor-productos{
     box-sizing:border-box;
@@ -196,7 +195,7 @@ img{
     }
 }
 @media (min-width: 1200px) {
-
+    
 }
 
 

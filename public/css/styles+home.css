@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #595959;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-header{
+    background-color: black;
+    padding:12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    max-width: 100px;
+}
+
+.seccion-barra1 {
+    display: flex;
+    display:none;
+    font-size: 12px;
+    color:white;
+    align-self: center;
+}
+
+.seccion-barra1 a{
+    color:white;
+    text-decoration: none;
+    margin: 0 80px;
+}
+
+.seccion-barra2{
+    font-size: 12px;
+    color:white;
+    align-self: center;
+}
+
+.sesion{
+    margin: 0 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.burger-menu{
+    background-color: #ccb23e;
+    color:#ffff;
+    padding: 8px 8px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 10px;
+    margin: auto;
+}
+
+.texto{
+    background-color: #ccb23e;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    margin-block-start: 5px;
+    border-radius: 8px;
+    text-shadow: 1px 1px black;
+}
+
+.foto1{
+    max-width:100%;
+    margin:auto;
+    border-radius: 8px;
+}
+.foto2{
+    max-width:100%;
+    margin:auto;
+    border-radius: 8px;
+}
+
+.ofertas{
+    background-color:  #ccb23e;
+    border-radius: 8px;
+    border: solid 3px #595959;
+    max-width: 100%;
+}
+
+.imagen{
+    max-width: 100%;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.precio-descuento-descripcion{
+    text-align: center;
+    line-height: 18px;
+    padding: 3px;
+}
+
+.precio{
+    font-size: 12px;
+}
+
+.descuento{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.descripcion{
+    font-size: 16px;
+}
+
+footer{
+    background-color: black;
+    color:white;
+    text-align: center;
+    font-size: 12px;
+    padding-top: 2px;;
+}
+
+@media(min-width:362px){
+    .seccion-barra1{
+        display: block;
+    }
+    .productoss{
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0px 0px 10px rgb(238, 208, 110);
+    }
+    .seccion-barra1 a{
+        margin: 0 15px;
+    }
+    .seccion-barra2{
+        justify-content: flex-end;
+        align-self: center;
+    }
+}
+
+@media(min-width:769px){
+    .seccion-barra1{
+        align-self: center;
+        display: block;
+
+    }
+    .productoss{
+        display: flex;
+        justify-content: space-around;
+        box-shadow: 0px 0px 10px rgb(238, 208, 110);
+    }
+    .seccion-barra1 a{
+        margin: 0 50px;
+    }
+}
