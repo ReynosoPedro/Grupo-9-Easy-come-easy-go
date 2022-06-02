@@ -42,6 +42,11 @@ body {
     text-align: right;
 }
 
+h2 {
+    font-size: 30px;
+    margin-top: 40px;
+}
+
 #formulario {
     text-align: center;
     display: flex;
@@ -51,13 +56,11 @@ body {
 }
 
 .form input {
-    width: 40vw;
-    padding: 10px;
+    width: 30vw;
+    padding: 15px;
     margin: 10px;
     border-radius: 10px;
-    border: solid 2px rgb(197, 197, 197);
-
-    
+    border: solid 2px rgb(197, 197, 197);    
 }
 
 .checkbox {
@@ -67,13 +70,15 @@ body {
 
 button {
     background-color: rgb(196, 196, 196);
-    padding: 10px;
+    padding: 12px;
     border-radius: 7px;
+    margin: 10px;
+    border: solid 2px #b9b9b9;
 }
 
 button:hover {
     background-color: #b9b9b9;
-    padding: 10px;
+    padding: 12px;
     border-radius: 7px;
 }
 
