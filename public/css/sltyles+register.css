@@ -27,7 +27,7 @@ header span{
 }
 
 body {
-    background-color: #595959;
+    background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
@@ -50,23 +50,29 @@ body {
     padding: 50px;
 }
 
-#formulario div input {
+.form input {
     width: 40vw;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    border: solid 2px rgb(161, 161, 161);
+    border: solid 2px rgb(197, 197, 197);
+
     
 }
 
+.checkbox {
+    justify-content: center;
+    margin: 5px;
+}
+
 button {
-    background-color: rgb(123, 123, 123);
+    background-color: rgb(196, 196, 196);
     padding: 10px;
     border-radius: 7px;
 }
 
 button:hover {
-    background-color: #bababa;
+    background-color: #b9b9b9;
     padding: 10px;
     border-radius: 7px;
 }
@@ -91,6 +97,10 @@ footer {
 
     #burger-menu {
         visibility: hidden;
+    }
+
+    .form input {
+        width: 30vw
     }
 
 }
