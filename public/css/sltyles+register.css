@@ -44,6 +44,8 @@ body {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    border: solid 2px rgb(161, 161, 161);
+    
 }
 
 button {
@@ -65,4 +67,16 @@ footer {
     padding-top: 20px;
     background-color: black;
     color: white;
+}
+
+@media (min-width: 480px) {
+    
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 1280px) {
+    
 }
