@@ -231,6 +231,7 @@ color: white;
 .footer {
     color: white;
     margin-top: 15px;
+    background-color: black;
 } 
 tfoot  {
      border-top: 2px solid gold;
