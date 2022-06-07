@@ -26,6 +26,25 @@ header span{
     visibility: hidden;
 }
 
+#busqueda{
+    display: flex;
+    background-color: #ccb23e;  
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    justify-content: center;
+    font-size: auto;
+
+}
+#busqueda h4{
+    border-radius: 5px;
+    width: 90%;   
+    background-color: white;
+    text-align: center;
+    color: gray;
+    margin: 7px 0px ;
+    padding: 2px;
+}
+
 body {
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
@@ -56,11 +75,18 @@ h2 {
 }
 
 .form input {
-    width: 30vw;
+    width: 60vw;
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
     border: solid 2px rgb(197, 197, 197);    
+}
+
+.form input:focus {
+    box-shadow: 0px 0px 10px rgb(170, 170, 170);
+    outline: none;
+    border: solid 2px rgb(137, 137, 137);
+    transition: 0.5s;
 }
 
 .checkbox {
@@ -80,6 +106,7 @@ button:hover {
     background-color: #b9b9b9;
     padding: 12px;
     border-radius: 7px;
+    box-shadow: 0px 0px 10px rgb(190, 190, 190);
 }
 
 footer {
@@ -87,11 +114,12 @@ footer {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 20px;
+    padding-bottom: 20px;
     background-color: black;
     color: white;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 769px) {
     
     header span{
         display: flex;
@@ -105,7 +133,17 @@ footer {
     }
 
     .form input {
-        width: 30vw
+        width: 50vw
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .footer p {
+        width: 160px;
     }
 
 }
@@ -115,5 +153,28 @@ footer {
 }
 
 @media (min-width: 1280px) {
-    
+    header span{
+        display: flex;
+        visibility: visible;
+        justify-content: space-around;
+        align-items: center;       
+    }
+
+    #burger-menu {
+        visibility: hidden;
+    }
+
+    .form input {
+        width: 40vw
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .footer p {
+        width: 160px;
+    }
 }
