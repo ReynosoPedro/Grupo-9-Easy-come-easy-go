@@ -12,7 +12,6 @@ body{
     color: cornflowerblue;
     margin: 5px;
     
-    
 }
 .table {
     color:white;
@@ -169,11 +168,11 @@ select.form-control {
     display: block;
     width: 100%
 }
-.table{
+.table {
     color: white;
     box-sizing: content-box ;
     border: 2px solid goldenrod;
-    width: 70vw;
+    width: 50vw;
     margin:auto;
     padding: 0px 20px;
     display:block;
@@ -197,12 +196,16 @@ color:black;
 .product-info {
 
     color: gold;
+    text-decoration: none;
+
 
 }
 .name-product {
 color: gold;
+text-decoration: none;
 
 }
+
 
 
 .total-producto {
@@ -213,10 +216,9 @@ color: gold;
 
 }
 
-
 .total-compra {
-color: white;
 
+color: white;
 
 }
 
@@ -228,6 +230,11 @@ color: white;
 
 .footer {
     color: white;
+    margin-top: 15px;
+} 
+tfoot  {
+     border-top: 2px solid gold;
+
 } 
 
 @media (min-width: 768px) {
