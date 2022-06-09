@@ -197,7 +197,7 @@ img{
 }
 @media (min-width: 900px) {
     .productos{
-        flex-basis:25%;
+        flex-basis:23%;
         height: 259px;
     }
     .contenedor-productos{
