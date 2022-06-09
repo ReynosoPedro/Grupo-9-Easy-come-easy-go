@@ -37,6 +37,9 @@ body{
     
     
 }
+#milochocpx{
+    display: block;
+}
 .productos{
     box-sizing:border-box;
     border:  solid gray;    
@@ -200,6 +203,7 @@ img{
         flex-basis:23%;
         height: 259px;
     }
+ 
     .contenedor-productos{
         align-content: flex-start;
     }
@@ -210,8 +214,13 @@ img{
 
     }
 }
-@media (min-width: 1200px) {
-    
+@media (min-width: 1800px) {
+    #ultimo{
+        display: none;
+    }
+    #milochoc{
+        display: block;
+    }
 }
 
 
