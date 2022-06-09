@@ -33,7 +33,7 @@ header span{
     margin-bottom: 5px;
     justify-content: center;
     font-size: auto;
-
+    width: 100vw;
 }
 #busqueda h4{
     border-radius: 5px;
@@ -46,10 +46,14 @@ header span{
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 #logo {
@@ -117,15 +121,22 @@ footer {
     padding-bottom: 20px;
     background-color: black;
     color: white;
+    width: 100%;
+    margin-top: auto;
 }
 
 @media (min-width: 769px) {
     
     header span{
         display: flex;
+        flex-direction: row;
         visibility: visible;
         justify-content: space-around;
         align-items: center;       
+    }
+
+    #micuenta {
+        white-space: nowrap;
     }
 
     #burger-menu {

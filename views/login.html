@@ -11,13 +11,15 @@
 
 <body>
     <header>
-        <img src="\images\infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' > 
+        <p style='height: 100%; width: 100%; object-fit: fill'><a href="/">
+            <img src="\images\infiniticars.png"> 
+        </a></p> 
         <span>Comprá un auto</span>
         <span>Vende un auto</span> 
         <span>Nosotros</span>
         <span><i class="fa-solid fa-basket-shopping"></i></span>
         <div>
-            <span><i class="fa-solid fa-user"></i>Mi cuenta</span>  
+            <span id="micuenta"><i class="fa-solid fa-user"></i>&nbsp;Mi cuenta</span>  
         </div>
         <i id="burger-menu" class="fa-solid fa-bars"></i>          
     </header>
@@ -35,7 +37,10 @@
                 <div class="form">
                     <label for="contraseña"></label>
                     <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
-                <button type="submit">Iniciar sesion</button>
+                </div>
+                <div>
+                    <button type="submit">Iniciar sesion</button>
+                </div>
             </form>
             <p>
                 No tenes cuenta? <a href="/register">Registrate</a>
