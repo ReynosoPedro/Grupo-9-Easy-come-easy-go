@@ -151,9 +151,28 @@ footer {
         text-decoration: none;
         color: white;
     }
+    
+    #carrito a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:active {
+        text-decoration: none;
+        color: white;
+    }
+    
+
 
     #burger-menu {
-        visibility: hidden;
+        display: none;
     }
 
     .form input {
@@ -180,10 +199,6 @@ footer {
     header span{
         visibility: visible;
         text-align: center;       
-    }
-
-    #burger-menu {
-        visibility: hidden;
     }
 
     .form input {
