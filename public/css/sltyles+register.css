@@ -128,19 +128,51 @@ footer {
 @media (min-width: 769px) {
     
     header span{
-        display: flex;
-        flex-direction: row;
         visibility: visible;
-        justify-content: space-around;
-        align-items: center;       
+        text-align: center;       
     }
 
     #micuenta {
         white-space: nowrap;
     }
+    #micuenta a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:active {
+        text-decoration: none;
+        color: white;
+    }
+    
+    #carrito a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:active {
+        text-decoration: none;
+        color: white;
+    }
+    
+
 
     #burger-menu {
-        visibility: hidden;
+        display: none;
     }
 
     .form input {
@@ -165,14 +197,8 @@ footer {
 
 @media (min-width: 1280px) {
     header span{
-        display: flex;
         visibility: visible;
-        justify-content: space-around;
-        align-items: center;       
-    }
-
-    #burger-menu {
-        visibility: hidden;
+        text-align: center;       
     }
 
     .form input {
