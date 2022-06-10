@@ -151,7 +151,7 @@ footer {
         text-decoration: none;
         color: white;
     }
-    
+
     #carrito a:link {
         text-decoration: none;
         color: white;
@@ -179,14 +179,28 @@ footer {
         width: 50vw
     }
 
-    .footer {
+    .footer{
         display: flex;
         justify-content: space-between;
         align-content: center;
+        padding: 2px;
     }
+
 
     .footer p {
         width: 160px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
     }
 
 }
