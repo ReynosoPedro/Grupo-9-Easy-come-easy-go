@@ -33,7 +33,7 @@ header span{
     margin-bottom: 5px;
     justify-content: center;
     font-size: auto;
-
+    width: 100vw;
 }
 #busqueda h4{
     border-radius: 5px;
@@ -46,10 +46,14 @@ header span{
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 #logo {
@@ -117,33 +121,86 @@ footer {
     padding-bottom: 20px;
     background-color: black;
     color: white;
+    width: 100%;
+    margin-top: auto;
 }
 
 @media (min-width: 769px) {
     
     header span{
-        display: flex;
         visibility: visible;
-        justify-content: space-around;
-        align-items: center;       
+        text-align: center;       
     }
 
+    #micuenta {
+        white-space: nowrap;
+    }
+    #micuenta a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:active {
+        text-decoration: none;
+        color: white;
+    }
+
+    #carrito a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:active {
+        text-decoration: none;
+        color: white;
+    }
+    
+
+
     #burger-menu {
-        visibility: hidden;
+        display: none;
     }
 
     .form input {
         width: 50vw
     }
 
-    .footer {
+    .footer{
         display: flex;
         justify-content: space-between;
         align-content: center;
+        padding: 2px;
     }
+
 
     .footer p {
         width: 160px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
     }
 
 }
@@ -154,14 +211,8 @@ footer {
 
 @media (min-width: 1280px) {
     header span{
-        display: flex;
         visibility: visible;
-        justify-content: space-around;
-        align-items: center;       
-    }
-
-    #burger-menu {
-        visibility: hidden;
+        text-align: center;       
     }
 
     .form input {

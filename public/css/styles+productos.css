@@ -37,6 +37,9 @@ body{
     
     
 }
+#milochocpx{
+    display: block;
+}
 .productos{
     box-sizing:border-box;
     border:  solid gray;    
@@ -50,14 +53,13 @@ body{
 .productos:hover{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
-footer{
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 20px;
+
+footer {
+    text-align: center;
     background-color: black;
     color: white;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    margin-top: auto;
 }
 #busqueda{
     display: flex;
@@ -129,6 +131,10 @@ img{
 
 }
 @media (min-width: 768px) {
+    #burger-menu {
+        display: none;
+    }
+
     .filtros-mobile{
         display: none;
     }
@@ -193,11 +199,24 @@ img{
         display: flex;
         align-items: stretch;
     }
+    .footer {
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer p{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #ultimo{
+        display: none;
+    }
     
 }
 @media (min-width: 900px) {
     .productos{
-        flex-basis:25%;
+        flex-basis:23%;
         height: 259px;
     }
     .contenedor-productos{
@@ -209,9 +228,21 @@ img{
         padding-right: 10%;
 
     }
-}
-@media (min-width: 1200px) {
-    
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+
+@media (min-width: 1800px) {
+    #ultimo{
+        display: none;
+    }
+    #milochoc{
+        display: block;
+    }
 }
 
 

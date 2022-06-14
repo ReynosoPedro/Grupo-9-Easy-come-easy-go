@@ -1,4 +1,6 @@
 *{
+    margin: 0px;
+    padding: 0px;  
     box-sizing: border-box;
 }
 
@@ -82,6 +84,10 @@ body {
     max-width: 100%;
 }
 
+.ofertas:hover{
+    box-shadow: 0px 0px 10px #ccb23e;
+}
+
 .imagen{
     max-width: 100%;
     border-radius: 8px;
@@ -122,7 +128,7 @@ footer{
     .productoss{
         display: flex;
         justify-content: space-around;
-        box-shadow: 0px 0px 10px rgb(238, 208, 110);
+        /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
     }
     .seccion-barra1 a{
         margin: 0 15px;
@@ -142,7 +148,7 @@ footer{
     .productoss{
         display: flex;
         justify-content: space-around;
-        box-shadow: 0px 0px 10px rgb(238, 208, 110);
+        /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
     }
     .seccion-barra1 a{
         margin: 0 50px;
