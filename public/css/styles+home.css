@@ -11,7 +11,7 @@ body {
 
 .main-header{
     background-color: black;
-    padding:12px;
+    padding:10px;
     display: flex;
     justify-content: space-between;
 }
@@ -113,12 +113,17 @@ body {
     font-size: 16px;
 }
 
-footer{
-    background-color: black;
-    color:white;
+footer {
     text-align: center;
-    font-size: 12px;
-    padding-top: 2px;;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: auto;
+    font-size: 14px;
 }
 
 @media(min-width:362px){
@@ -137,6 +142,32 @@ footer{
         justify-content: flex-end;
         align-self: center;
     }
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 2px;
+        font-size: 14px;
+    }
+
+
+    .footer p {
+        width: 160px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
+    }
+
 }
 
 @media(min-width:769px){
