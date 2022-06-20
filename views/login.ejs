@@ -5,24 +5,12 @@
     <title>Log in</title>
     <meta name="viewport" content="width=device-wid th">
     <meta charset="utf-8">
-    <link href="/css/sltyles+register.css" rel="stylesheet">
+    <link href="/css/sltyles+register-login.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header>
-        <p style='height: 100%; width: 100%; object-fit: fill'><a href="/">
-            <img src="\images\infiniticars.png"> 
-        </a></p> 
-        <span>Comprá un auto</span>
-        <span>Vende un auto</span> 
-        <span>Nosotros</span>
-        <span><i class="fa-solid fa-basket-shopping"></i></span>
-        <div>
-            <span id="micuenta"><i class="fa-solid fa-user"></i>&nbsp;Mi cuenta</span>  
-        </div>
-        <i id="burger-menu" class="fa-solid fa-bars"></i>          
-    </header>
+    <%- include('./partials/header')%>
     <main>
         <div id="busqueda">     
             <h4> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </h4>
@@ -47,24 +35,7 @@
             </p>
         </section>
     </main>
-    <footer>
-        <section class="footer"> 
-            <p>Compra tu auto</p>
-            <p>Financiamiento </p>
-            <p>Preguntas frecuentes </p>           
-        </section>
-        <section class="footer">
-            <p>Redes sociales</p>
-            <p>Contacto </p>
-            <p>Trabaja con nosotros</p>
-        </section>
-        <section>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram-square"></i>
-            <i class="fa-brands fa-youtube"></i>
-            <p>Politicas de Privacidad  Terminos y condiciones</p>
-        </section>
-    </footer>
+    <%- include('./partials/footer')%>
 </body>
 
 </html>

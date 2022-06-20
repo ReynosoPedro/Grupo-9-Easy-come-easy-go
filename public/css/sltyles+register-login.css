@@ -125,6 +125,11 @@ footer {
     margin-top: auto;
 }
 
+footer p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 @media (min-width: 769px) {
     
     header span{
@@ -189,6 +194,8 @@ footer {
 
     .footer p {
         width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 
     footer .redes {
@@ -227,5 +234,7 @@ footer {
 
     .footer p {
         width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 }
