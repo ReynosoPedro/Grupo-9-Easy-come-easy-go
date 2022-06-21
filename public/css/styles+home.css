@@ -125,6 +125,11 @@ footer {
     margin-top: auto;
 }
 
+footer p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 @media(min-width:362px){
     .seccion-barra1{
         display: block;
@@ -152,6 +157,8 @@ footer {
 
     .footer p {
         width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 
     footer .redes {
