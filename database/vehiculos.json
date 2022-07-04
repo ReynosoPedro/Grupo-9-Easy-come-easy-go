@@ -1,0 +1,110 @@
+[
+    {
+        "id": "1",
+        "nombre": "Toyota Hilux 2.8 Cd Srv 177cv 4x2",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "EXTERIOR-frontSidePilotNear-1646321139201.jpeg"
+    },
+    {
+        "id": "2",
+        "nombre": "Ford Ecosport 2.0 Titanium 143cv 4x2",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "ecosport.jpeg"
+    },
+    {
+        "id": "3",
+        "nombre": "Ford Focus III 2.0 Se Plus Mt",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "focus.jpeg"
+    },
+    {
+        "id": "4",
+        "nombre": "Nissan Kicks 1.6 Advance Cvt 120cv",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "nissan k.jpeg"
+    },
+    {
+        "id": "5",
+        "nombre": "Chevrolet Cruze II 1.4 Lt 153cv",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "chevrolet cruze.jpeg"
+    },
+    {
+        "id": "6",
+        "nombre": "Peugeot 208 1.6 Active",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "peugeot active.jpeg"
+    },
+    {
+        "id": "7",
+        "nombre": "Renault Kwid 1.0 Sce 66cv",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "renault kwid.jpeg"
+    },
+    {
+        "id": "8",
+        "nombre": "Renault Captur 2.0 Intens",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "reno-capture.jpeg"
+    },
+    {
+        "id": "9",
+        "nombre": "Volkswagen Amarok 2.0 Cd ",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "volkswagenamarok.jpg"
+    },
+    {
+        "id": "10",
+        "nombre": "Audi A4 2.0 Fsi Quattro 252cv",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "audia4.jpeg"
+    },
+    {
+        "id": "11",
+        "nombre": "Jeep Compass 2.4 Limited Plus",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "jeep compas.jpeg"
+    },
+    {
+        "id": "12",
+        "nombre": "Ford Ranger 3.2 Cd Limited",
+        "año": "2017",
+        "kilometraje": "150.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "ford ranger.jpeg"
+    }
+]
