@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <img src="images\logo-infinity cars.jpg" style='height: 100%; width: 100%; object-fit: fill' > 
+            <img src="/images/infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' > 
             <span>Comprá un auto</span>
             <span>Vende un auto</span> 
             <span>Nosotros</span>
@@ -19,10 +19,14 @@
         </header>
         <main>   
             <div class="productos">
-                <h2 class="productos-titulo">Toyota Hilux 2.8 Cd Srv 177cv 4x2</h2>
-                <h4 class="productos-detalles">2017 • 41.558 km • Manual</h4>
-                <img src="images\EXTERIOR-frontSidePilotNear-1646321139201.jpeg" style='height: 100%; width: 100%; object-fit: fill' >
-                <h3 class="productos-precio">Precio: $ 6.050.000 $ 6.140.000</h3>
+                <img src="\images\<%=vehiculo.imagen%>" style='height: 100%; width: 100%; object-fit: fill' >  
+                <div class="detalleProductos">
+                <h4 class="productos-titulo"><%= vehiculo.nombre %></h4>
+                <p class="productos-detalles">Año: <%= vehiculo.año %></p>
+                <p class="productos-detalles">Kilomentraje: <%= vehiculo.kilometraje %> kms</p>
+                <p class="productos-detalles">Transmisión: <%= vehiculo.transmision %></p>
+                <p class="productos-precio">Precio: <%= vehiculo.precio %></p>
+                </div>
             </div>
         </main>
         <footer>

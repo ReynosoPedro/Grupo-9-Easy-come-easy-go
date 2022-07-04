@@ -8,6 +8,10 @@ header{
     align-items: center;
 
 }
+a {
+    text-decoration: none; 
+    color: black; 
+}
 
 header img{
     max-width: 100px;
