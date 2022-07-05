@@ -1,0 +1,242 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    width: 100%;
+    box-sizing:border-box;
+    padding: 15px;
+    color: white;
+    align-items: center;
+
+}
+
+header img{
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: scale-down;
+}
+
+header span{
+    width: 80%;
+    visibility: hidden;
+}
+
+#busqueda{
+    display: flex;
+    background-color: #ccb23e;  
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    justify-content: center;
+    font-size: auto;
+    width: 100vw;
+}
+#busqueda h4{
+    border-radius: 5px;
+    width: 90%;   
+    background-color: white;
+    text-align: center;
+    color: gray;
+    margin: 7px 0px ;
+    padding: 2px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #cacaca;
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#logo {
+    width: 25%;
+}
+
+#burger-menu {
+    font-size: 50px;
+    text-align: right;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+.form input {
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 2px rgb(197, 197, 197);
+    width: 600px;    
+}
+
+.form input:focus {
+    box-shadow: 0px 0px 10px rgb(170, 170, 170);
+    outline: none;
+    border: solid 2px rgb(137, 137, 137);
+    transition: 0.5s;
+}
+button {
+    width: 60vw;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 2px rgb(197, 197, 197);  
+    background-color: white;  
+}
+
+button :focus {
+    box-shadow: 0px 0px 10px rgb(170, 170, 170);
+    outline: none;
+    border: solid 2px rgb(137, 137, 137);
+    transition: 0.5s;
+}
+
+button {
+    background-color: rgb(196, 196, 196);
+    padding: 12px;
+    border-radius: 7px;
+    margin: 10px;
+    border: solid 2px #b9b9b9;
+}
+
+button:hover {
+    background-color: #b9b9b9;
+    padding: 12px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgb(190, 190, 190);
+}
+
+footer {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+@media (min-width: 769px) {
+    
+    header span{
+        visibility: visible;
+        text-align: center;       
+    }
+
+    #micuenta {
+        white-space: nowrap;
+    }
+    #micuenta a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #micuenta a:active {
+        text-decoration: none;
+        color: white;
+    }
+
+    #carrito a:link {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:visited {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:hover {
+        text-decoration: none;
+        color: white;
+    }
+    #carrito a:active {
+        text-decoration: none;
+        color: white;
+    }
+    
+
+
+    #burger-menu {
+        display: none;
+    }
+
+    .form input {
+        width: 50vw
+    }
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 2px;
+    }
+
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+}
+
+@media (min-width: 1280px) {
+    header span{
+        visibility: visible;
+        text-align: center;       
+    }
+
+    .form input {
+        width: 40vw
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+}

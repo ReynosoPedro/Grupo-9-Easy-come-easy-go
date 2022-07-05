@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <meta name="viewport" content="width=device-wid th">
+    <meta charset="utf-8">
+    <link href="/css/styles vender.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header')%>
+    <main>
+
+        <form action="/registro" method="POST" enctype="multipart/form-data">
+            <div class="form">
+                <input type="text" name="marca" id="marca" placeholder="Marca">
+            </div>
+            <div class="form">
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo">
+            </div>
+            <div class="form">
+                <input type="text" name="kilomentraje" id="kilomentraje" placeholder="Kilomentraje">
+            </div>
+            <div class="form">
+                <input type="text" name="año" id="año" placeholder="Año">
+            </div>
+            <div class="form">
+                <input type="text" name="precio" id="precio" placeholder="Precio">
+            </div>
+            <div class="form">
+                <input type="text" name="transmision" id="transmision" placeholder="Transmision">
+            </div>
+            <div class="custom-file">
+                <input type="file"   name="imagen"  placeholder="Elige una imagen">
+            </div>
+            <button class="form" type="submit">Publicar</button>   
+        </form>
+    </main>
+    <%- include('./partials/footer')%>
+</body>
+
+</html>
