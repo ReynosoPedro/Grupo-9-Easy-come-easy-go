@@ -12,6 +12,10 @@ const rutasRegister = require('./routes/register');
 const rutasShopCar = require('./routes/shop-car');
 const rutasSellCar = require('./routes/formularioVenta');
 
+// lineas para que funciones POST
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
 app.listen(process.env.PORT || 3050 , function (){
     console.log("Servidor corriendo en el puerto 3050");
 })
@@ -27,4 +31,5 @@ app.use('/shop-car', rutasShopCar);
 app.use('/login', rutasLogin);
 
 app.use('/detalle', rutasDetalle);
+
 app.use('/vender', rutasSellCar);

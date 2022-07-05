@@ -13,24 +13,24 @@
     <%- include('./partials/header')%>
     <main>
 
-        <form action="/registro" method="POST" enctype="multipart/form-data">
+        <form method="POST" action="/vender" >
             <div class="form">
-                <input type="text" name="marca" id="marca" placeholder="Marca">
+                <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
             </div>
             <div class="form">
-                <input type="text" name="modelo" id="modelo" placeholder="Modelo">
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
             </div>
             <div class="form">
-                <input type="text" name="kilomentraje" id="kilomentraje" placeholder="Kilomentraje">
+                <input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
             </div>
             <div class="form">
-                <input type="text" name="año" id="año" placeholder="Año">
+                <input type="number" name="año" id="año" placeholder="Año"  required="required">
             </div>
             <div class="form">
-                <input type="text" name="precio" id="precio" placeholder="Precio">
+                <input type="number" name="precio" id="precio" placeholder="Precio" required="required">
             </div>
             <div class="form">
-                <input type="text" name="transmision" id="transmision" placeholder="Transmision">
+                <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
             </div>
             <div class="custom-file">
                 <input type="file"   name="imagen"  placeholder="Elige una imagen">
