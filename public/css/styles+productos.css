@@ -106,7 +106,8 @@ img{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: flex-start;
+        align-content: flex-start;
         
         
     }
@@ -117,6 +118,7 @@ img{
         background-color: white;
         font-size: 20ph;
         line-height: 1px;    
+        max-width: 45%;
         
     }
     .productos img{
@@ -135,6 +137,7 @@ img{
 
 }
 @media (min-width: 768px) {
+    
     #burger-menu {
         display: none;
     }
@@ -198,10 +201,13 @@ img{
     }
     .productos{
         margin-top: 0%;
+        max-width: 29.7%;
+        
     }
     #marketplace{
         display: flex;
         align-items: stretch;
+    
     }
     .footer {
         display: flex;
@@ -245,6 +251,9 @@ img{
     }
     #milochoc{
         display: block;
+    }
+    .productos{
+        max-width: 23%;
     }
 }
 
