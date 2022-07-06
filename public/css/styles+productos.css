@@ -1,3 +1,4 @@
+
 header{
     background-color: black;
     display: flex;
@@ -31,6 +32,10 @@ body{
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
+    margin: 0px;
+    padding: 0px;  
+    box-sizing: border-box;
+
 }
 .contenedor-productos{
     box-sizing:border-box;
@@ -136,6 +141,7 @@ img{
     }
 
 }
+
 @media (min-width: 768px) {
     
     #burger-menu {
@@ -201,7 +207,7 @@ img{
     }
     .productos{
         margin-top: 0%;
-        max-width: 29.7%;
+        max-width: 45.7%;
         
     }
     #marketplace{
@@ -228,6 +234,7 @@ img{
     .productos{
         flex-basis:23%;
         height: 259px;
+        max-width: 30%;
     }
     .contenedor-productos{
         align-content: flex-start;
