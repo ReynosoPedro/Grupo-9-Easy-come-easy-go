@@ -13,7 +13,7 @@
     <%- include('./partials/header')%>
     <main>
 
-        <form method="POST" action="/vender" >
+        <form method="POST" action="/vender" enctype="multipart/form-data" >
             <div class="form">
                 <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
             </div>
@@ -24,7 +24,7 @@
                 <input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
             </div>
             <div class="form">
-                <input type="number" name="año" id="año" placeholder="Año"  required="required">
+                <input type="number" name="year" id="year" placeholder="Año"  required="required">
             </div>
             <div class="form">
                 <input type="number" name="precio" id="precio" placeholder="Precio" required="required">
@@ -33,7 +33,8 @@
                 <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
             </div>
             <div class="custom-file">
-                <input type="file"   name="imagen"  placeholder="Elige una imagen">
+                <label for ="imagen-auto">Subi una foto de tu auto </label>
+                <input type="file"   name="imagen-auto"  placeholder="Elige una imagen">
             </div>
             <button class="form" type="submit">Publicar</button>   
         </form>

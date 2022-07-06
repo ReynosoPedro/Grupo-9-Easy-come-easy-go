@@ -83,7 +83,7 @@
                 <% for(let i= 0; i < vehiculos.length; i++){ %>
                     <div class="productos">
                         <a href= "/detalle/<%=vehiculos[i].id%>" </a>
-                        <img src="\images\<%=vehiculos[i].imagen%>" style='height: 100%; width: 100%; object-fit: fill' >  
+                        <img src="\images\autos\<%=vehiculos[i].imagen%>" style='height: 100%; width: 100%; object-fit: fill' >  
                         <h4 class="productos-titulo"><%= vehiculos[i].nombre %></h4>
                         <p class="productos-detalles"><%= vehiculos[i].año +" "+vehiculos[i].kilometraje +" "+ vehiculos[i].transmision %></p>
                         <p class="productos-precio"><%= vehiculos[i].precio %></p>

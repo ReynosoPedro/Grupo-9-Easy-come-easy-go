@@ -10,11 +10,11 @@ const venta = {
         let nuevoAuto={
         id: (vehiculosDelArchivoJSON.length+1),
         nombre: (req.body.marca+" "+req.body.modelo),
-        año: req.body.año,
+        año: req.body.year,
         kilometraje:req.body.kilometraje,
         precio: req.body.precio,
         transmision: req.body.transmision,
-        imagen:null,
+        imagen:(""+ Math.floor( Date.now()/1000)+".jpeg"),
         } 
         console.log(nuevoAuto);
         vehiculosDelArchivoJSON.push(nuevoAuto);
