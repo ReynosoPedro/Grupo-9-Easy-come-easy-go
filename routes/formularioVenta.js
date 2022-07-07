@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-// importo multer
+const controller = require('../controllers/ventaController')
+//multer
 const multer= require ('multer');
 const storage= multer.diskStorage(
     {
@@ -16,9 +17,6 @@ const storage= multer.diskStorage(
     }
 )
 const UploadFile =multer ( { storage});
-
-
-const controller = require('../controllers/ventaController')
 // formulario de creación
 router.get('/', controller.seleccion);
 // procesamiento del formulario de creación
