@@ -8,5 +8,27 @@
         "email": "andyrovner4@gmail.com",
         "celular": "1165326532",
         "newsletter": "on"
+    },
+    {
+        "nombre": "eee",
+        "usuario": "eee",
+        "password": "ee",
+        "confirmPassword": "ee",
+        "fechaDeNacimiento": "2022-07-06",
+        "email": "eee@gmail.com",
+        "celular": "eee",
+        "terminos": "on",
+        "newsletter": "on"
+    },
+    {
+        "nombre": "eee",
+        "usuario": "eee",
+        "password": "ee",
+        "confirmPassword": "ee",
+        "fechaDeNacimiento": "2022-07-06",
+        "email": "eee@gmail.com",
+        "celular": "eee",
+        "terminos": "on",
+        "newsletter": "on"
     }
 ]

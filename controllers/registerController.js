@@ -17,10 +17,12 @@ const register = {
         terminos: req.body.terminos,
         newsletter: req.body.newsletter
        }
-       const nuevosUsuarios = usuariosJSON.push(user)
-       JSON.stringify(nuevosUsuarios)
-        fs.writeFileSync(path.resolve(__dirname,'..','database','users.json'), nuevosUsuarios);
-        res.redirect('/login')
+        // los agrego al JSON
+        usuariosJSON.push(user);
+        // no estoy seguro de si es necesario , 
+        let nuevaLista=JSON.stringify( usuariosJSON);
+        fs.writeFileSync(path.resolve(__dirname,'..','database','users.json'),nuevaLista);
+        res.redirect("/")
     }   
 };
 
