@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "Andres",
+        "usuario": "Rovner",
+        "Password": "contra",
+        "confirmPassword": "contra",
+        "fechaDeNacimiento": "2022-07-29",
+        "email": "andyrovner4@gmail.com",
+        "celular": "1165326532",
+        "newsletter": "on"
+    }
+]

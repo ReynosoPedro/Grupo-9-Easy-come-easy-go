@@ -151,7 +151,22 @@ footer p {
         justify-content: flex-end;
         align-self: center;
     }
+}
 
+@media(min-width:769px){
+    .seccion-barra1{
+        align-self: center;
+        display: block;
+
+    }
+    .productoss{
+        display: flex;
+        justify-content: space-around;
+        /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
+    }
+    .seccion-barra1 a{
+        margin: 0 50px;
+    }
     .footer{
         display: flex;
         justify-content: space-between;
@@ -177,21 +192,18 @@ footer p {
     footer .politicas {
         margin-top: 10px;
     }
-
 }
 
-@media(min-width:769px){
-    .seccion-barra1{
-        align-self: center;
-        display: block;
-
-    }
-    .productoss{
+@media (min-width: 1280px) {
+    .footer {
         display: flex;
-        justify-content: space-around;
-        /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
+        justify-content: space-between;
+        align-content: center;
     }
-    .seccion-barra1 a{
-        margin: 0 50px;
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
     }
 }

@@ -214,8 +214,32 @@ footer p {
 
 }
 
-@media (min-width: 768px) {
-    
+@media (min-width: 769px) {
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 2px;
+    }
+
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
+    }
 }
 
 @media (min-width: 1280px) {

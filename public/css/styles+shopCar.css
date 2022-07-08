@@ -302,6 +302,13 @@ footer {
     padding-bottom: 20px;
     background-color: black;
     color: white;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer p {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 .table-footer td {
@@ -313,6 +320,47 @@ h6 {
     padding-left: 35px;
 }
 
+@media (min-width: 769px) {
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        padding: 2px;
+    }
+
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    footer .redes {
+        margin-top: 5px;
+    }
+
+    footer .logos {
+        margin-top: 5px;
+    }
+
+    footer .politicas {
+        margin-top: 10px;
+    } 
+}
+
+@media (min-width: 1280px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
+
+    .footer p {
+        width: 160px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+}
 
 
 
