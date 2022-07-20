@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+main {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
 header{
     background-color: black;
     display: flex;
@@ -46,8 +50,7 @@ header span{
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;
