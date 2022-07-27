@@ -20,88 +20,12 @@
         </div>
         <i id="burger-menu" class="fa-solid fa-bars"></i>          
     </header>
-    <main>   
-        <div id="busqueda">     
-        <h4> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </h4>
-        </div>
-        <div><a class="edit-product">Editor de productos</a></div>
-        <div class="headerfiltros">
-            <span id="titular-filtro">FILTRO</span>
-            <span id="titular-seleccion"> |Reset all| Filtros aplicados x |</span>
-            <span id="titular-orden"> Ordenar: Mas relevante <i class="fa-solid fa-arrow-down"></i></span>
-        </div>
-        <section id="marketplace">
-        <div class="filtros-mobile">
-            <span>Tipo  |</span>
-            <span>Marca | </span>
-            <span>+Filtros  |</span>
-            <span> Ordenar: ej Precio </span>
-            <span><i class="fa-solid fa-arrow-down"></i></span>
-        </div>
-        <div class="filtros">
-            <ul>Categorias
-                <li>SUVs</li>
-                <li>Hatchbacks</li>
-                <li>Sedan</li>
-                <li>Coupes</li>
-                <li>Sports</li>
-                <li>Convertibles</li>
-                <li>Utilitario</li>
-            </ul>
-            <ul>Año
-                <li>2022</li>
-                <li>2021</li>
-                <li>2020</li>
-                <li>2019</li>
-            </ul>
-            <ul>Precio
-                <li>Caro</li>
-                <li>Medio</li>
-                <li>Barato</li>
-            </ul>
-            <ul>Condicion
-                <li>Nuevo</li>
-                <li>Usado</li>
-            </ul>
-            <ul>Marca
-                <li>Ford</li>
-                <li>Honda</li>
-                <li>BMW</li>
-                <li>Peugeot</li>
-                <li>Jaguar</li>
-                <li>Hyundai</li>
-            </ul>
-            <ul>Kilometros
-                <li>menos</li>
-                <li>mas</li>
-            </ul>
-            <ul>Combustible
-                <li>Electrico</li>
-                <li>Diesel</li>
-                <li>Hibrido</li>
-            </ul>
-        </div>
-        <section class="contenedor-productos">
-            <% for(let i= 0; i < vehiculos.length; i++){ %>
-                <div class="productos">
-                    <a href= "/detalle/<%=vehiculos[i].id%>" </a>
-                    <img src="\images\autos\<%=vehiculos[i].imagen%>" style='height: 100%; width: 100%; object-fit: fill' >  
-                    <h4 class="productos-titulo"><%= vehiculos[i].nombre %></h4>
-                    <p class="productos-detalles"><%= vehiculos[i].año +" "+vehiculos[i].kilometraje +" km "+ vehiculos[i].transmision %></p>
-                    <p class="productos-precio"><%= vehiculos[i].precio %></p>
-                    <li type="none" class="text-editar"><a href="/products/edit/<%= vehiculos.id%> ">Editar</a></li>
-                </div>
-            <% } %>                 
+    <main>
+        <article><h2>Editor de productos</h2></article>
 
-        </section>
-        </section>
-        <div id="paginas-mobile">
-            <span><i class="fa-solid fa-chevron-left"></i></span>
-            <span> 1 de 1 </span>
-            <span><i class="fa-solid fa-chevron-right"></i> </span>
-            <span><i class="fa-solid fa-chevrons-double-right"></i>  </span>
-        </div>
     </main>
+
+
     <%- include('./partials/footer')%>
 </body>
 </html>
