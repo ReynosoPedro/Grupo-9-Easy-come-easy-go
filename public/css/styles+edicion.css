@@ -1,0 +1,62 @@
+*{
+    margin: 0px;
+    padding: 0px;  
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #595959;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-header{
+    background-color: black;
+    padding:15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    max-width: 100px;
+}
+
+.seccion-barra1 {
+    display: flex;
+    display:none;
+    font-size: 12px;
+    color:white;
+    align-self: center;
+}
+
+.seccion-barra1 a{
+    color:white;
+    text-decoration: none;
+    margin: 0 80px;
+    font-size: 16px;
+}
+
+.seccion-barra2 a{
+    font-size: 16px;
+}
+
+.seccion-barra2{
+    font-size: 16px;
+    color:white;
+    align-self: center;
+}
+
+.sesion{
+    margin: 0 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.burger-menu{
+    background-color: #ccb23e;
+    color:#ffff;
+    padding: 8px 8px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 10px;
+    margin: auto;
+}
