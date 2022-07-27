@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <meta name="viewport" content="width=device-wid th">
+    <meta charset="utf-8">
+    <link href="/css/styles+edit.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('./partials/header')%>
+    <main>
+
+        <form method="POST" action="/editar/<%=vehiculoEditar.id%>?_method=PUT" enctype="multipart/form-data" >
+            <div class="form">
+                <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
+            </div>
+            <div class="form">
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
+            </div>
+            <div class="form">
+                <input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
+            </div>
+            <div class="form">
+                <input type="number" name="year" id="year" placeholder="Año"  required="required">
+            </div>
+            <div class="form">
+                <input type="number" name="precio" id="precio" placeholder="Precio" required="required">
+            </div>
+            <div class="form">
+                <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
+            </div>
+            <div class="custom-file">
+                <label for ="imagen-auto">Subi una foto de tu auto </label>
+                <input type="file"   name="imagen-auto"  placeholder="Elige una imagen">
+            </div>
+            <button class="form" type="submit">Editar</button>   
+        </form>
+    </main>
+    <%- include('./partials/footer')%>
+</body>
+
+</html>

@@ -12,7 +12,8 @@ const rutasProductos = require('./routes/productos');
 const rutasRegister = require('./routes/register');
 const rutasShopCar = require('./routes/shop-car');
 const rutasSellCar = require('./routes/formularioVenta');
-const rutasAdmin = require('./routes/admins');
+const rutasEditCar = require('./routes/formularioEdit');
+
 
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
@@ -38,4 +39,4 @@ app.use('/detalle', rutasDetalle);
 
 app.use('/vender', rutasSellCar);
 
-app.use(rutasAdmin);
+app.use('/editar', rutasEditCar);
