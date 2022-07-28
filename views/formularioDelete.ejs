@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>"Detalle de articulo"</title>
+        <meta name="viewport" content="width=device-wid th">
+        <meta charset="utf-8">
+        <link href="/css/styles+detalle.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <img src="/images/infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' > 
+            <span>Comprá un auto</span>
+            <span>Vende un auto</span> 
+            <span>Nosotros</span>
+            <span><i class="fa-solid fa-basket-shopping"></i></span>
+            <span><i class="fa-solid fa-user"></i> Mi cuenta </span>  
+            <i class="fa-solid fa-bars"></i>          
+        </header>
+        <main>   
+            <div class="productos">
+             <img src="\images\autos\<%=vehiculoEliminar.imagen%>"
+              style='height: 100%; width: 100%; object-fit: fill' >
+            <div class="detalleProductos">
+                <h4 class="productos-titulo"><%= vehiculoEliminar.nombre%></h4>                                  
+                <p class="productos-detalles">Año: <%=vehiculoEliminar.año %></p>
+                <p class="productos-detalles">Kilomentraje: <%=vehiculoEliminar.kilometraje %> kms</p>
+                <p class="productos-detalles">Transmisión: <%= vehiculoEliminar.transmision %></p>
+                <p class="productos-precio">Precio: <%=vehiculoEliminar.precio %></p>
+                <form method="POST" action="/delete/<%=vehiculoEliminar.id%>?_method=DELETE" enctype="multipart/form-data" >
+                    <button class="form" type="submit">ELIMINAR</button>
+</form>
+</div>
+</div>
+   </main>
+   <%- include('./partials/footer')%>
+</body>
+</html>
+
