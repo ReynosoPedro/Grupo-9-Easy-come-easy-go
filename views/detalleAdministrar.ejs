@@ -9,26 +9,17 @@
     <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <img src="\images\infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' > 
-        <span>Comprá un auto</span>
-        <span>Vende un auto</span> 
-        <span>Nosotros</span>
-        <span ><i href="/shop-car" class="fa-solid fa-basket-shopping"></i></span>
-        <div>
-            <span><i href="/login"  class="fa-solid fa-user"></i>  Mi cuenta </span>  
-        </div>
-        <i id="burger-menu" class="fa-solid fa-bars"></i>          
-    </header>
+    <%- include('./partials/header')%>
+
     <main>
         <article>
             <h2>Editor de productos</h2>
         </article>
-        <table class=" table">
-            <thead class="table-primary">
+        <table class="table">
+            <thead>
             <tr>  
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
+                <th class="ubicacion-nombre"scope="col">Nombre</th>
                 <th scope="col">Ver</th>
                 <th scope="col">Editar</th>
                 <th scope="col">Borrar</th>
@@ -38,7 +29,7 @@
             <% for (let i=0;i<vehiculosDelArchivoJSON.length;i++ ) { %> 
             <tr>
                 <td><%= vehiculosDelArchivoJSON[i].id%> </td>
-                <td><%= vehiculosDelArchivoJSON[i].nombre%> </td>
+                <td class="detallevehiculos"><%= vehiculosDelArchivoJSON[i].nombre%> </td>
                 <td><a href="/detalle/<%= vehiculosDelArchivoJSON[i].id%> "> ver</a></td>
                 <td><a href="/editar/<%= vehiculosDelArchivoJSON[i].id%> "> editar</ion-icon></a></td>
                 <td><a href="/delete/<%= vehiculosDelArchivoJSON[i].id%>"> delete</a></td>
@@ -48,8 +39,6 @@
         </table> 
 
     </main>
-
-
     <%- include('./partials/footer')%>
 </body>
 </html>
