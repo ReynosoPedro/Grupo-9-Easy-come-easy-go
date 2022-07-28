@@ -13,7 +13,7 @@ const rutasRegister = require('./routes/register');
 const rutasShopCar = require('./routes/shop-car');
 const rutasSellCar = require('./routes/formularioVenta');
 const rutasEditCar = require('./routes/formularioEdit');
-
+const rutasAdministrar = require('./routes/formularioAdministrar');
 
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
@@ -40,3 +40,5 @@ app.use('/detalle', rutasDetalle);
 app.use('/vender', rutasSellCar);
 
 app.use('/editar', rutasEditCar);
+
+app.use('/administrar', rutasAdministrar);

@@ -23,7 +23,5 @@ router.get('/:id', controller.seleccion);
 router.put(':id', UploadFile.single("imagen-auto"),controller.edit);
         
 
-/*const editController = require(path.resolve(__dirname,'../controllers/editController'));*/
-router.get('/products', controller.index);
 
 module.exports = router;
