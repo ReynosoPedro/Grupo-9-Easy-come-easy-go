@@ -15,6 +15,9 @@
         <article>
             <h2>Editor de productos</h2>
         </article>
+        <article>
+            <a class="edicion-texto" href="/create"> Agregar</a>
+        </article>
         <table class="table">
             <thead>
             <tr>  
@@ -27,12 +30,12 @@
             </thead>
             <tbody>
             <% for (let i=0;i<vehiculosDelArchivoJSON.length;i++ ) { %> 
-            <tr>
+            <tr class="interlineado-productos">
                 <td><%= vehiculosDelArchivoJSON[i].id%> </td>
                 <td class="detallevehiculos"><%= vehiculosDelArchivoJSON[i].nombre%> </td>
-                <td><a href="/detalle/<%= vehiculosDelArchivoJSON[i].id%> "> ver</a></td>
-                <td><a href="/editar/<%= vehiculosDelArchivoJSON[i].id%> "> editar</ion-icon></a></td>
-                <td><a href="/delete/<%= vehiculosDelArchivoJSON[i].id%>"> delete</a></td>
+                <td><a class="edicion-texto" href="/detalle/<%= vehiculosDelArchivoJSON[i].id%> "> ver</a></td>
+                <td><a class="edicion-texto" href="/editar/<%= vehiculosDelArchivoJSON[i].id%> "> editar</ion-icon></a></td>
+                <td><a class="edicion-texto" href="/delete/<%= vehiculosDelArchivoJSON[i].id%>"> delete</a></td>
             </tr>
             <% }; %>
             </tbody>

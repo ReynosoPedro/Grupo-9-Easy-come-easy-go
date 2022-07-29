@@ -56,8 +56,12 @@ h2 {
 }
 
 .table{
-
     width: 100%;
+    background-color: rgb(143, 140, 140);
+}
+
+.edicion-texto{
+    text-decoration: none;
 }
 
 .ubicacion-nombre{
@@ -67,7 +71,9 @@ h2 {
     text-align: left;
 }
 
-
+.interlineado-productos{
+    line-height: 25px;
+}
 
 
 footer {

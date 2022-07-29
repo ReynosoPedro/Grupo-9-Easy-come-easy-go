@@ -14,6 +14,7 @@ const register = {
         fechaDeNacimiento: req.body.fechaDeNacimiento,
         email: req.body.email,
         celular: req.body.celular,
+        avatar: req.file.filename,
         terminos: req.body.terminos,
         newsletter: req.body.newsletter
        }
