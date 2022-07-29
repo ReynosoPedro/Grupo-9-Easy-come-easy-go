@@ -17,7 +17,7 @@
         </div>
         <h2>Registrate</h2>
         <section id="formulario">
-            <form method="POST" action="/register" entype="multipart/form-data">
+            <form method="POST" action="/register" enctype="multipart/form-data" >
                 <div class="form">
                     <label for="nombre-completo"></label>
                     <input type="text" name="nombreCompleto" id="nombre-completo" placeholder="Nombre completo">
@@ -35,10 +35,31 @@
                     <input type="text" name="confirmarContraseña" id="confirmar-contraseña" placeholder="Confirmar contraseña">
                 </div>
                 <div class="form">
+                    <label for="fecha-de-nacimiento"></label>
+                    <input type="date" name="fechaDeNacimiento" id="fecha-de-nacimiento" placeholder="Fecha de nacimiento">
+                </div>
+                <div class="form">
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                </div>
+                <div class="form">
                     <span>
-                        <label for="avatar"></label>
-                        <input type="file" name="avatar" id="avatar">
+                        <label for="celular"></label>
+                        <input type="tel" name="celular" id="celular" placeholder="Celular">
                     </span>
+                </div>
+
+            <div class="form">
+            <label for ="avatar"> </label>
+            <input type="file"   name="avatar"  placeholder="Elige una imagen">
+            </div>
+                <div class="checkbox">
+                    <label for="terminos">Acepto los <a href="#">terminos y condiciones</a></label>
+                    <input type="checkbox" name="terminos">
+                </div>
+                <div class="checkbox">
+                    <label for="newsletter">Deseo recibir ofertas</label>
+                    <input type="checkbox" name="newsletter">
                 </div>
                 <button type="submit">Registrarse</button>
             </form>

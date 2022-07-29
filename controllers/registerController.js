@@ -6,6 +6,7 @@ const register = {
         res.render('register');
     },
     newUser: (req, res) => {
+
        let user = {
         nombre: req.body.nombreCompleto,
         usuario: req.body.usuario,
@@ -24,6 +25,7 @@ const register = {
         let nuevaLista=JSON.stringify( usuariosJSON);
         fs.writeFileSync(path.resolve(__dirname,'..','database','users.json'),nuevaLista);
         res.redirect("/")
+
     }   
 };
 
