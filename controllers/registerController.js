@@ -6,8 +6,9 @@ const register = {
         res.render('register');
     },
     newUser: (req, res) => {
-
-       let user = {
+        if(req.file!=undefined){
+        const usuariosJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/users.json')));
+        let user = {
         nombre: req.body.nombreCompleto,
         usuario: req.body.usuario,
         password: req.body.contraseña,
@@ -18,14 +19,16 @@ const register = {
         avatar: req.file.filename,
         terminos: req.body.terminos,
         newsletter: req.body.newsletter
-       }
+        }
         // los agrego al JSON
         usuariosJSON.push(user);
         // no estoy seguro de si es necesario , 
         let nuevaLista=JSON.stringify( usuariosJSON);
         fs.writeFileSync(path.resolve(__dirname,'..','database','users.json'),nuevaLista);
-        res.redirect("/")
-
+        res.redirect("/");
+    }else {
+        res.render('register');
+    }
     }   
 };
 

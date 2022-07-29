@@ -33,6 +33,6 @@ const venta = {
 
     }  
 
-}
+};
 
 module.exports = venta;
