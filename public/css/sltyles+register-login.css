@@ -130,6 +130,13 @@ footer p {
     margin-bottom: 12px;
 }
 
+.mensajeError{
+    text-align: left;
+    margin-left: 15px;
+    color: red;
+    font-size: 12px;
+}
+
 @media (min-width: 769px) {
     
     header span{

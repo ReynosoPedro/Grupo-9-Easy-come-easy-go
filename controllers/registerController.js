@@ -1,35 +1,42 @@
 const path = require('path');
 const fs = require('fs');
+const bcryptjs = require('bcryptjs');
+const User = require('../models/User');
+const {validationResult}=require('express-validator');
 const usuariosJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/users.json')));
 const register = {
     register: (req, res) => {
         res.render('register');
     },
     newUser: (req, res) => {
-        if(req.file!=undefined){
-        const usuariosJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/users.json')));
-        let user = {
-        nombre: req.body.nombreCompleto,
-        usuario: req.body.usuario,
-        password: req.body.contraseña,
-        confirmPassword: req.body.confirmarContraseña,
-        fechaDeNacimiento: req.body.fechaDeNacimiento,
-        email: req.body.email,
-        celular: req.body.celular,
-        avatar: req.file.filename,
-        terminos: req.body.terminos,
-        newsletter: req.body.newsletter
+        const resultValidation = validationResult (req);
+        if (resultValidation.errors.length > 0){
+            return res.render('register',{
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
         }
-        // los agrego al JSON
-        usuariosJSON.push(user);
-        // no estoy seguro de si es necesario , 
-        let nuevaLista=JSON.stringify( usuariosJSON);
-        fs.writeFileSync(path.resolve(__dirname,'..','database','users.json'),nuevaLista);
-        res.redirect("/");
-    }else {
-        res.render('register');
+        let userInDB = User.findByField('email', req.body.email);
+        if (userInDB){
+            return res.render('register',{
+                errors: {
+                    email:{
+                        msg:'El email ya esta registrado'
+                    }
+                
+                },
+                oldData: req.body
+            });
+        }
+        
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar:req.file.filename
+        }
+        let userCreate=User.create(userToCreate);
+        res.redirect('/login');
     }
-    }   
 };
 
 module.exports = register

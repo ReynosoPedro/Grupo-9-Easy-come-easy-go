@@ -1,1 +1,15 @@
-[{"nombre":"Andres","usuario":"Rovner","Password":"contra","confirmPassword":"contra","fechaDeNacimiento":"2022-07-29","email":"andyrovner4@gmail.com","celular":"1165326532","newsletter":"on"},{"nombre":"eee","usuario":"eee","password":"ee","confirmPassword":"ee","fechaDeNacimiento":"2022-07-06","email":"eee@gmail.com","celular":"eee","terminos":"on","newsletter":"on"},{"nombre":"eee","usuario":"eee","password":"ee","confirmPassword":"ee","fechaDeNacimiento":"2022-07-06","email":"eee@gmail.com","celular":"eee","terminos":"on","newsletter":"on"},{"nombre":"Muy kawai sushi","usuario":"Kawai","fechaDeNacimiento":"2022-07-28","email":"cedavilu@gmail.com","celular":"01114233056","avatar":"1659119851.jpg","terminos":"on","newsletter":"on"},{"nombre":"buenas","usuario":"tardes","fechaDeNacimiento":"2022-07-16","email":"cewedw@gmail.com","celular":"1165326532","avatar":"1659120161.jpg","terminos":"on","newsletter":"on"},{"nombre":"buenas","usuario":"noches","fechaDeNacimiento":"2022-06-29","email":"skug@sljdj.com","celular":"1435354635","avatar":"1659120530.jpg","terminos":"on","newsletter":"on"},{"nombre":"tai","usuario":"tai","fechaDeNacimiento":"2022-07-15","email":"skug@sljdj.com","celular":"16548486","avatar":"1659121514.jpg","terminos":"on","newsletter":"on"}]
+[
+ {
+  "id": 1,
+  "nombreCompleto": "super",
+  "usuario": "mario",
+  "password": "$2a$10$qFlaW.ZKWpcsOqwyUSGTK.qs4fS8BRy/45G/h57d4Kcni2HjXoYZK",
+  "fechaDeNacimiento": "2022-07-14",
+  "email": "skug@sljdj.com",
+  "celular": "1165326532",
+  "categoria": "Comprador",
+  "terminos": "on",
+  "newsletter": "on",
+  "avatar": "1659267584253_img.jpg"
+ }
+]

@@ -17,10 +17,15 @@
         </div>
         <h2>Inicia sesion</h2>
         <section id="formulario">
-            <form action="/registro" method="POST">
+            <form action="/login" method="POST">
                 <div class="form">
                     <label for="usuario"></label>
                     <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+                    <% if (locals.errors && errors.usuario){ %>
+                        <div class="mensajeError">
+                            <%= errors.usuario.msg %>
+                        </div>
+                       <% } %>
                 </div>
                 <div class="form">
                     <label for="contraseña"></label>

@@ -20,19 +20,34 @@
             <form method="POST" action="/register" enctype="multipart/form-data" >
                 <div class="form">
                     <label for="nombre-completo"></label>
-                    <input type="text" name="nombreCompleto" id="nombre-completo" placeholder="Nombre completo">
+                    <input type="text" name="nombreCompleto" id="nombre-completo" placeholder="Nombre completo"
+                    value="<%= locals.oldData ? oldData.nombreCompleto : null %>"
+                    >
+                    <% if (locals.errors && errors.nombreCompleto){ %>
+                    <div class="mensajeError">
+                        <%= errors.nombreCompleto.msg %>
+                    </div>
+                   <% } %>
                 </div>
                 <div class="form">
                     <label for="usuario"></label>
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuario">
+                    <input type="text" name="usuario" id="usuario" placeholder="Usuario"
+                    value="<%= locals.oldData ? oldData.usuario : null %>"
+                    >
+                    <% if (locals.errors && errors.usuario){ %>
+                        <div class="mensajeError">
+                            <%= errors.usuario.msg %>
+                        </div>
+                       <% } %>
                 </div>
                 <div class="form">
-                    <label for="contraseña"></label>
-                    <input type="text" name="contraseña" id="contraseña" placeholder="Contraseña">
-                </div>
-                <div class="form">
-                    <label for="confirmar-contraseña"></label>
-                    <input type="text" name="confirmarContraseña" id="confirmar-contraseña" placeholder="Confirmar contraseña">
+                    <label for="password"></label>
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <% if (locals.errors && errors.password){ %>
+                        <div class="mensajeError">
+                            <%= errors.password.msg %>
+                        </div>
+                       <% } %>
                 </div>
                 <div class="form">
                     <label for="fecha-de-nacimiento"></label>
@@ -40,18 +55,57 @@
                 </div>
                 <div class="form">
                     <label for="email"></label>
-                    <input type="email" name="email" id="email" placeholder="Email">
+                    <input type="email" name="email" id="email" placeholder="Email"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                    >
+                    <% if (locals.errors && errors.email){ %>
+                        <div class="mensajeError">
+                            <%= errors.email.msg %>
+                        </div>
+                       <% } %>
                 </div>
                 <div class="form">
                     <span>
                         <label for="celular"></label>
-                        <input type="tel" name="celular" id="celular" placeholder="Celular">
+                        <input type="tel" name="celular" id="celular" placeholder="Celular"
+                        value="<%= locals.oldData ? oldData.celular : null %>"
+                        >
+                        <% if (locals.errors && errors.celular){ %>
+                            <div class="mensajeError">
+                                <%= errors.celular.msg %>
+                            </div>
+                           <% } %>
                     </span>
                 </div>
-
+                <div>
+                <div>
+                    <label for="categoria"></label>
+                    <select name="categoria">
+                        <option value="">Categoría</option>
+                        <%
+                        let categoria = ['Comprador', 'Vendedor'];
+                        %>
+                        <% for (const unaCategoria of categoria) { %>
+                            <option value="<%= unaCategoria %>"
+                                    <%= locals.oldData && (unaCategoria === oldData.categoria) ? 'selected' : null %>
+                            > <%= unaCategoria %> </option>
+                        <% } %>
+                    </select>
+                    <% if (locals.errors && errors.categoria){ %>
+                        <div class="mensajeError">
+                            <%= errors.categoria.msg %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
             <div class="form">
             <label for ="avatar"> </label>
             <input type="file"   name="avatar"  placeholder="Elige una imagen">
+            <% if (locals.errors && errors.avatar){ %>
+                <div class="mensajeError">
+                    <%= errors.avatar.msg %>
+                </div>
+            <% } %>
             </div>
                 <div class="checkbox">
                     <label for="terminos">Acepto los <a href="#">terminos y condiciones</a></label>
