@@ -11,5 +11,18 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659267584253_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombreCompleto": "vanesa",
+  "usuario": "vane",
+  "password": "$2a$10$7zYfQyl0N0eT6LA5l1.TYOXH0Zc4OTEoQfURo5rFm0FBghVP74IZO",
+  "fechaDeNacimiento": "",
+  "email": "abcd@gmail.com",
+  "celular": "1762556362",
+  "categoria": "Comprador",
+  "terminos": "on",
+  "newsletter": "on",
+  "avatar": "1659309134689_img.jpg"
  }
 ]

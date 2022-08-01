@@ -8,7 +8,7 @@ const login = {
     loginProcess:(req, res)=>{
 
         let userToLogin = User.findByField('usuario', req.body.usuario);
-        
+
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
