@@ -10,42 +10,66 @@ body{
     color: whitesmoke;
 }
 
+.main-header{
+    background-color: black;
+    padding:15px;
+    display: flex;
+    justify-content: space-between;
+    /*justify-content: flex-start;*/
+}
+
+.logo{
+    max-width: 100px;
+}
+
+.seccion-barra1 {
+    display: flex;
+    font-size: 12px;
+    color:white;
+    align-self: center;
+}
+
+.seccion-barra1 a{
+    flex-direction: row;
+    color:white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 16px;
+    margin: 0px 8px;
+}
+
+
+
+.seccion-barra2{
+    display: flex;
+    font-size: 12px;
+    color:white;
+    align-items: center;
+    /*font-size: 16px;
+    color:white;
+    align-self: center;*/
+}
+
+.seccion-barra2 a{
+    flex-direction: row;
+    color:white;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 0px 33px;
+    /*align-items:center;*/
+    font-size: 16px;
+    display: none;
+}
+
+
+
+
+
 
 .fa.fa-trash {
    padding-left: 35px;
    color:black;
 }
-header {
-    background-color:black ;
-    padding:12px;
-    display: flex;
-    justify-content: space-between;
-   
-
-}
-
-
-header .img-header {
-    object-fit: scale-down;
-}
-
-div.seccion-barra a{
-    color:white;
-    text-decoration: none;
-    margin: 0 80px;
-}
-
-div.seccion-barra span {
-
-    color:white;
-    text-decoration: none;
-    margin: 0px 80px;
-    padding: 40px;
-
-}
-
-
-
 
 
 

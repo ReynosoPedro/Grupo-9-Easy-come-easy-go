@@ -7,31 +7,14 @@
     <meta charset="utf-8">
 
     <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+    <link href="/css/styles+home.css" rel="stylesheet">
 
     <link href="/css/styles+shopCar.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="img-header">
-            <img src="\images\infiniticars.png" style='height: 100%; width: 100%; object-fit: fill'>
-        </div>
-
-        <div class="seccion-barra">
-
-            <span><a href="#">Home</a></span>
-            <span><a href="/productos">Catálogo</a></span>
-            <span><a href="#">Nosotros</a></span>
-        </div>
-
-        <div>
-            <span><i class="fa-solid fa-user"></i>Mi cuenta</span>
-        </div>
-        <i id="burger-menu" class="fa-solid fa-bars"></i>
-    </header>
-
-
-    </header>
+    <%- include('./partials/header')%>
+    
     <section class="mt-5">
         <div class="container">
             <div class="table-responsive">
@@ -55,7 +38,7 @@
 
                                         <a class="product-thumb" href="#">
                                             <!-- w=145 h=98--> <img
-                                                src="\images\EXTERIOR-frontSidePilotNear-1646321139201.jpeg"
+                                                src="\images\autos\EXTERIOR-frontSidePilotNear-1646321139201.jpeg"
                                                 style='height: 100%; width: 100%; object-fit: fill' alt="Product">
                                         </a>
 
@@ -108,7 +91,6 @@
                         <!-- end-->
 
 
-
                         <tr>
                             <td>
                                 <div class="main">
@@ -116,7 +98,7 @@
 
                                         <a class="product-thumb" href="#">
                                             <!-- w=145 h=98--> <img
-                                                src="\images\EXTERIOR-frontSidePilotNear-1646321139201.jpeg"
+                                                src="\images\autos\EXTERIOR-frontSidePilotNear-1646321139201.jpeg"
                                                 alt="Product">
                                         </a>
 
@@ -195,7 +177,6 @@
         </div>
 
     </div>
-
 
     <%- include('./partials/footer')%>
         </div>

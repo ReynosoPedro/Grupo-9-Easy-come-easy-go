@@ -37,5 +37,18 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659406036235_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombreCompleto": "fdfdfd",
+  "usuario": "32760222",
+  "password": "$2a$10$HbMs4b1sacIPNA21rOHlJuGJ3HEK30.FBulhWqe1sYBbZ3/W9tHJW",
+  "fechaDeNacimiento": "1990-11-17",
+  "email": "marcelinoagonzalez2022@gmail.com",
+  "celular": "11 5499 8631",
+  "categoria": "Vendedor",
+  "terminos": "on",
+  "newsletter": "on",
+  "avatar": "1659472366390_img.jpg"
  }
 ]
