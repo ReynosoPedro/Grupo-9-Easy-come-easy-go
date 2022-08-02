@@ -2,16 +2,19 @@ const express= require ('express');
 const path = require ('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 let app =express();
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath) );
 app.set('view engine', 'ejs');
+
 app.use(session({
     secret : 'topSecret',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
 }))
-//false los dos
+
+app.use(userLoggedMiddleware);
 
 const rutasHome = require('./routes/home');
 const rutasLogin = require('./routes/login');

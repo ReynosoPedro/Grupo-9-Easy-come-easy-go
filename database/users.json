@@ -24,5 +24,18 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659309134689_img.jpg"
+ },
+ {
+  "id": 3,
+  "nombreCompleto": "Hola que",
+  "usuario": "tal",
+  "password": "$2a$10$.mh33x.Qo1tFDJpHIxrAXe8fGZvkooB1XEVjPV5wGg4Q85eXeqe6i",
+  "fechaDeNacimiento": "",
+  "email": "jjjj@gmail.com",
+  "celular": "1762556362",
+  "categoria": "Comprador",
+  "terminos": "on",
+  "newsletter": "on",
+  "avatar": "1659406036235_img.jpg"
  }
 ]

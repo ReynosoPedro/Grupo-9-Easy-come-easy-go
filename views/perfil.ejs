@@ -9,6 +9,16 @@
     </head>
     <body>
         <%- include('./partials/header')%>
-        <h2>Holaaaa</h2>
+        <div class="container" style="margin-top: 20px;">
+		<div>
+			<div style= 'text-align: center;'>
+                <h2> <%= user.nombreCompleto %></h2>
+				<a><img   src="/images/usuarios/<%= user.avatar %>"  style= 'width: 20rem; height: 20rem; 'alt="Foto"></a>
+				<br>
+				<br>
+				<div class="alert alert-success"><%= user.email %> </div>
+			</div>
+		</div>
+	    </div>
         <%- include('./partials/footer')%>
     </body>

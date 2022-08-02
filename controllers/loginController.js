@@ -12,6 +12,7 @@ const login = {
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
+                delete userToLogin.password;
                 req.session.userLogged = userToLogin;
                 return res.redirect('/profile');
             }
@@ -32,8 +33,15 @@ const login = {
         });
     },
     profile: (req, res)=>{
-        return res.render('perfil');
+
+        return res.render('perfil', {
+            user: req.session.userLogged
+        });
     },
+    logout: (req, res) =>{
+        req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 module.exports = login;

@@ -11,14 +11,16 @@
             <i class="fas fa-search"></i>
         </div>
         <div class="seccion-barra2">
+            <% if (locals.isLogged) { %>
             <a href = "/vender">Vende un auto</a>
             <a class="sesion" class="fa-solid fa-basket-shopping" href = "/shop-car">Carrito</a>
-            <a><img   src="/images/bmw.jpg"  style= 'border-radius: 50%; width: 2.5rem; height: 2.5rem; 'alt="Foto">Usuario</a>
-            <a class="sesion" href="#">Mi perfil</a>
-            <a class="sesion" href="#">Cerrar sesion</a>
-            <a class="sesion" href = "/register">Registrate</a>
-            <a class="sesion" href="#">Inicia sesion</a>
-            
+            <a><img   src="/images/usuarios/<%= locals.userLogged.avatar %>"  style= 'border-radius: 50%; width: 2.5rem; height: 2.5rem; 'alt="Foto"><%= locals.userLogged.nombreCompleto %></a>
+            <a class="sesion" href="/profile">Mi perfil</a>
+            <a class="sesion" href="/logout">Cerrar sesion</a>
+            <% } else { %>
+            <a class="sesion2" href = "/register">Registrate</a>
+            <a class="sesion2" href="/login">Inicia sesion</a>
+            <% } %>
         </div>
         <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
     </header>
