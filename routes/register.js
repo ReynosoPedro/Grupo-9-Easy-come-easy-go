@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const controller = require('../controllers/registerController');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 //multer
 const multer= require ('multer');
 const { body } = require('express-validator');
@@ -51,7 +52,7 @@ const storage= multer.diskStorage(
 )
 const uploadFile =multer ( { storage});
 // formulario de creación
-router.get('/', controller.register);
+router.get('/',guestMiddleware, controller.register);
 // procesamiento del formulario de creación
 router.post('/', uploadFile.single("avatar"), validations,controller.newUser);
 

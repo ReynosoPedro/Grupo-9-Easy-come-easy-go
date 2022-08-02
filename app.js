@@ -1,10 +1,18 @@
 const express= require ('express');
 const path = require ('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
 let app =express();
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath) );
 app.set('view engine', 'ejs');
+app.use(session({
+    secret : 'topSecret',
+    resave: true,
+    saveUninitialized: true,
+}))
+//false los dos
+
 const rutasHome = require('./routes/home');
 const rutasLogin = require('./routes/login');
 const rutasDetalle = require('./routes/detalle');
@@ -15,8 +23,6 @@ const rutasSellCar = require('./routes/formularioVenta');
 const rutasEditCar = require('./routes/formularioEdit');
 const rutasAdministrar = require('./routes/formularioAdministrar');
 const rutasDelete = require ('./routes/formularioDelete');
-
-
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
@@ -46,3 +52,5 @@ app.use('/editar', rutasEditCar);
 app.use('/administrar', rutasAdministrar);
 
 app.use('/delete', rutasDelete);
+
+app.use(rutasLogin);

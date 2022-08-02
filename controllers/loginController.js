@@ -7,12 +7,13 @@ const login = {
     },
     loginProcess:(req, res)=>{
 
-        let userToLogin = User.findByField('usuario', req.body.usuario);
+        let userToLogin = User.findByField('email', req.body.email);
 
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
-                return res.redirect('/');
+                req.session.userLogged = userToLogin;
+                return res.redirect('/profile');
             }
             return res.render('login',{
                 errors:{
@@ -29,7 +30,10 @@ const login = {
                 }
             }
         });
-    }
+    },
+    profile: (req, res)=>{
+        return res.render('perfil');
+    },
 }
 
 module.exports = login;

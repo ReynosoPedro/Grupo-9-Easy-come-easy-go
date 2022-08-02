@@ -19,11 +19,11 @@
         <section id="formulario">
             <form action="/login" method="POST">
                 <div class="form">
-                    <label for="usuario"></label>
-                    <input type="text" name="usuario" id="usuario" placeholder="Usuario">
-                    <% if (locals.errors && errors.usuario){ %>
+                    <label for="email"></label>
+                    <input type="email" name="email" id="email" placeholder="Email">
+                    <% if (locals.errors && errors.email){ %>
                         <div class="mensajeError">
-                            <%= errors.usuario.msg %>
+                            <%= errors.email.msg %>
                         </div>
                     <% } %>
                 </div>
