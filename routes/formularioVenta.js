@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const controller = require('../controllers/ventaController')
+const controller = require('../controllers/ventaController');
+const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
 //multer
 const multer= require ('multer');
 const storage= multer.diskStorage(
@@ -18,7 +19,7 @@ const storage= multer.diskStorage(
 )
 const UploadFile =multer ( { storage});
 // formulario de creación
-router.get('/', controller.seleccion);
+router.get('/',  autenticadoMiddleware, controller.seleccion);
 // procesamiento del formulario de creación
 router.post('/', UploadFile.single("imagen-auto"), controller.crear);
 

@@ -11,8 +11,8 @@
             <i class="fas fa-search"></i>
         </div>
         <div class="seccion-barra2">
-            <% if (locals.isLogged) { %>
             <a href = "/vender">Vende un auto</a>
+            <% if (locals.isLogged) { %>
             <a class="sesion" class="fa-solid fa-basket-shopping" href = "/shop-car">Carrito</a>
             <a><img   src="/images/usuarios/<%= locals.userLogged.avatar %>"  style= 'border-radius: 50%; width: 2.5rem; height: 2.5rem; 'alt="Foto"><%= locals.userLogged.nombreCompleto %></a>
             <a class="sesion" href="/profile">Mi perfil</a>
