@@ -57,3 +57,4 @@ app.use('/administrar', rutasAdministrar);
 app.use('/delete', rutasDelete);
 
 app.use(rutasLogin);
+app.use(rutasSellCar);

@@ -23,6 +23,8 @@ router.get('/',  autenticadoMiddleware, controller.seleccion);
 // procesamiento del formulario de creación
 router.post('/', UploadFile.single("imagen-auto"), controller.crear);
 
+router.get('/create', controller.crear);
+
 
 
 module.exports = router
