@@ -14,7 +14,7 @@ const login = {
             if(isOkThePassword){
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                return res.redirect('/profile');
+                return res.redirect('/');
             }
             return res.render('login',{
                 errors:{
