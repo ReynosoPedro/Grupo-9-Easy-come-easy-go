@@ -23,7 +23,7 @@ body{
 }
 
 .seccion-barra1 {
-    display: flex;
+    display: none;
     font-size: 12px;
     color:white;
     align-self: center;
@@ -41,7 +41,7 @@ body{
 
 
 .seccion-barra2{
-    display: flex;
+    display: none;
     font-size: 12px;
     color:white;
     align-items: center;
@@ -345,6 +345,66 @@ h6 {
 }
 
 @media (min-width: 769px) {
+    header div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+         
+    .main-header{
+        background-color: black;
+        padding:15px;
+        display: flex;
+        justify-content: space-between;
+        /*justify-content: flex-start;*/
+    }
+    
+    .logo{
+        max-width: 100px;
+    }
+    
+    .seccion-barra1 {
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-self: center;
+    }
+    
+    .seccion-barra1 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 16px;
+        margin: 0px 8px;
+    }
+    
+    
+    
+    .seccion-barra2{
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-items: center;
+        /*font-size: 16px;
+        color:white;
+        align-self: center;*/
+    }
+    
+    .seccion-barra2 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 0px 33px;
+        /*align-items:center;*/
+        font-size: 16px;
+    }
+
     .footer{
         display: flex;
         justify-content: space-between;

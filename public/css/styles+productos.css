@@ -9,6 +9,38 @@ header{
     align-items: center;
 
 }
+
+.seccion-barra1 {
+    display: none;
+}
+
+.seccion-barra2 {
+    display: none;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+header a {
+    color: white;
+}
+
+.main-header{
+    justify-content: space-between;
+}
+.burger-menu{
+    display: flex;
+    font-size: 50px;
+}
+
 a {
     text-decoration: none; 
     color: black; 
@@ -71,8 +103,8 @@ footer {
     padding-bottom: 20px;
     background-color: black;
     color: white;
-    width: 100%;
     margin-top: auto;
+    max-width: 100%;
 }
 
 footer p {
@@ -152,7 +184,68 @@ img{
 }
 
 @media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+    header div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+         
+    .main-header{
+        background-color: black;
+        padding:15px;
+        display: flex;
+        justify-content: space-between;
+        /*justify-content: flex-start;*/
+    }
     
+    .logo{
+        max-width: 100px;
+    }
+    
+    .seccion-barra1 {
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-self: center;
+    }
+    
+    .seccion-barra1 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 16px;
+        margin: 0px 8px;
+    }
+    
+    
+    
+    .seccion-barra2{
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-items: center;
+        /*font-size: 16px;
+        color:white;
+        align-self: center;*/
+    }
+    
+    .seccion-barra2 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 0px 33px;
+        /*align-items:center;*/
+        font-size: 16px;
+    }
     #burger-menu {
         display: none;
     }
@@ -274,6 +367,69 @@ img{
 }
 
 @media (min-width: 1280px) {
+
+   
+    header div{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+         
+    .main-header{
+        background-color: black;
+        padding:15px;
+        display: flex;
+        justify-content: space-between;
+        /*justify-content: flex-start;*/
+    }
+    
+    .logo{
+        max-width: 100px;
+    }
+    
+    .seccion-barra1 {
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-self: center;
+    }
+    
+    .seccion-barra1 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 16px;
+        margin: 0px 8px;
+    }
+    
+    
+    
+    .seccion-barra2{
+        display: flex;
+        font-size: 12px;
+        color:white;
+        align-items: center;
+        /*font-size: 16px;
+        color:white;
+        align-self: center;*/
+    }
+    
+    .seccion-barra2 a{
+        flex-direction: row;
+        color:white;
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 0px 33px;
+        /*align-items:center;*/
+        font-size: 16px;
+    }
+    
+    
     .footer {
         display: flex;
         justify-content: space-between;

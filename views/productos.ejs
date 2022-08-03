@@ -8,23 +8,8 @@
         <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            
-            <img src="\images\infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' >
-            <span>Comprá un auto</span>
-            <span>Vende un auto</span> 
-            <span>Nosotros</span>
-            
-            <span ><i href="/shop-car" class="fa-solid fa-basket-shopping"></i></span>
-            <div>
-                <span><i href="/login"  class="fa-solid fa-user"></i>  Mi cuenta </span>  
-            </div>
-            <i id="burger-menu" class="fa-solid fa-bars"></i>          
-        </header>
+        <%- include('./partials/header')%>
         <main>   
-            <div id="busqueda">     
-            <h4> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </h4>
-            </div>
             <div class="headerfiltros">
                 <span id="titular-filtro">FILTRO</span>
                 <span id="titular-seleccion"> |Reset all| Filtros aplicados x |</span>

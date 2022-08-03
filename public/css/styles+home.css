@@ -21,8 +21,9 @@ body {
     max-width: 100px;
 }
 
+
 .seccion-barra1 {
-    display: flex;
+    display: none;
     font-size: 12px;
     color:white;
     align-self: center;
@@ -40,7 +41,7 @@ body {
 
 
 .seccion-barra2{
-    display: flex;
+    display: none;
     font-size: 12px;
     color:white;
     align-items: center;
@@ -73,15 +74,28 @@ body {
     width: 10%;
 }
 
-.burger-menu{
-    background-color: #ccb23e;
-    display: block;
-    color:#ffff;
-    padding: 8px 8px;
+#busqueda{
+    display: flex;
+    background-color: #ccb23e;  
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+    justify-content: center;
+    font-size: auto;
+    width: 100vw;
+}
+#busqueda h4{
     border-radius: 5px;
-    text-align: left;
-    font-size: 10px;
-    margin: auto;
+    width: 90%;   
+    background-color: white;
+    text-align: center;
+    color: gray;
+    margin: 7px 0px ;
+    padding: 2px;
+}
+
+.burger-menu {
+    font-size: 50px;
+    text-align: center;
 }
 
 .texto{
@@ -159,14 +173,7 @@ footer p {
 }
 
 @media(min-width:362px){
-    .burger-menu{
-    display: none;
-    padding: 8px 8px;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 10px;
-    margin: auto;
-    }
+
     .seccion-barra1{
         display: block;
     }
@@ -237,6 +244,18 @@ footer p {
 }
 
 @media (min-width: 1280px) {
+    
+    .burger-menu {
+        display: none;
+    }
+    
+    .seccion-barra1 {
+        display: flex;
+    }
+
+    .seccion-barra2{
+        display: flex;
+    }
     .footer {
         display: flex;
         justify-content: space-between;

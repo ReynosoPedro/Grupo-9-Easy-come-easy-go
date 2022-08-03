@@ -1,28 +1,29 @@
-
-    <header class="main-header">
+<header class="main-header">
         <div>
             <a href="/"><img src="/images/infiniticars.png" class="logo"></a>
         </div>
         <div class="seccion-barra2">
-            <a href = "/administrar">Admin</a>
-            <a href = "#">Nosotros</a>
-            <a href = "/productos">Catálogo</a>
-            
-            
-            <i class="fas fa-search"></i>
+            <a href="/administrar">Admin</a>
+            <a href="#">Nosotros</a>
+            <a href="/productos">Catálogo</a>
         </div>
         <div class="seccion-barra2">
-            <a href = "/vender">Vende un auto</a>
+            <a href="/vender">Vende un auto</a>
             <% if (locals.isLogged) { %>
-            <a class="sesion" class="fa-solid fa-basket-shopping" href = "/shop-car">Carrito</a>
-            <a><img   src="/images/usuarios/<%= locals.userLogged.avatar %>"  style= 'border-radius: 50%; width: 2.5rem; height: 2.5rem; 'alt="Foto"><%= locals.userLogged.nombreCompleto %></a>
-            <a class="sesion" href="/profile">Mi perfil</a>
-            <a class="sesion" href="/logout">Cerrar sesion</a>
-            <% } else { %>
-            <a class="sesion2" href = "/register">Registrate</a>
-            <a class="sesion2" href="/login">Inicia sesion</a>
-            <% } %>
+                <a class="sesion" class="fa-solid fa-basket-shopping" href="/shop-car">Carrito</a>
+                <a><img src="/images/usuarios/<%= locals.userLogged.avatar %>"
+                        style='border-radius: 50%; width: 2.5rem; height: 2.5rem; ' alt="Foto">
+                    <%= locals.userLogged.nombreCompleto %>
+                </a>
+                <a class="sesion" href="/profile">Mi perfil</a>
+                <a class="sesion" href="/logout">Cerrar sesion</a>
+                <% } else { %>
+                    <a class="sesion2" href="/register">Registrate</a>
+                    <a class="sesion2" href="/login">Inicia sesion</a>
+                    <% } %>
         </div>
         <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
-    </header>
-
+</header>    
+    <span id="busqueda">
+            <h4> Buscar por modelo, marca , color <i class="fa-solid fa-magnifying-glass "></i> </h4>
+    </span>

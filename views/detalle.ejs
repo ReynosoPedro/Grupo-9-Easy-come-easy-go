@@ -8,15 +8,7 @@
         <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header>
-            <img src="/images/infiniticars.png" style='height: 100%; width: 100%; object-fit: fill' > 
-            <span>Comprá un auto</span>
-            <span>Vende un auto</span> 
-            <span>Nosotros</span>
-            <span><i class="fa-solid fa-basket-shopping"></i></span>
-            <span><i class="fa-solid fa-user"></i> Mi cuenta </span>  
-            <i class="fa-solid fa-bars"></i>          
-        </header>
+        <%- include('./partials/header')%>
         <main>   
             <div class="productos">
                 <img src="\images\autos\<%=vehiculo.imagen%>" style='height: 100%; width: 100%; object-fit: fill' >  
