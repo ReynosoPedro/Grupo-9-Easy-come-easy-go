@@ -10,7 +10,8 @@
   "categoria": "Comprador",
   "terminos": "on",
   "newsletter": "on",
-  "avatar": "1659267584253_img.jpg"
+  "avatar": "1659267584253_img.jpg",
+  "rol":"1"
  },
  {
   "id": 2,
@@ -24,6 +25,8 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659309134689_img.jpg"
+  ,
+  "rol":"9"
  },
  {
   "id": 3,
@@ -37,6 +40,8 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659406036235_img.jpg"
+  ,
+  "rol":"1"
  },
  {
   "id": 4,
@@ -50,5 +55,7 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659472366390_img.jpg"
+  ,
+  "rol":"1"
  }
 ]

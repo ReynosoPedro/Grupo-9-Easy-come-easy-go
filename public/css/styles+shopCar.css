@@ -10,13 +10,6 @@ body{
     color: whitesmoke;
 }
 
-.main-header{
-    background-color: black;
-    padding:15px;
-    display: flex;
-    justify-content: space-between;
-    /*justify-content: flex-start;*/
-}
 
 .logo{
     max-width: 100px;
@@ -264,12 +257,7 @@ div.delete-button {
 }
 
 
-.img-header{
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: scale-down;
-    
-}
+
 .menu{
     background-color: #ccb23e;
     color:#ffff;
@@ -345,23 +333,7 @@ h6 {
 }
 
 @media (min-width: 769px) {
-    header div{
-        display: flex;
-        justify-content: space-between;
-    }
 
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-         
-    .main-header{
-        background-color: black;
-        padding:15px;
-        display: flex;
-        justify-content: space-between;
-        /*justify-content: flex-start;*/
-    }
     
     .logo{
         max-width: 100px;
