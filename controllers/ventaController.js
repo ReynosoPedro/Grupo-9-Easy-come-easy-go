@@ -24,7 +24,7 @@ const venta = {
         // no estoy seguro de si es necesario , 
         let nuevaLista=JSON.stringify( vehiculosDelArchivoJSON);
         fs.writeFileSync(path.resolve(__dirname,'..','database','vehiculos.json'),nuevaLista);
-        res.redirect("/productos");
+        res.render('productos',{vehiculos: vehiculosDelArchivoJSON});
           //en caso de que la validacion de img sea negativa , vuelve al formulario
         }else {
             res.render('formularioVenta');
