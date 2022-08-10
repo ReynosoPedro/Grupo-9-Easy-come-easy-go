@@ -3,7 +3,9 @@
     padding: 0px;  
     box-sizing: border-box;
 }
-
+.notfound {
+    text-align: center;
+}
 body {
     background-color: #595959;
     font-family: 'Roboto', sans-serif;
@@ -82,6 +84,7 @@ body {
     justify-content: center;
     font-size: auto;
     width: 100vw;
+    max-width: 100%;
 }
 #busqueda h4{
     border-radius: 5px;

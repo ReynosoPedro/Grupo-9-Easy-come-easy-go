@@ -36,6 +36,7 @@ app.listen(process.env.PORT || 3050 , function (){
     console.log("Servidor corriendo en el puerto 3050");
 })
 
+
 app.use('/productos', rutasProductos);
 
 app.use('/', rutasHome);
@@ -58,3 +59,7 @@ app.use('/delete', rutasDelete);
 
 app.use(rutasLogin);
 app.use(rutasSellCar);
+
+app.use((req,res,next)=> {
+    res.status(404).render('not-found');
+})
