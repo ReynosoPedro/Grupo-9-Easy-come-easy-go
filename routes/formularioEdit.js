@@ -20,7 +20,7 @@ const UploadFile= multer({storage});
 
 
 router.get('/:id', controller.seleccion);
-router.put(':id', UploadFile.single("imagen-auto"),controller.edit);
+router.put('/:id', UploadFile.single("imagen-auto"),controller.edit);
         
 
 
