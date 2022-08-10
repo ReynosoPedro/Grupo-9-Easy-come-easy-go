@@ -16,7 +16,7 @@ const edit = {
         // no estoy seguro de si es necesario , 
         listaFinal=JSON.stringify(listaFinal);
         fs.writeFileSync(path.resolve(__dirname,'..','database','vehiculos.json'),listaFinal);
-        res.redirect("/productos");
+        res.render('productos',{vehiculos: vehiculosDelArchivoJSON});
     
     }  
 
