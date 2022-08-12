@@ -6,6 +6,9 @@
 .notfound {
     text-align: center;
 }
+a {
+    text-decoration: none;
+}
 body {
     background-color: #595959;
     font-family: 'Roboto', sans-serif;
