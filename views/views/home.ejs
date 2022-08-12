@@ -17,30 +17,16 @@
             <div><img src="/images/varios.jpg" class="foto2"></div>
             <h2 class="texto">Ofertas destacadas</h2>
             <section class="productoss">
-                <div class="ofertas">
-                    <img src = "/images/autos/EXTERIOR-frontSidePilotNear-1646321139201.jpeg" class="imagen">
-                    <article class="precio-descuento-descripcion">
-                        <p class="precio">Precio: $ 6.050.000$ 6.140.000</p>
-                        <p class="descuento">10% off</p>
-                        <h3 class="descripcion">Toyota Hilux 2.8</h3>
-                    </article>
-                </div>
-                <div class="ofertas">
-                    <img src = "/images/autos/EXTERIOR-frontSidePilotNear-1646321139201.jpeg" class="imagen">
-                    <article class="precio-descuento-descripcion">
-                        <p class="precio">Precio: $ 6.050.000$ 6.140.000</p>
-                        <p class="descuento">10% off</p>
-                        <h3 class="descripcion">Toyota Hilux 2.8</h3>
-                    </article>
-                </div>
-                <div class="ofertas">
-                    <img src = "/images/autos/EXTERIOR-frontSidePilotNear-1646321139201.jpeg" class="imagen">
-                    <article class="precio-descuento-descripcion">
-                        <p class="precio">Precio: $ 6.050.000$ 6.140.000</p>
-                        <p class="descuento">10% off</p>
-                        <h3 class="descripcion">Toyota Hilux 2.8</h3>
-                    </article>
-                </div>
+                <% for(let i= 0; i < 3; i++){ %>
+                    <div class="ofertas"> 
+                        <img src="\images\autos\<%=vehiculos[i].imagen%>" class="imagen">  
+                        <article class="precio-descuento-descripcion">
+                            <h4 class="productos-titulo"><%= vehiculos[i].nombre %></h4>
+                            <p class="productos-precio"><%= vehiculos[i].precio %></p>
+                            <p class="descuento">10% off</p>
+                        </article>                       
+                    </div>
+                <% } %> 
             </section>
         </header>
         <%- include('../partials/footer')%>
