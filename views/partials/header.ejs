@@ -12,7 +12,7 @@
     <a href="/productos">Catálogo</a>
   </div>
   <div class="seccion-barra2">
-    <a href="/vender">Vende tu auto</a>
+    <a href="/agregar">Vende tu auto</a>
     <% if (locals.isLogged) { %>
     <a class="sesion" class="fa-solid fa-basket-shopping" href="/shop-car"
       >Carrito</a
@@ -25,11 +25,11 @@
       />
       <%= locals.userLogged.nombreCompleto %>
     </a>
-    <a class="sesion" href="/profile">Mi perfil</a>
-    <a class="sesion" href="/logout">Cerrar sesion</a>
+    <a class="sesion" href="profile">Mi perfil</a>
+    <a class="sesion" href="logout">Cerrar sesion</a>
     <% } else { %>
-    <a class="sesion2" href="/register">Registrate</a>
-    <a class="sesion2" href="/login">Inicia sesion</a>
+    <a class="sesion2" href="register">Registrate</a>
+    <a class="sesion2" href="login">Inicia sesion</a>
     <% } %>
   </div>
   <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>

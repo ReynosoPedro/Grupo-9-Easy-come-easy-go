@@ -16,16 +16,13 @@ app.use(session({
 
 app.use(userLoggedMiddleware);
 
-const rutasHome = require('./routes/home');
-const rutasLogin = require('./routes/login');
-const rutasDetalle = require('./routes/detalle');
-const rutasProductos = require('./routes/productos');
-const rutasRegister = require('./routes/register');
-const rutasShopCar = require('./routes/shop-car');
-const rutasSellCar = require('./routes/formularioVenta');
-const rutasEditCar = require('./routes/formularioEdit');
-const rutasAdministrar = require('./routes/formularioAdministrar');
-const rutasDelete = require ('./routes/formularioDelete');
+
+const rutasUsers = require('./routes/users');
+//rutas disponibles para el ADM  valga la redundancia
+const rutasAdmin = require('./routes/formularioAdmin');
+//rutas disponibles para todos los usuarios y visitantes home , productos etc
+const rutasViews = require('./routes/views');
+
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
@@ -33,33 +30,15 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 app.listen(process.env.PORT || 3050 , function (){
-    console.log("Servidor corriendo en el puerto 3050");
+    console.log("Server up and running port 3050");
 })
 
+app.use( rutasUsers);
 
-app.use('/productos', rutasProductos);
+app.use( rutasViews);
 
-app.use('/', rutasHome);
-
-app.use('/register', rutasRegister);
-
-app.use('/shop-car', rutasShopCar);
-
-app.use('/login', rutasLogin);
-
-app.use('/detalle', rutasDetalle);
-
-app.use('/vender', rutasSellCar);
-
-app.use('/editar', rutasEditCar);
-
-app.use('/administrar', rutasAdministrar);
-
-app.use('/delete', rutasDelete);
-
-app.use(rutasLogin);
-app.use(rutasSellCar);
+app.use( rutasAdmin);
 
 app.use((req,res,next)=> {
-    res.status(404).render('not-found');
+    res.status(404).render('views/not-found');
 })

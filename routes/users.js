@@ -1,8 +1,21 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
-const controller = require('../controllers/registerController');
+
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
+const controller = require('../controllers/usuarioController');
+
+
+router.get('/login', guestMiddleware, controller.login);
+
+router.post('/login', controller.loginProcess);
+
+router.get('/profile', autenticadoMiddleware, controller.profile);
+
+router.get('/logout', autenticadoMiddleware, controller.logout);
+
+router.get('/shop-cart', controller.shopCar)
+
 //multer
 const multer= require ('multer');
 const { body } = require('express-validator');
@@ -52,9 +65,10 @@ const storage= multer.diskStorage(
 )
 const uploadFile =multer ( { storage});
 // formulario de creación
-router.get('/',guestMiddleware, controller.register);
+router.get('/register',guestMiddleware, controller.register);
 // procesamiento del formulario de creación
-router.post('/', uploadFile.single("avatar"), validations,controller.newUser);
+router.post('/register', uploadFile.single("avatar"), validations,controller.newUser);
+
 
 
 

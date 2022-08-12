@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <%- include('./partials/header')%>
+    <%- include('../partials/header')%>
     <main>
 
-        <form method="POST" action="/vender" enctype="multipart/form-data" >
+        <form method="POST" action="agregar" enctype="multipart/form-data" >
             <div class="form">
                 <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
             </div>
@@ -40,7 +40,7 @@
             <button class="form" type="submit">Publicar</button>   
         </form>
     </main>
-    <%- include('./partials/footer')%>
+    <%- include('../partials/footer')%>
 </body>
 
 </html>
