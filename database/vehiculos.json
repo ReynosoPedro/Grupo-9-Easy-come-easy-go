@@ -1,5 +1,23 @@
 [
     {
+        "id": "1",
+        "nombre": "Ford Focus III 2.0 Se Plus Mt",
+        "año": "2022",
+        "kilometraje": "1.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "focus.jpeg"
+    },
+    {
+        "id": "2",
+        "nombre": "Ford Focus III 2.0 Se Plus Mt",
+        "año": "2022",
+        "kilometraje": "1.000",
+        "precio": "$ 6.050.000",
+        "transmision": "Manual",
+        "imagen": "focus.jpeg"
+    },
+    {
         "id": "3",
         "nombre": "Ford Focus III 2.0 Se Plus Mt",
         "año": "2022",

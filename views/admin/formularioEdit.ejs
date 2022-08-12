@@ -16,22 +16,22 @@
 
         <form action="/editar/<%=vehiculoEditar.id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
             <div class="form">
-                <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
+                <input type="text" name="marca" id="marca" placeholder="Marca" required="required" value="<%=vehiculoEditar.marca%>">
             </div>
             <div class="form">
-                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
+                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required" value="<%=vehiculoEditar.modelo%>">
             </div>
             <div class="form">
-                <input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
+                <input type="text" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required" value="<%=vehiculoEditar.kilometraje +" km" %>">
             </div>
             <div class="form">
-                <input type="number" name="year" id="year" placeholder="Año"  required="required">
+                <input type="number" name="year" id="year" placeholder="Año"  required="required" value="<%=vehiculoEditar.año%>">
             </div>
             <div class="form">
-                <input type="number" name="precio" id="precio" placeholder="Precio" required="required">
+                <input type="text" name="precio" id="precio" placeholder="Precio" required="required" value="<%=vehiculoEditar.precio%>">
             </div>
             <div class="form">
-                <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
+                <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required" value="<%=vehiculoEditar.transmision%>">
             </div>
             <div class="custom-file">
                 <label for ="imagen-auto">Subi una foto de tu auto </label>
