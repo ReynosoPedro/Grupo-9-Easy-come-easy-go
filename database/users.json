@@ -11,7 +11,7 @@
   "terminos": "on",
   "newsletter": "on",
   "avatar": "1659267584253_img.jpg",
-  "rol":"1"
+  "rol": "1"
  },
  {
   "id": 2,
@@ -24,9 +24,8 @@
   "categoria": "Comprador",
   "terminos": "on",
   "newsletter": "on",
-  "avatar": "1659309134689_img.jpg"
-  ,
-  "rol":"9"
+  "avatar": "1659309134689_img.jpg",
+  "rol": "9"
  },
  {
   "id": 3,
@@ -39,9 +38,8 @@
   "categoria": "Comprador",
   "terminos": "on",
   "newsletter": "on",
-  "avatar": "1659406036235_img.jpg"
-  ,
-  "rol":"1"
+  "avatar": "1659406036235_img.jpg",
+  "rol": "1"
  },
  {
   "id": 4,
@@ -54,8 +52,20 @@
   "categoria": "Vendedor",
   "terminos": "on",
   "newsletter": "on",
-  "avatar": "1659472366390_img.jpg"
-  ,
-  "rol":"1"
+  "avatar": "1659472366390_img.jpg",
+  "rol": "1"
+ },
+ {
+  "id": 5,
+  "nombreCompleto": "Pedro Reynoso",
+  "usuario": "Qwerty",
+  "password": "$2a$10$fvx6RzyD/MJBUAQoEmI60uAeUZX.780oDyOAeTHOHPQV69iBMNowC",
+  "fechaDeNacimiento": "",
+  "email": "pedro.reynoso.2022@gmail.com",
+  "celular": "01114233056",
+  "categoria": "Comprador",
+  "terminos": "on",
+  "newsletter": "on",
+  "avatar": "1660309666675_img.jpg"
  }
 ]
