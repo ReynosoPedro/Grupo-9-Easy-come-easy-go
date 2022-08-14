@@ -24,10 +24,10 @@ router.get('/administrar', controller.panel)
 router.get('/agregar',  autenticadoMiddleware, controller.formCrear);
 router.post('/agregar', UploadFile.single("imagen-auto"), controller.crear);
 //edit
-router.get('/editar/:id', controller.formEdit);
+router.get('/editar/:id', autenticadoMiddleware, controller.formEdit);
 router.put('/editar/:id', UploadFile.single("imagen-auto"),controller.edit);
 //delete
-router.get('/delete/:id', controller.formDelete)
+router.get('/delete/:id', autenticadoMiddleware, controller.formDelete)
 router.delete ('/delete/:id', controller.delete)
 
 
