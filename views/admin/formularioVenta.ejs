@@ -15,28 +15,42 @@
     <main>
 
         <form method="POST" action="agregar" enctype="multipart/form-data" >
-            <div class="form">
-                <input type="text" name="marca" id="marca" placeholder="Marca" required="required">
+            <div class="formulario">
+            <div class="part1">
+                <div class="form">
+                    <p> Marca </p><input type="text" name="marca" id="marca" placeholder="Marca" required="required">
+                </div>
+                <div class="form">
+                    <p> Modelo </p><input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
+                </div>
+                <div class="form">
+                    <p> Kilometraje </p><input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
+                </div>
+                <div class="form">
+                    <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"  required="required">
+                </div>
             </div>
-            <div class="form">
-                <input type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
+            <div class="part2">
+                <div class="form">
+                    <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  required="required">
+                </div>
+                <div class="form">
+                    <p> Año </p><input type="number" name="year" id="year" placeholder="Año"  required="required">
+                </div>
+                <div class="form">
+                    <p> Combustible </p><input type="number" name="precio" id="precio" placeholder="Combustible" required="required">
+                </div>
+                <div class="form">
+                    <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
+                </div>
             </div>
-            <div class="form">
-                <input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
             </div>
-            <div class="form">
-                <input type="number" name="year" id="year" placeholder="Año"  required="required">
-            </div>
-            <div class="form">
-                <input type="number" name="precio" id="precio" placeholder="Precio" required="required">
-            </div>
-            <div class="form">
-                <input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
-            </div>
+            <br>
             <div class="custom-file">
                 <label for ="imagen-auto">Subi una foto de tu auto </label>
                 <input type="file"   name="imagen-auto"  placeholder="Elige una imagen">
             </div>
+            <br>
             <button class="form" type="submit">Publicar</button>   
         </form>
     </main>
