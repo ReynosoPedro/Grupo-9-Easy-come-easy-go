@@ -10,34 +10,37 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING
         },
         brand_id:{
-            type: dataTypes.
+            type: dataTypes.INTEGER
         },
         color_id:{
-            type:
+            type:dataTypes.INTEGER
         },
         model_id:{
-            type:
+            type:dataTypes.INTEGER
         },
         year_id:{
-            type:
+            type:dataTypes.INTEGER
         },
         km_id:{
-            type:
+            type:dataTypes.INTEGER
+        },
+        prices:{
+            type:dataTypes.DECIMAL
         },
         categories_id:{
-            type:
+            type:dataTypes.INTEGER
         },
         image_filename:{
-            type:
+            type:dataTypes.STRING
         },
         transmission:{
-            type:
+            type:dataTypes.STRING
         },
         condition:{
-            type:
+            type:dataTypes.STRING
         },
         stock:{
-            type:
+            type:dataTypes.STRING
         },
         
     };
