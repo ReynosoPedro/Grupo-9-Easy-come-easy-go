@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }
 
-.formulario {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 main {
     padding-top: 2%;
     padding-bottom: 3%;
@@ -145,6 +139,15 @@ footer p {
 }
 
 @media (min-width: 769px) {
+
+    .formulario {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 99%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
     
     header span{
         visibility: visible;

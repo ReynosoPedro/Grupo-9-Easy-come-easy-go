@@ -3,6 +3,13 @@
     padding: 0px;  
     box-sizing: border-box;
 }
+
+.miniatura {
+    display: flex;
+    justify-content:center;
+    width: 5%;
+}
+
 .notfound {
     text-align: center;
 }

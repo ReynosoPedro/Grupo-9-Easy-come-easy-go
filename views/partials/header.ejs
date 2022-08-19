@@ -17,14 +17,19 @@
     <a class="sesion" class="fa-solid fa-basket-shopping" href="/shop-cart"
       >Carrito</a
     >
-    <a
-      ><img
+    <a class="miniatura"
+      >
+      <div>
+      <img
         src="/images/usuarios/<%= locals.userLogged.avatar %>"
         style="border-radius: 50%; width: 2.5rem; height: 2.5rem"
         alt="Foto"
       />
+    </div>
+    <div>
       <%= locals.userLogged.nombreCompleto %>
     </a>
+  </div>
     <a class="sesion" href="profile">Mi perfil</a>
     <a class="sesion" href="/logout">Cerrar sesion</a>
     <% } else { %>
