@@ -16,5 +16,14 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps: false
     }
     const Km_intervalo= sequelize.define(alias, cols, config);
+
+    Km_intervalo.associate= function(models){
+        Km_intervalo.hasMany(models.Productos, {
+            as:"products",
+            foreignKey:"km_id"
+        }) 
+
+    }
+
     return Km_intervalo;
 }

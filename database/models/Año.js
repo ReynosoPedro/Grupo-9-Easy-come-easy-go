@@ -16,5 +16,13 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps: false
     }
     const Año= sequelize.define(alias, cols, config);
+
+    Año.associate= function(models){
+        Año.hasMany(models.Productos, {
+            as:"products",
+            foreignKey:"year_id"
+        }) 
+
+    }
     return Año;
 }
