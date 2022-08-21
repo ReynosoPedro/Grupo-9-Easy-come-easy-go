@@ -21,6 +21,28 @@ const admin = {
         res.render('admin/formularioVenta')
     },
     crear: (req, res) => {
+        /*
+        if(req.file!=undefined){
+            db.Productos.create({
+                brands: req.body.marca,
+                models: req.body.modelo,
+                categories: req.body.categirua ,
+                km_intervals:kilometraje ,
+                prices: req.body.precio,
+                image_filename: req.file.filename,
+                transmission: req.body.transmision,
+                condition: req.body.condicion,
+                years: req.body.year,
+        })
+        .then(function(vehiculos) {
+                res.render('views/productos',{vehiculos:vehiculos})
+            })
+        }else {
+            res.render('admin/formularioVenta');
+        }
+         */
+        
+
         // validacion img
         if(req.file!=undefined){
         let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
@@ -47,6 +69,17 @@ const admin = {
         
 
     },    formEdit: (req, res) => {
+
+        /*
+        db.Productos.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(vehiculoEditar) {
+                res.render('admin/formularioEdit',{vehiculoEditar:vehiculos})
+            })
+        */
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         let vehiculoEditar= archivoV.find(vehiculo=>vehiculo.id==vId);
@@ -54,6 +87,31 @@ const admin = {
     },
 
     edit: (req, res) => {
+    /*
+    if(req.file!=undefined){
+        db.Productos.update({
+                brands: req.body.marca,
+                models: req.body.modelo,
+                categories: req.body.categirua ,
+                km_intervals:kilometraje ,
+                prices: req.body.precio,
+                image_filename: req.file.filename,
+                transmission: req.body.transmision,
+                condition: req.body.condicion,
+                years: req.body.year,
+        },
+        {
+            where: {
+                id:req.params.id
+                }
+        })
+        .then(function(vehiculos) {
+                res.render('views/productos',{vehiculos:vehiculos})
+            })
+    }else {
+    res.render('views/home');
+    }
+     */
         // validacion img
         if(req.file!=undefined){
         let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
@@ -75,12 +133,34 @@ const admin = {
         
 
     }  ,    formDelete: (req, res) => {
+        /*
+        db.Productos.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(vehiculoEliminar) {
+                res.render('admin/formularioDelete',{vehiculoEliminar})
+            })
+        */
+
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         let vehiculoEliminar= archivoV.find(vehiculo=>vehiculo.id==vId);
         res.render('admin/formularioDelete',{vehiculoEliminar})
     },
     delete: (req, res) => {
+                /*
+        db.Productos.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(vehiculos) {
+                res.render('views/productos',{vehiculos:vehiculos})
+            })
+        */
+    
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         //elimino el auto con los datos ingresados
