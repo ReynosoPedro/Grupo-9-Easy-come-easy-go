@@ -42,3 +42,6 @@ app.use( rutasAdmin);
 app.use((req,res,next)=> {
     res.status(404).render('views/not-found');
 })
+
+console.log(session.userLogged);
+

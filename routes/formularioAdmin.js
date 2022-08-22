@@ -3,6 +3,7 @@ const path = require('path');
 const router = express.Router();
 const controller = require('../controllers/adminController')
 const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
+const permisosMiddleware = require('../middlewares/permisosMiddleware');
 const multer = require('multer');
 
 const storage=multer.diskStorage(
@@ -20,15 +21,15 @@ const storage=multer.diskStorage(
 const UploadFile= multer({storage});
 
 //panel
-router.get('/administrar',autenticadoMiddleware, controller.panel)
+router.get('/administrar',permisosMiddleware, controller.panel)
 //agregar
-router.get('/agregar',  autenticadoMiddleware, controller.formCrear);
+router.get('/agregar',  permisosMiddleware, controller.formCrear);
 router.post('/agregar', UploadFile.single("imagen-auto"), controller.crear);
 //edit
-router.get('/editar/:id', autenticadoMiddleware, controller.formEdit);
+router.get('/editar/:id', permisosMiddleware, controller.formEdit);
 router.put('/editar/:id', UploadFile.single("imagen-auto"),controller.edit);
 //delete
-router.get('/delete/:id', autenticadoMiddleware, controller.formDelete)
+router.get('/delete/:id', permisosMiddleware, controller.formDelete)
 router.delete ('/delete/:id', controller.delete)
 
 
