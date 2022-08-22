@@ -1,7 +1,7 @@
 function permisosMiddleware(req, res, next) {
-	if (req.session.userLogged.roll!=9) {
+	if (req.session.userLogged.rol!=9) {
 		return res.redirect('/home');
-	}
+	}	
 	next();
 }
 
