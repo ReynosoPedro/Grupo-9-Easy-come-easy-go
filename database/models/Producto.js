@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes)=>{
         transmission:{
             type:dataTypes.STRING
         },
-        condition:{
+        conditions:{
             type:dataTypes.STRING
         },
         stock:{
