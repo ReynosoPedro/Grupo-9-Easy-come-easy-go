@@ -36,7 +36,6 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
             },
     crear: (req, res) => {
                 if(req.file!=undefined){
-                    console.log(req.body);
                     db.Productos.create({
                         brand_id:req.body.marca,         
                         model_id:req.body.modelo,
@@ -115,31 +114,35 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
     },
 
     edit: (req, res) => {
-    /*
-    if(req.file!=undefined){
-        db.Productos.update({
-                brands: req.body.marca,
-                models: req.body.modelo,
-                categories: req.body.categirua ,
-                km_intervals:kilometraje ,
-                prices: req.body.precio,
-                image_filename: req.file.filename,
-                transmission: req.body.transmision,
-                condition: req.body.condicion,
-                years: req.body.year,
-        },
-        {
-            where: {
-                id:req.params.id
-                }
-        })
-        .then(function(vehiculos) {
-                res.render('views/productos',{vehiculos:vehiculos})
+            if(req.file!=undefined){
+                db.Productos.update({
+                    brand_id:req.body.marca,         
+                    model_id:req.body.modelo,
+                    categories_id:req.body.categoria,
+                    color_id: req.body.color,
+                    year_id: req.body.year,
+                    km_id:  req.body.kilometraje ,
+                    prices: req.body.precio,
+                    image_filename: req.file.filename,
+                    transmission: req.body.transmision,
+                    conditions: req.body.condition,
+                    stock: "disponible",
+            },{
+                where:{id:req.params.id}
             })
-    }else {
-    res.render('views/home');
-    }
-     */
+            db.Productos.findAll({
+                include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+            })
+                .then(function(vehiculos) {
+                    res.render('views/productos',{vehiculos})
+                })
+                
+            }else {
+                res.render('admin/formularioEdit');
+            }
+
+    /* JSON EDIT 
+
         // validacion img
         if(req.file!=undefined){
         let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
@@ -157,8 +160,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
           //en caso de que la validacion de img sea negativa , vuelve al formulario
         }else {
             res.render('views/home');
-        }
-        
+        }     
+*/
 
     }  ,    formDelete: (req, res) => {
         /*

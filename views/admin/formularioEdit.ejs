@@ -14,7 +14,10 @@
 <body>
     <%- include('../partials/header')%>
     <main>
+        
+        <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 50%; width: 50%; object-fit: fill' >
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
+
             <div class="formulario">
                 <div class="part1">
                     <div class="form">
@@ -111,7 +114,7 @@
                     <input type="file"   name="imagen-auto"  placeholder="Elige una imagen">
                 </div>
                 <br>
-                <button class="form" type="submit">Publicar</button>   
+                <button class="form" type="submit">Editar</button>   
             </form>
     <%- include('../partials/footer')%>
 </body>
