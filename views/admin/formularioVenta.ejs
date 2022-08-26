@@ -44,13 +44,29 @@
                     </select>
                 </div>
                 <div class="form">
-                    <p> Kilometraje </p><input type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
+                    <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required">
+                        <% for(let i= 0; i < bases[3].length; i++){ %>
+                        <% if (testmarca== bases[3][i].intervals) { %>
+                        <% }else {  %>
+                                <option value= <%= bases[3][i].id %> ><%= bases[3][i].intervals %></option>
+                                <%   testmarca=bases[2][i].intervals; %>
+                        <% } %>
+                        <% } %>
+                        </select >
                 </div>
                 <div class="form">
                     <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"  required="required">
                 </div>
                 <div class="form">
-                    <p> Color </p><input type="text" name="color" id="color" placeholder="Color" required="required">
+                    <p> Color </p><select type="text" name="color" id="color" placeholder="Color" required="required">
+                        <% for(let i= 0; i < bases[5].length; i++){ %>
+                        <% if (testmarca== bases[5][i].color) { %>
+                        <% }else {  %>
+                                <option value= <%= bases[5][i].id %> ><%= bases[5][i].color%></option>
+                                <%   testmarca=bases[5][i].color; %>
+                        <% } %>
+                        <% } %>
+                        </select >
                 </div>
             </div>
             <div class="part2">
@@ -58,10 +74,18 @@
                     <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  required="required">
                 </div>
                 <div class="form">
-                    <p> Año </p><input type="number" name="year" id="year" placeholder="Año"  required="required">
+                    <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  required="required">
+                        <% for(let i= 0; i < bases[4].length; i++){ %>
+                        <% if (testmarca== bases[4][i].year) { %>
+                        <% }else {  %>
+                                <option value= <%= bases[4][i].id %> ><%= bases[4][i].year %></option>
+                                <%   testmarca=bases[4][i].year; %>
+                        <% } %>
+                        <% } %>
+                        </select >
                 </div>
                 <div class="form">
-                    <p> Combustible </p><input type="text" name="precio" id="precio" placeholder="Combustible" required="required">
+                    <p> Combustible </p><input type="text" name="combustible" id="combustible" placeholder="Combustible" required="required">
                 </div>
                 <div class="form">
                     <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">

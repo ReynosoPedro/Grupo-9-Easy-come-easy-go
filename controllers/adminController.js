@@ -22,9 +22,11 @@ const admin = {
                 let marcas =db.Marcas.findAll() 
                 let modelos =db.Modelos.findAll()
                 let categorias =db.Categorias.findAll()
-                Promise.all([marcas,modelos,categorias])
+                let uso =db.Km_intervalos.findAll()
+                let edad =db.Antiguedad.findAll()
+                let color =db.Colores.findAll()
+                Promise.all([marcas,modelos,categorias,uso,edad,color])
                 .then(function(bases){
-                    console.log(bases[0][1]);
                     res.render('admin/formularioVenta' , {bases})
                 })
                 .catch(function(error){
@@ -32,53 +34,58 @@ const admin = {
                 })         
             },
     crear: (req, res) => {
-        /*
-        if(req.file!=undefined){
-            db.Productos.create({
-                brands: req.body.marca,
-                models: req.body.modelo,
-                categories: req.body.categirua ,
-                km_intervals:kilometraje ,
-                prices: req.body.precio,
-                image_filename: req.file.filename,
-                transmission: req.body.transmision,
-                condition: req.body.condicion,
-                years: req.body.year,
-        })
-        .then(function(vehiculos) {
-                res.render('views/productos',{vehiculos:vehiculos})
-            })
-        }else {
-            res.render('admin/formularioVenta');
-        }
-         */
+                if(req.file!=undefined){
+                    console.log(req.body);
+                    db.Productos.create({
+                        brand_id:req.body.marca,         
+                        model_id:req.body.modelo,
+                        categories_id:req.body.categoria,
+                        color_id: req.body.color,
+                        year_id: req.body.year,
+                        km_id:  req.body.kilometraje ,
+                        prices: req.body.precio,
+                        image_filename: req.file.filename,
+                        transmission: req.body.transmision,
+                        conditions: req.body.condition,
+                        stock: "disponible",
+                })
+                let vehiculos= db.Productos.findAll({
+                    include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+                })
+                    .then(function(todos) {
+                        return todos;
+                    })
+                    res.render('views/productos',{vehiculos})
+                }else {
+                    res.render('admin/formularioVenta');
+                }
+                
+        /* LINEAS DE CODIGO JSON 
+                // validacion img
+                if(req.file!=undefined){
+                let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
+                //guardar los datos del formulario
+                let nuevoAuto={
+                        id: (vehiculosDelArchivoJSON.length+1),
+                        nombre: (req.body.marca+" "+req.body.modelo),
+                        año: req.body.year,
+                        kilometraje:req.body.kilometraje,
+                        precio: req.body.precio,
+                        transmision: req.body.transmision,
+                        imagen:req.file.filename,
+                } 
+                // los agrego al JSON
+                vehiculosDelArchivoJSON.push(nuevoAuto);
+                // no estoy seguro de si es necesario , 
+                let nuevaLista=JSON.stringify( vehiculosDelArchivoJSON);
+                fs.writeFileSync(path.resolve(__dirname,'..','database','vehiculos.json'),nuevaLista);
+                res.render('views/productos',{vehiculos: vehiculosDelArchivoJSON});
+                  //en caso de que la validacion de img sea negativa , vuelve al formulario
+                }else {
+                    res.render('admin/formularioVenta');
+                }
+                */
         
-
-        // validacion img
-        if(req.file!=undefined){
-        let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
-        //guardar los datos del formulario
-        let nuevoAuto={
-                id: (vehiculosDelArchivoJSON.length+1),
-                nombre: (req.body.marca+" "+req.body.modelo),
-                año: req.body.year,
-                kilometraje:req.body.kilometraje,
-                precio: req.body.precio,
-                transmision: req.body.transmision,
-                imagen:req.file.filename,
-        } 
-        // los agrego al JSON
-        vehiculosDelArchivoJSON.push(nuevoAuto);
-        // no estoy seguro de si es necesario , 
-        let nuevaLista=JSON.stringify( vehiculosDelArchivoJSON);
-        fs.writeFileSync(path.resolve(__dirname,'..','database','vehiculos.json'),nuevaLista);
-        res.render('views/productos',{vehiculos: vehiculosDelArchivoJSON});
-          //en caso de que la validacion de img sea negativa , vuelve al formulario
-        }else {
-            res.render('admin/formularioVenta');
-        }
-        
-
     },    formEdit: (req, res) => {
 
         /*

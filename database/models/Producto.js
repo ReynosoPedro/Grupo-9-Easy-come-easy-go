@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes)=>{
             as:"colors",
             foreignKey:"color_id"
         }),
-        Producto.belongsTo(models.Años,{
+        Producto.belongsTo(models.Antiguedad,{
             as:"years",
             foreignKey:"year_id"
         }),
