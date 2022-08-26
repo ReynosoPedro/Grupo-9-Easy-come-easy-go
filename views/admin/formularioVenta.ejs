@@ -18,19 +18,29 @@
             <div class="formulario">
             <div class="part1">
                 <div class="form">
-                    <p> Marca </p><select type="text" name="marca" id="marca" placeholder="Marca" required="required">
-                        <option value="Empty">Marca</option>
-                        <option value="Fd">Ford</option>
-                        <option value="Ai">Audi</option>
-                        <option value="BW">BMW</option>
+                    <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca" required="required" >
+                    <datalist id="brand">
+                        <% let testmarca="start" %>
+                        <% for(let i= 0; i < bases[0].length; i++){ %>
+                        
+                        <% if (testmarca== bases[0][i].brand) { %>
+                        <% }else {  %>
+                                <option value=<%= bases[0][i].id %> > <%= bases[0][i].brand %></option>
+                                <%   testmarca=bases[0][i].brand; %>
+                        <% } %>
+                        
+                        <% } %>
                     </select>
                 </div>
                 <div class="form">
-                    <p> Modelo </p><select type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
-                        <option value="Ea">Modelo</option>
-                        <option value="F">Ford</option>
-                        <option value="A">Audi</option>
-                        <option value="B">BMW</option>
+                    <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo" required="required">
+                    <% for(let i= 0; i < bases[1].length; i++){ %>
+                    <% if (testmarca== bases[1][i].model) { %>
+                    <% }else {  %>
+                            <option value=<%= bases[1][i].id %> > <%= bases[1][i].model %></option>
+                            <%   testmarca=bases[1][i].model; %>
+                    <% } %>
+                    <% } %>
                     </select>
                 </div>
                 <div class="form">
@@ -38,6 +48,9 @@
                 </div>
                 <div class="form">
                     <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"  required="required">
+                </div>
+                <div class="form">
+                    <p> Color </p><input type="text" name="color" id="color" placeholder="Color" required="required">
                 </div>
             </div>
             <div class="part2">
@@ -48,10 +61,21 @@
                     <p> Año </p><input type="number" name="year" id="year" placeholder="Año"  required="required">
                 </div>
                 <div class="form">
-                    <p> Combustible </p><input type="number" name="precio" id="precio" placeholder="Combustible" required="required">
+                    <p> Combustible </p><input type="text" name="precio" id="precio" placeholder="Combustible" required="required">
                 </div>
                 <div class="form">
                     <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required">
+                </div>
+                <div class="form">
+                    <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria" required="required" >
+                    <% for(let i= 0; i < bases[2].length; i++){ %>
+                    <% if (testmarca== bases[2][i].type_auto) { %>
+                    <% }else {  %>
+                            <option value= <%= bases[2][i].id %> ><%= bases[2][i].type_auto %></option>
+                            <%   testmarca=bases[2][i].type_auto; %>
+                    <% } %>
+                    <% } %>
+                    </select >
                 </div>
             </div>
             </div>

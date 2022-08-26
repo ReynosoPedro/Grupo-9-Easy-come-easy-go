@@ -18,8 +18,19 @@ const admin = {
         res.render('admin/detalleAdministrar' , {vehiculosDelArchivoJSON})*/
     },
     formCrear: (req, res) => {
-        res.render('admin/formularioVenta')
-    },
+        let tablas = [];            
+                let marcas =db.Marcas.findAll() 
+                let modelos =db.Modelos.findAll()
+                let categorias =db.Categorias.findAll()
+                Promise.all([marcas,modelos,categorias])
+                .then(function(bases){
+                    console.log(bases[0][1]);
+                    res.render('admin/formularioVenta' , {bases})
+                })
+                .catch(function(error){
+                    console.log("ERROR :" +error);
+                })         
+            },
     crear: (req, res) => {
         /*
         if(req.file!=undefined){
