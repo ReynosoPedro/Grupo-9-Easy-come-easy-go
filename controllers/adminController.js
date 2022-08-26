@@ -14,11 +14,12 @@ const admin = {
             })
 
 
-        /*let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
-        res.render('admin/detalleAdministrar' , {vehiculosDelArchivoJSON})*/
+/*LINEAS JSON
+let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
+        res.render('admin/detalleAdministrar' , {vehiculosDelArchivoJSON})
+*/
     },
-    formCrear: (req, res) => {
-        let tablas = [];            
+    formCrear: (req, res) => {           
                 let marcas =db.Marcas.findAll() 
                 let modelos =db.Modelos.findAll()
                 let categorias =db.Categorias.findAll()
@@ -60,7 +61,7 @@ const admin = {
                     res.render('admin/formularioVenta');
                 }
                 
-        /* LINEAS DE CODIGO JSON 
+/* LINEAS DE CODIGO JSON 
                 // validacion img
                 if(req.file!=undefined){
                 let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
@@ -84,24 +85,33 @@ const admin = {
                 }else {
                     res.render('admin/formularioVenta');
                 }
-                */
+*/
         
     },    formEdit: (req, res) => {
-
-        /*
-        db.Productos.findOne({
+        let vehEditar=db.Productos.findOne({
             where: {
                 id: req.params.id
             }
         })
-        .then(function(vehiculoEditar) {
-                res.render('admin/formularioEdit',{vehiculoEditar:vehiculos})
-            })
-        */
+        let marcas =db.Marcas.findAll() 
+        let modelos =db.Modelos.findAll()
+        let categorias =db.Categorias.findAll()
+        let uso =db.Km_intervalos.findAll()
+        let edad =db.Antiguedad.findAll()
+        let color =db.Colores.findAll()
+        Promise.all([marcas,modelos,categorias,uso,edad,color,vehEditar])
+        .then(function(bases){
+            res.render('admin/formularioEdit' , {bases})
+        })
+
+
+        
+        /* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         let vehiculoEditar= archivoV.find(vehiculo=>vehiculo.id==vId);
         res.render('admin/formularioEdit',{vehiculoEditar})
+        */
     },
 
     edit: (req, res) => {
