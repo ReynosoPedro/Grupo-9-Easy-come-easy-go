@@ -16,10 +16,9 @@
         <section id="formulario">
             <form method="POST" action="/register" enctype="multipart/form-data" >
                 <div class="form">
-                    <label for="nombre-completo"></label>
-                    <input type="text" name="nombreCompleto" id="nombre-completo" placeholder="Nombre completo"
-                    value="<%= locals.oldData ? oldData.nombreCompleto : null %>"
-                    >
+                    <label for="nombre"></label>
+                    <input type="text" name="nombreCompleto" id="nombre" placeholder="Nombre completo"
+                    value="<%= locals.oldData ? oldData.nombreCompleto : null %>">
                     <% if (locals.errors && errors.nombreCompleto){ %>
                     <div class="mensajeError">
                         <%= errors.nombreCompleto.msg %>
@@ -48,7 +47,7 @@
                 </div>
                 <div class="form">
                     <label for="fecha-de-nacimiento"></label>
-                    <input type="date" name="fechaDeNacimiento" id="fecha-de-nacimiento" placeholder="Fecha de nacimiento">
+                    <input type="date" name="fechaDeNacimiento" id="fechadenacimiento" placeholder="Fecha de nacimiento">
                 </div>
                 <div class="form">
                     <label for="email"></label>

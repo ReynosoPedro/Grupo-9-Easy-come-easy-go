@@ -86,11 +86,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 */
         
     },    formEdit: (req, res) => {
-        let vehEditar=db.Productos.findOne({
-            where: {
-                id: req.params.id
-            }
-        })
+        let vehEditar=db.Productos.findByPk(req.params.id)
         let marcas =db.Marcas.findAll() 
         let modelos =db.Modelos.findAll()
         let categorias =db.Categorias.findAll()
@@ -156,8 +152,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
         db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
             .then(function(vehiculos){
+                console.log(vehiculos);
                 res.render('admin/formularioDelete',{vehiculos:vehiculos})
-
             }) 
         /*
 

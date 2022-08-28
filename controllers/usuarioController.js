@@ -2,6 +2,10 @@ const path = require('path');
 const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const User = require('../models/User');
+const db = require('../database/models');
+const sequelize= db.sequelize;
+
+
 
 const {validationResult}=require('express-validator');
 
@@ -30,14 +34,12 @@ const users = {
                 oldData: req.body
             });
         }
-        
         let userToCreate = {
             ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
             avatar:req.file.filename
         }
         let userCreate=User.create(userToCreate);
-        res.redirect('/login');
+        res.redirect('/login');  
     },
     shopCar: (req, res) => {
         res.render('users/shop-car');
