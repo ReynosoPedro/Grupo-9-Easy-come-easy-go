@@ -25,7 +25,6 @@
                             <option value="none" selected disabled hidden>"<%=bases[0][(bases[6].brand_id-1)].brand %>"</option>
                             <% let testmarca="start" %>
                             <% for(let i= 0; i < bases[0].length; i++){ %>
-                            
                             <% if (testmarca== bases[0][i].brand) { %>
                             <% }else {  %>
                                     <option value=<%= bases[0][i].id %> > <%= bases[0][i].brand %></option>

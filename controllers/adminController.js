@@ -49,13 +49,16 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                         conditions: req.body.condition,
                         stock: "disponible",
                 })
-                let vehiculos= db.Productos.findAll({
+                .then(function(){
+                    console.log("se creo el producto")
+                })
+                db.Productos.findAll({
                     include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
                 })
-                    .then(function(todos) {
-                        return todos;
+                    .then(function(vehiculos) {
+                        res.render('views/productos',{vehiculos})
                     })
-                    res.render('views/productos',{vehiculos})
+                    
                 }else {
                     res.render('admin/formularioVenta');
                 }
@@ -105,12 +108,12 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
 
         
-        /* JSON
+/* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         let vehiculoEditar= archivoV.find(vehiculo=>vehiculo.id==vId);
         res.render('admin/formularioEdit',{vehiculoEditar})
-        */
+ */
     },
 
     edit: (req, res) => {
@@ -129,6 +132,9 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                     stock: "disponible",
             },{
                 where:{id:req.params.id}
+            })
+            .then(function(){
+                console.log("se actualizo el producto")
             })
             db.Productos.findAll({
                 include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
@@ -164,24 +170,24 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 */
 
     }  ,    formDelete: (req, res) => {
-        /*
-        db.Productos.findOne({
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(function(vehiculoEliminar) {
-                res.render('admin/formularioDelete',{vehiculoEliminar})
-            })
-        */
 
+        db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
+            .then(function(vehiculos){
+                res.render('admin/formularioDelete',{vehiculos:vehiculos})
+            }) 
+        /*
+
+    */
+        
+        /* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         let vehiculoEliminar= archivoV.find(vehiculo=>vehiculo.id==vId);
         res.render('admin/formularioDelete',{vehiculoEliminar})
+        */
     },
     delete: (req, res) => {
-                /*
+
         db.Productos.destroy({
             where: {
                 id: req.params.id
@@ -190,8 +196,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
         .then(function(vehiculos) {
                 res.render('views/productos',{vehiculos:vehiculos})
             })
-        */
-    
+/* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         //elimino el auto con los datos ingresados
@@ -201,7 +206,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
         fs.writeFileSync(path.resolve(__dirname,'..','database','vehiculos.json'),listaFinal);
         let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         res.render('views/productos',{vehiculos: vehiculosDelArchivoJSON});
-    
+*/
     }
 
 

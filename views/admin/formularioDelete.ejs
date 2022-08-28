@@ -13,16 +13,17 @@
         <%- include('../partials/header')%>
         <main>   
             <div class="productos">
-             <img src="\images\autos\<%=vehiculoEliminar.imagen%>"
-              style='height: 100%; width: 100%; object-fit: fill' >
-            <div class="detalleProductos">
-                <h4 class="productos-titulo"><%= vehiculoEliminar.nombre%></h4>                                  
-                <p class="productos-detalles">Año: <%=vehiculoEliminar.año %></p>
-                <p class="productos-detalles">Kilomentraje: <%=vehiculoEliminar.kilometraje %> kms</p>
-                <p class="productos-detalles">Transmisión: <%= vehiculoEliminar.transmision %></p>
-                <p class="productos-precio">Precio: <%=vehiculoEliminar.precio %></p>
-                <form method="POST" action="/delete/<%=vehiculoEliminar.id%>?_method=DELETE" enctype="multipart/form-data" >
-                    <button class="form" type="submit">ELIMINAR</button>
+                <img src="\images\autos\<%=vehiculos.image_filename%>" style='height: 100%; width: 100%; object-fit: fill' >  
+                <div class="detalleProductos">
+                <h4 class="productos-titulo"><%= vehiculos.name + " "+vehiculos.brands.brand + " "+vehiculos.models.model + " "+vehiculos.categories.type_auto + " "+vehiculos.colors.color %></h4>
+                <p class="productos-detalles">Año: <%= vehiculos.years.year %></p>
+                <p class="productos-detalles">Kilomentraje: <%= vehiculos.km_intervals.intervals %> kms</p>
+                <p class="productos-detalles">Transmisión: <%= vehiculos.transmission %></p>
+                <p class="productos-precio">Precio: <%= vehiculos.prices %></p>
+                <p class="productos-detalles">Condicion: <%= vehiculos.conditions + " "+vehiculos.stock %></p>
+                </div>
+                <form method="POST" action="/delete/<%=vehiculos.id%>?_method=DELETE" enctype="multipart/form-data" >
+                <button class="form" type="submit">ELIMINAR</button>
 </form>
 </div>
 </div>
