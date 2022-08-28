@@ -7,7 +7,7 @@
 
 main {
     padding-top: 2%;
-    padding-bottom: 2%;
+    padding-bottom: 0%;
 }
 header{
     background-color: black;
@@ -96,6 +96,7 @@ button {
     border-radius: 10px;
     border: solid 2px rgb(197, 197, 197);  
     background-color: white;  
+    padding-bottom: 3%;
 }
 
 button :focus {
@@ -151,6 +152,7 @@ footer p {
         max-width: 99%;
         padding-left: 0%;
         padding-right: 0%;
+        padding-bottom: 3%;
     }
 
 

@@ -52,12 +52,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 .then(function(){
                     console.log("se creo el producto")
                 })
-                db.Productos.findAll({
-                    include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
-                })
-                    .then(function(vehiculos) {
-                        res.render('views/productos',{vehiculos})
-                    })
+                res.redirect ('productos')
+
                     
                 }else {
                     res.render('admin/formularioVenta');
@@ -117,7 +113,6 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
     },
 
     edit: (req, res) => {
-            if(req.file!=undefined){
                 db.Productos.update({
                     brand_id:req.body.marca,         
                     model_id:req.body.modelo,
@@ -126,27 +121,15 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                     year_id: req.body.year,
                     km_id:  req.body.kilometraje ,
                     prices: req.body.precio,
-                    image_filename: req.file.filename,
+                    image_filename: req.file ? req.file.filename : req.body.oldImagen ,
                     transmission: req.body.transmision,
                     conditions: req.body.condition,
                     stock: "disponible",
             },{
                 where:{id:req.params.id}
             })
-            .then(function(){
-                console.log("se actualizo el producto")
-            })
-            db.Productos.findAll({
-                include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
-            })
-                .then(function(vehiculos) {
-                    res.render('views/productos',{vehiculos})
-                })
+            res.redirect ('productos')
                 
-            }else {
-                res.render('admin/formularioEdit');
-            }
-
     /* JSON EDIT 
 
         // validacion img
@@ -174,6 +157,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
         db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
             .then(function(vehiculos){
                 res.render('admin/formularioDelete',{vehiculos:vehiculos})
+
             }) 
         /*
 
@@ -193,9 +177,10 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 id: req.params.id
             }
         })
-        .then(function(vehiculos) {
-                res.render('views/productos',{vehiculos:vehiculos})
-            })
+        .then(
+            res.redirect ('/administrar')
+        )
+        
 /* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));

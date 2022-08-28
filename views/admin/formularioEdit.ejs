@@ -15,7 +15,7 @@
     <%- include('../partials/header')%>
     <main>
         
-        <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 50%; width: 50%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
 
             <div class="formulario">
@@ -61,6 +61,9 @@
                     <div class="form">
                         <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"  required="required" value="<%=bases[6].prices *10%>">
                     </div>
+
+                </div>
+                <div class="part2">
                     <div class="form">
                         <p> Color </p><select type="text" name="color" id="color" placeholder="Color" required="required" >
                             <option value="none" selected disabled hidden>"<%= bases[5][(bases[6].color_id-1)].color%>"</option>
@@ -72,11 +75,6 @@
                             <% } %>
                             <% } %>
                             </select >
-                    </div>
-                </div>
-                <div class="part2">
-                    <div class="form">
-                        <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  required="required" value="<%=bases[6].conditions%>">
                     </div>
                     <div class="form">
                         <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  required="required" value="<%=bases[6].year%>">>
