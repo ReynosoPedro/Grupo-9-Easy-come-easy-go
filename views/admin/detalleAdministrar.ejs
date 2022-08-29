@@ -33,7 +33,7 @@
             <% for (let i=0;i<vehiculos.length;i++ ) { %> 
             <tr class="interlineado-productos">
                 <td><%= vehiculos[i].id%> </td>
-                <td class="detallevehiculos"><%= vehiculos[i].brands.brand + " "+vehiculos[i].models.model + " "+vehiculos[i].categories.type_auto + " "+vehiculos[i].colors.color+" "+ vehiculos[i].years.year +" "+vehiculos[i].km_intervals.interval +" km "+ vehiculos[i].transmission + " "+vehiculos[i].condition+" " + vehiculos[i].prices %> </td>
+                <td class="detallevehiculos"><%= vehiculos[i].brands.brand + " "+vehiculos[i].models.model + " "+vehiculos[i].categories.type_auto + " "+vehiculos[i].colors.color+" "+ vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions+" " + vehiculos[i].prices %> </td>
                 <td><a class="edicion-texto" href="/detalle/<%= vehiculos[i].id%> "> ver</a></td>
                 <td><a class="edicion-texto" href="/editar/<%= vehiculos[i].id%> "> editar</ion-icon></a></td>
                 <td><a class="edicion-texto" href="/delete/<%= vehiculos[i].id%>"> delete</a></td>

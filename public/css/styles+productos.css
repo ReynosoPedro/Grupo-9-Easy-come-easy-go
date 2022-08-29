@@ -130,6 +130,9 @@ footer p {
     padding: 2px;
 }
 #paginas-mobile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding-bottom: 10px;
 }
 .filtros-mobile{
@@ -146,6 +149,11 @@ img{
 }
 .headerfiltros{
     display: none;
+}
+.paginados-number{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 @media (min-width: 556px) {
     .contenedor-productos{    
