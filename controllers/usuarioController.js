@@ -59,7 +59,6 @@ const users = {
             if(isOkThePassword){
                 delete usuario.password;
                 req.session.userLogged = usuario;
-                console.log(req.session)
                 return res.redirect('/login');}
                 return res.render('users/login',{
                     errors:{
