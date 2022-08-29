@@ -52,7 +52,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 .then(function(){
                     console.log("se creo el producto")
                 })
-                res.redirect ('productos')
+                res.redirect ('productos/1')
 
                     
                 }else {
@@ -124,7 +124,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
             },{
                 where:{id:req.params.id}
             })
-            res.redirect ('productos')
+            res.redirect ('productos/1')
                 
     /* JSON EDIT 
 

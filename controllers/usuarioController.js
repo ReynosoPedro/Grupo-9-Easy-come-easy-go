@@ -48,32 +48,35 @@ const users = {
         res.render('users/login')
     },
     loginProcess:(req, res)=>{
-
-        let userToLogin = User.findByField('email', req.body.email);
-
-        if (userToLogin){
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+        let userToLogin=db.Usuarios.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(function(usuario){
+            if(usuario){
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.password);
             if(isOkThePassword){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-
-                return res.redirect('/login');
-            }
-            return res.render('users/login',{
-                errors:{
-                    usuario:{
-                        msg: 'Contraseñas invalidas'
+                delete usuario.password;
+                req.session.userLogged = usuario;
+                console.log(req.session)
+                return res.redirect('/login');}
+                return res.render('users/login',{
+                    errors:{
+                        usuario:{
+                            msg: 'Contraseñas invalidas'
+                        }
                     }
-                }
-            });
-        }
-        return res.render('users/login',{
-            errors:{
-                usuario:{
-                    msg: 'Usuario no registrado'
-                }
-            }
-        });
+                });}
+                return res.render('users/login',{
+                    errors:{
+                        usuario:{
+                            msg: 'Usuario no registrado'
+                        }
+                    }
+                });
+        })
+        
     },
     profile: (req, res)=>{
 

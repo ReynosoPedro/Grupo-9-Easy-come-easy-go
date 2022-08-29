@@ -40,21 +40,12 @@ const User ={
 
 
     },
-    findByField: function (field, text){
+    findByField: function (emailB){
 /* JSON
         let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
 */
-        
-        db.Usuarios.findOne({
-            where: {
-                email: text
-            }
-        })
-        .then(function(usuario) {
-                return usuario
-            })
         
 
     },
