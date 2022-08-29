@@ -71,7 +71,7 @@
                     <div class="productos">
                         <a href= "/detalle/<%=vehiculos[i].id%>" </a>
                         <img src="\images\autos\<%=vehiculos[i].image_filename%>" style='height: 100%; width: 100%; object-fit: fill' >  
-                        <h4 class="productos-titulo"><%= vehiculos[i].name + " "+vehiculos[i].brands.brand + " "+vehiculos[i].models.model + " "+vehiculos[i].categories.type_auto %></h4>
+                        <h4 class="productos-titulo"><%= vehiculos[i].brands.brand + " "+vehiculos[i].models.model + " "+vehiculos[i].categories.type_auto %></h4>
                         <h4 class="productos-titulo"><%= vehiculos[i].colors.color %></h4>
                         <p class="productos-detalles"><%= vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions %></p>
                         <p class="productos-precio"><%= vehiculos[i].prices + " "+vehiculos[i].stock %></p>

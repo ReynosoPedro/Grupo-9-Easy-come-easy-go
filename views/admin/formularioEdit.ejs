@@ -92,6 +92,9 @@
                         <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required" value="<%=bases[6].transmission%>">
                     </div>
                     <div class="form">
+                        <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  required="required" value="<%=bases[6].conditions%>">
+                    </div>
+                    <div class="form">
                         <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria" required="required" >
                         <option value="none" selected disabled hidden>"<%=bases[2][(bases[6].categories_id)].type_auto%>"</option>
                         <% for(let i= 0; i < bases[2].length; i++){ %>
