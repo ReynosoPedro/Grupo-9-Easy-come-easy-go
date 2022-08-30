@@ -49,10 +49,9 @@ body {
 
 }
 .precio-descuento-descripcion img{
-    height: 100%; 
-    width: 100%; 
-
-
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
 }
 
 .precio-descuento-descripcion div{
