@@ -38,6 +38,9 @@ const views = {
 
         /*let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         res.render('views/detalle',{vehiculos: vehiculosDelArchivoJSON[req.params.id-1]})*/
+    },
+    nosotros: (req, res) =>{
+        res.render('views/nosotros')
     }
 
 }

@@ -10,4 +10,6 @@ router.get('/productos/:id', controller.productos)
 //vistazo rapido a productos especificos
 router.get('/detalle/:id', controller.detalle)
 
+router.get('/nosotros', controller.nosotros)
+
 module.exports = router
