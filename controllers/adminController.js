@@ -35,7 +35,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 })         
             },
     crear: (req, res) => {
-                if(req.file!=undefined){
+                if(req.file!=undefined){+
+                    console.log(req.body)
                     db.Productos.create({
                         brand_id:req.body.marca,         
                         model_id:req.body.modelo,
@@ -46,7 +47,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                         prices: req.body.precio,
                         image_filename: req.file.filename,
                         transmission: req.body.transmision,
-                        conditions: req.body.condition,
+                        conditions: req.body.condicion,
                         stock: "disponible",
                 })
                 .then(function(){
