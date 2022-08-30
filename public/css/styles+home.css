@@ -41,6 +41,28 @@ body {
     align-self: center;
 }
 
+.precio-descuento-descripcion{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+
+}
+.precio-descuento-descripcion img{
+    height: 100%; 
+    width: 100%; 
+
+
+}
+
+.precio-descuento-descripcion div{
+    height: 68%;
+    text-align: center;
+    
+
+    
+}
+
 .seccion-barra1 a{
     flex-direction: row;
     color:white;
@@ -147,12 +169,15 @@ body {
     max-width: 100%;
     border-radius: 8px;
     margin: auto;
+
 }
 
-.precio-descuento-descripcion{
+
+.des {
+    display: flexbox;
     text-align: center;
-    line-height: 18px;
-    padding: 3px;
+    align-items: center;
+    justify-content: center;
 }
 
 .precio{
