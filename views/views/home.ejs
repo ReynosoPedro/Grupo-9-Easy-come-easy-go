@@ -21,12 +21,14 @@
             <section class="productoss">
                 <% for(let i= 0; i < 3; i++){ %>
                     <div class="ofertas"> 
-                        <img src="\images\autos\<%=vehiculos[i].imagen%>" class="imagen">  
+                        <a href= "/detalle/<%=vehiculos[i].id%>">
+                        <img src="\images\autos\<%=vehiculos[i].image_filename%>" class="imagen">  
                         <article class="precio-descuento-descripcion">
-                            <h4 class="productos-titulo"><%= vehiculos[i].nombre %></h4>
-                            <p class="productos-precio"><%= vehiculos[i].precio %></p>
-                            <p class="descuento">10% off</p>
-                        </article>                       
+                            <h4 class="productos-titulo"><%= vehiculos[i].brands.brand +" "+ vehiculos[i].models.model+" "+ vehiculos[i].categories.type_auto%></h4>
+                            <p class="productos-precio"><%= vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions %></p>
+                            <p class="productos-precio"><%="Precio : $"+ vehiculos[i].prices %></p>
+                        </article>
+                        </a>                       
                     </div>
                 <% } %> 
             </section>

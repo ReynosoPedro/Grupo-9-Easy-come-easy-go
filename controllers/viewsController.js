@@ -7,7 +7,12 @@ const vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirna
 
 const views = {
     home: (req, res) => {
-        res.render('views/home',{vehiculos: vehiculosDelArchivoJSON})
+        db.Productos.findAll({
+            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+        })
+            .then(function(vehiculos) {
+                res.render('views/home',{vehiculos:vehiculos})
+            })
     },
     productos: (req, res) => {
         db.Productos.findAll({
