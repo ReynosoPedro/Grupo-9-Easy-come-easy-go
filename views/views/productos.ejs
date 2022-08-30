@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Detalle de productos</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <meta name="viewport" content="width=device-wid th">
         <meta charset="utf-8">
         <link href="/css/styles+productos.css" rel="stylesheet">
@@ -71,7 +72,7 @@
                     <div class="productos" >
                         <a href= "/detalle/<%=vehiculos[i].id%>">
                         <img src="\images\autos\<%=vehiculos[i].image_filename%>" style='height: 100%; width: 100%; object-fit: fill' >  
-                        <h4 class="productos-titulo"><%= vehiculos[i].brands.brand%></h4>
+                        <h4 class="productos-titulo"><%= vehiculos[i].brands.brand %></h4>
                         <h4 class="productos-titulo"><%= vehiculos[i].categories.type_auto+" "+vehiculos[i].models.model %></h4>
                         <p class="productos-detalles"><%= vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions %></p>
                         <p class="productos-precio"><%= vehiculos[i].prices + " "+vehiculos[i].stock %></p></a>
@@ -83,10 +84,10 @@
                 <div id="paginas-mobile">
                     <button><i class="fa-solid fa-chevron-left"></i></button>
                         <ul class="paginados-number">
-                            <a href= "/productos/1">1</a>
+                            <a href= "/productos/1">1-</a>
                             <a href= "/productos/2">2</a>
                         </ul>
-                    <button><i class="fa-solid fa-chevron-right"></i></button>
+                    <button><a href=""></a><i class="fa-solid fa-chevron-right"></i></button>
                     
                 </div>
         </main>
