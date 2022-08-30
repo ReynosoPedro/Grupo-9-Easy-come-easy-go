@@ -11,6 +11,8 @@ const views = {
     },
     productos: (req, res) => {
         db.Productos.findAll({
+            offset: (req.params.id-1)*11 ,
+            limit:12 ,            
             include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
         })
             .then(function(vehiculos) {
