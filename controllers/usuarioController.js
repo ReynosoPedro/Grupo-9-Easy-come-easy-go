@@ -76,12 +76,13 @@ const users = {
             email: req.body.email ,
             phone: req.body.celular ,
             roll_id: 1,
-            image: req.body.avatar,
+            image: req.file.filename,
             state: 1 , }
             ,{
                 where:{id: req.session.userLogged.id}
             }) 
             .then (function (user){
+                req.session.userLogged = user
                 res.redirect('/profile'); 
             }) 
 
