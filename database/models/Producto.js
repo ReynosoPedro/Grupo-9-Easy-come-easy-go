@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes)=>{
             type: dataTypes.STRING
         },
         prices:{
-            type:dataTypes.DECIMAL
+            type:dataTypes.BIGINT
         },
         image_filename:{
             type:dataTypes.STRING
