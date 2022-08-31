@@ -82,8 +82,8 @@ const users = {
                 where:{id: req.session.userLogged.id}
             }) 
             .then (function (user){
-                req.session.userLogged = user
-                res.redirect('/profile'); 
+                req.session.destroy();
+                res.redirect('/login'); 
             }) 
 
     },
