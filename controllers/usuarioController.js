@@ -125,10 +125,17 @@ const users = {
         
     },
     profile: (req, res)=>{
-
-        return res.render('users/perfil', {
-            user: req.session.userLogged
-        });
+        db.Productos.findAll(  
+        {   where: {
+            name: req.session.userLogged.email
+        },
+            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+        })
+            .then(function(vehiculos) {
+                let user=req.session.userLogged
+                let info={user,vehiculos}
+                res.render("users/perfil",{info})
+            })
     },
     logout: (req, res) =>{
         req.session.destroy();

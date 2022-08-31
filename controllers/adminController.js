@@ -38,6 +38,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 if(req.file!=undefined){+
                     console.log(req.body)
                     db.Productos.create({
+                        name:req.session.userLogged.email,
                         brand_id:req.body.marca,         
                         model_id:req.body.modelo,
                         categories_id:req.body.categoria,
@@ -153,7 +154,6 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
         db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
             .then(function(vehiculos){
-                console.log(vehiculos);
                 res.render('admin/formularioDelete',{vehiculos:vehiculos})
             }) 
         /*

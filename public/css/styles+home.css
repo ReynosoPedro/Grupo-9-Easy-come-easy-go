@@ -3,6 +3,32 @@
     padding: 0px;  
     box-sizing: border-box;
 }
+.contenedor-productos{
+    box-sizing:border-box;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    width: 30%;
+    height: 30%;
+    
+    
+}
+
+.productos{
+    box-sizing:border-box;
+    border:  solid gray;    
+    border-radius: 20px;
+    color: black;
+    padding: 10;
+    background-color: white;
+    margin: 15px;
+
+}
+.productos:hover{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
 
 .miniatura {
     display: flex;
