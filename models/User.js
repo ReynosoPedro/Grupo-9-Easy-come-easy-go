@@ -92,8 +92,27 @@ db.Usuarios.create({
         .then (function (){
             return true
         })
-    }
-}
+    },
+    edit: function(idEditar){
 
+        db.Usuarios.update({
+            full_name: idEditar.nombreCompleto ,
+            user: idEditar.usuario ,
+            password: bcryptjs.hashSync(idEditar.password, 10) ,
+            date_birth: idEditar.fechadenacimiento ,
+            email: idEditar.email ,
+            phone: idEditar.celular ,
+            roll_id: 1,
+            image: idEditar.avatar,
+            state: 1 , }
+            ,{
+                where:{id: req.session.userLogged.id}
+            }) 
+            .then (function (user){
+                return user;
+            }) 
+        
+}
+}
 module.exports= User;
 

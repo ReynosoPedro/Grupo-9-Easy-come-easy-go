@@ -41,9 +41,55 @@ const users = {
         let userCreate=User.create(userToCreate);
         res.redirect('/login');  
     },
+    formEditar: (req, res) => {
+        db.Usuarios.findByPk(req.session.userLogged.id)
+        .then(function(usuarioEdit){
+
+            res.render('users/perfilEdit' , {usuarioEdit})
+        })}
+        ,
+    editarPerfil:(req, res) => {
+        const resultValidation = validationResult (req);
+        if (resultValidation.errors.length > 0){
+            return res.render('users/register',{
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        let userInDB = User.findByField('email', req.body.email);
+        if (userInDB){
+            return res.render('users/register',{
+                errors: {
+                    email:{
+                        msg:'El email ya esta registrado'
+                    }
+                
+                },
+                oldData: req.body
+            });
+        }
+        db.Usuarios.update({
+            full_name: req.body.nombreCompleto ,
+            user: req.body.usuario ,
+            password: bcryptjs.hashSync(req.body.password, 10) ,
+            date_birth: req.body.fechadenacimiento ,
+            email: req.body.email ,
+            phone: req.body.celular ,
+            roll_id: 1,
+            image: req.body.avatar,
+            state: 1 , }
+            ,{
+                where:{id: req.session.userLogged.id}
+            }) 
+            .then (function (user){
+                res.redirect('/profile'); 
+            }) 
+
+    },
     shopCar: (req, res) => {
         res.render('users/shop-car');
     },
+
     login: (req, res) => {
         res.render('users/login')
     },

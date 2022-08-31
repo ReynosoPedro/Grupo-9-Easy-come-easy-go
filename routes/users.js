@@ -69,6 +69,12 @@ const uploadFile =multer ( { storage});
 router.get('/register',guestMiddleware, controller.register);
 // procesamiento del formulario de creación
 router.post('/register', uploadFile.single("avatar"), validations,controller.newUser);
+// formulario de edit
+router.get('/editarPerfil', autenticadoMiddleware, controller.formEditar);
+// procesamiento del formulario de edit
+router.put('/editarPerfil', uploadFile.single("avatar"), controller.editarPerfil);
+
+
 
 
 
