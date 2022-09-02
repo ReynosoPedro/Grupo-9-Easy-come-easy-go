@@ -41,11 +41,11 @@ body {
 
 
 
-.contenedor{
+/*.contenedor{
     position: relative;
     display: inline-block;
     text-align: center;
-}
+}*/
 
 .texto-arriba{
     padding: 0 20px;
@@ -54,7 +54,7 @@ body {
     font-size: 50px;
     height: 80px;
     position: absolute;
-    top: 20%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -66,6 +66,15 @@ body {
     text-align: justify;
 }
 
+.parrafo-imagen{
+    background: linear-gradient(to right, rgb(75, 75, 75), #000000, #000000, rgb(75, 75, 75));
+    /*background: linear-gradient(to right, #000000 80%, #6c6e67);*/
+    /*background-color: black;*/
+    color: white;
+    height: 40px;
+    text-align: center;
+    padding-top: 7px;
+}
 
 
 
@@ -207,8 +216,8 @@ body {
 
 .foto1{
     max-width:100%;
-    margin:auto;
-    border-radius: 8px;
+    /*margin:auto;*/
+    /*border-radius: 8px;*/
 }
 .foto2{
     max-width:100%;
