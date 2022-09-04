@@ -22,12 +22,14 @@ const multer= require ('multer');
 const { body } = require('express-validator');
 
 const validations = [  
-    body('nombreCompleto').isLength({
-        min: 1
-        }).withMessage('Ingrese su Nombre completo'),
+    body('nombreCompleto').notEmpty().withMessage('Ingrese su Nombre completo').isLength({
+        min: 2
+        }).withMessage('Ingrese un minimo de dos caracteres'),
     body('usuario').isLength({min: 1
         }).withMessage('Ingrese un Usuario'),
-    body('password').notEmpty().withMessage('Ingrese una contraseña'),
+    body('password').notEmpty().withMessage('Ingrese una contraseña').isLength({
+        min: 8
+        }).withMessage('Ingrese un minimo de 8 caracteres'),
     body('email')
         .notEmpty().withMessage('Agregar un email').bail()
         .isEmail().withMessage('Ingresar un formato de correo electrónico'),
@@ -35,7 +37,7 @@ const validations = [
     body('categoria').notEmpty().withMessage('Elija una opcion'),
     body('avatar').custom((value, {req})=>{
         let file= req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+        let acceptedExtensions = ['.JPG', '.JPEG', '.PNG', '.GIF'];
 
         if(!file){
             throw new Error('Seleccione una imagen');
