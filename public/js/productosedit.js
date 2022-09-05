@@ -20,8 +20,6 @@ window.onload = function(){
 
         let year = document.querySelector('#year')
 
-        let combustible = document.querySelector('#combustible')
-
         let transmision = document.querySelector('#transmision')
 
         let condicion = document.querySelector('#condicion')
@@ -35,7 +33,6 @@ window.onload = function(){
         console.log(precio );
         console.log(color);
         console.log(year);
-        console.log(combustible );
         console.log( transmision  );
         console.log(condicion );
         console.log(categoria );
@@ -89,13 +86,6 @@ window.onload = function(){
             year.classList.remove('campos-invalidos')
         }
 
-        if(combustible.value == ''){
-            errors.push('Debe ingresar el tipo de combustible que usa su vehiculo')
-            combustible.classList.add('campos-invalidos')
-        }else{
-            combustible.classList.add('campos-validos')
-            combustible.classList.remove('campos-invalidos')
-        }
 
         if(transmision.value == ''){
             errors.push('Debe ingresar el tipo de transmisión que usa su vehiculo')

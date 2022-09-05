@@ -130,7 +130,7 @@ datalist option {
     border: solid 2px rgb(137, 137, 137);
     transition: 0.5s;
 }
-button {
+.formb {
     width: 60vw;
     padding: 15px;
     margin: 10px;
@@ -139,14 +139,14 @@ button {
     background-color: white;  
 }
 
-button :focus {
+.formb :focus {
     box-shadow: 0px 0px 10px rgb(170, 170, 170);
     outline: none;
     border: solid 2px rgb(137, 137, 137);
     transition: 0.5s;
 }
 
-button {
+.formb{
     background-color: rgb(196, 196, 196);
     padding: 12px;
     border-radius: 7px;
@@ -154,7 +154,7 @@ button {
     border: solid 2px #b9b9b9;
 }
 
-button:hover {
+.formb:hover  .form{
     background-color: #b9b9b9;
     padding: 12px;
     border-radius: 7px;

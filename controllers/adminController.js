@@ -125,7 +125,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
             },{
                 where:{id:req.params.id}
             })
-            res.redirect ('productos/1')
+            res.redirect ('/productos/1')
                 
     /* JSON EDIT 
 

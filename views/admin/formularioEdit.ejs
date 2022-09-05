@@ -19,13 +19,11 @@
         <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
         <ul class="errorescamp"></ul>
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
-
             <div class="formulario" id="formulario">
-
                 <div class="part1">
                     <div class="form">
-                        <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca" required="required" >
-                            <option value="" selected disabled hidden>"<%=bases[0][(bases[6].brand_id-1)].brand %>"</option>
+                        <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca"  >
+                            <option value=<%=bases[0][(bases[6].brand_id-1)].brand %> selected disabled hidden><%=bases[0][(bases[6].brand_id-1)].brand %></option>
                             <% let testmarca="start" %>
                             <% for(let i= 0; i < bases[0].length; i++){ %>
                             <% if (testmarca== bases[0][i].brand) { %>
@@ -38,8 +36,8 @@
                         </select>
                     </div>
                     <div class="form">
-                        <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo" required="required" >
-                            <option value="" selected disabled hidden>"<%= bases[1][(bases[6].model_id-1)].model %>"</option>
+                        <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo"  >
+                            <option value=<%= bases[1][(bases[6].model_id-1)].model %> selected disabled hidden><%= bases[1][(bases[6].model_id-1)].model %></option>
                         <% for(let i= 0; i < bases[1].length; i++){ %>
                         <% if (testmarca== bases[1][i].model) { %>
                         <% }else {  %>
@@ -50,8 +48,8 @@
                         </select>
                     </div>
                     <div class="form">
-                        <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" required="required" >
-                            <option value="" selected disabled hidden>"<%=bases[3][(bases[6].km_id-1)].intervals%>"</option>
+                        <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje"  >
+                            <option value=<%=bases[3][(bases[6].km_id-1)].intervals%> selected disabled hidden><%=bases[3][(bases[6].km_id-1)].intervals%></option>
                             <% for(let i= 0; i < bases[3].length; i++){ %>
                             <% if (testmarca== bases[3][i].intervals) { %>
                             <% }else {  %>
@@ -62,14 +60,14 @@
                             </select >
                     </div>
                     <div class="form">
-                        <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"  required="required" value="<%=bases[6].prices *10%>">
+                        <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"   value="<%=bases[6].prices *10%>">
                     </div>
 
                 </div>
                 <div class="part2">
                     <div class="form">
-                        <p> Color </p><select type="text" name="color" id="color" placeholder="Color" required="required" >
-                            <option value="" selected disabled hidden>"<%= bases[5][(bases[6].color_id-1)].color%>"</option>
+                        <p> Color </p><select type="text" name="color" id="color" placeholder="Color"  >
+                            <option value=<%= bases[5][(bases[6].color_id-1)].color%>selected disabled hidden><%= bases[5][(bases[6].color_id-1)].color%></option>
                             <% for(let i= 0; i < bases[5].length; i++){ %>
                             <% if (testmarca== bases[5][i].color) { %>
                             <% }else {  %>
@@ -80,8 +78,8 @@
                             </select >
                     </div>
                     <div class="form">
-                        <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  required="required" value="<%=bases[6].year%>">>
-                            <option value="" selected disabled hidden>"<%=bases[4][(bases[6].year_id-1)].year%>"</option>
+                        <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  value="<%=bases[6].year%>">>
+                            <option value=<%=bases[4][(bases[6].year_id-1)].year%> selected disabled hidden><%=bases[4][(bases[6].year_id-1)].year%></option>
                             <% for(let i= 0; i < bases[4].length; i++){ %>
                             <% if (testmarca== bases[4][i].year) { %>
                             <% }else {  %>
@@ -92,14 +90,14 @@
                             </select >
                     </div>
                     <div class="form">
-                        <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision" required="required" value="<%=bases[6].transmission%>">
+                        <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision"  value=<%=bases[6].transmission%>>
                     </div>
                     <div class="form">
-                        <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  required="required" value="<%=bases[6].conditions%>">
+                        <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición" value=<%=bases[6].conditions%>>
                     </div>
                     <div class="form">
-                        <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria" required="required" >
-                        <option value="" selected disabled hidden>"<%=bases[2][(bases[6].categories_id)].type_auto%>"</option>
+                        <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria"  >
+                        <option value=<%=bases[2][(bases[6].categories_id)].type_auto%> selected disabled hidden><%=bases[2][(bases[6].categories_id)].type_auto%></option>
                         <% for(let i= 0; i < bases[2].length; i++){ %>
                         <% if (testmarca== bases[2][i].type_auto) { %>
                         <% }else {  %>
@@ -117,10 +115,10 @@
                     <input type="file"   name="imagen-auto"  id="image" placeholder="Elige una imagen">
                 </div>
                 <br>
-                <button class="form" type="submit">Editar</button>   
+                <button class="formb" type="submit">Editar</button>   
             </form>
     <%- include('../partials/footer')%>
-    <script src= "js/productos.js"></script>
+    <script src= "/js/productosedit.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
