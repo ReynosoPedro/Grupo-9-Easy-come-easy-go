@@ -17,9 +17,11 @@
     <main>
         
         <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <ul class="errorescamp"></ul>
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
 
-            <div class="formulario">
+            <div class="formulario" id="formulario">
+
                 <div class="part1">
                     <div class="form">
                         <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca" required="required" >
@@ -112,12 +114,14 @@
                 <br>
                 <div class="custom-file">
                     <label for ="imagen-auto">Subi una foto de tu auto </label>
-                    <input type="file"   name="imagen-auto"  placeholder="Elige una imagen">
+                    <input type="file"   name="imagen-auto"  id="image" placeholder="Elige una imagen">
                 </div>
                 <br>
                 <button class="form" type="submit">Editar</button>   
             </form>
     <%- include('../partials/footer')%>
+    <script src= "js/productos.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
