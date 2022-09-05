@@ -117,7 +117,7 @@ h2 {
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
-    border: solid 2px rgb(197, 197, 197);    
+    /*border: solid 2px rgb(197, 197, 197);    */
 }
 
 .form input:focus {
@@ -170,6 +170,11 @@ footer p {
     color: red;
     font-size: 12px;
 }
+
+.campos-invalidos {
+    /*color: #842029;*/
+    border: 2px solid rgb(248, 89, 89);
+  }
 
 @media (min-width: 769px) {
     

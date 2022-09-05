@@ -40,8 +40,9 @@ const User ={
 
 
     },
-    findByField: function (emailB){
-/* JSON
+    findByField: function (field, text){
+        
+/*
         let allUsers = this.findAll();
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
@@ -116,3 +117,4 @@ db.Usuarios.create({
 }
 module.exports= User;
 
+console.log(User.findByField('email', 'abcd@gmail.com'))

@@ -77,7 +77,7 @@
                 <div>
                 <div>
                     <label for="categoria"></label>
-                    <select name="categoria">
+                    <select name="categoria" id="categoria">
                         <option value="">Categoría</option>
                         <%
                         let categoria = ['Comprador', 'Vendedor'];
@@ -97,7 +97,7 @@
             </div>
             <div class="form">
             <label for ="avatar"> </label>
-            <input type="file"   name="avatar"  placeholder="Elige una imagen">
+            <input type="file"   name="avatar" id="image" placeholder="Elige una imagen">
             <% if (locals.errors && errors.avatar){ %>
                 <div class="mensajeError">
                     <%= errors.avatar.msg %>
@@ -120,6 +120,7 @@
         </section>
     </main>
     <%- include('../partials/footer')%>
+    <script src= "js/register.js"></script>
 </body>
 
 </html>
