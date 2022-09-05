@@ -35,8 +35,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 })         
             },
     crear: (req, res) => {
-                if(req.file!=undefined){+
-                    console.log(req.body)
+                if(req.file!=undefined){
                     db.Productos.create({
                         name:req.session.userLogged.email,
                         brand_id:req.body.marca,         
@@ -58,7 +57,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
                     
                 }else {
-                    res.render('admin/formularioVenta');
+                    res.redirect('/formularioVenta');
                 }
                 
 /* LINEAS DE CODIGO JSON 
