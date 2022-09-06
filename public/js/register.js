@@ -54,6 +54,12 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingrese su Nombre completo (minimo 2 caracteres)')
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Asegurate de revisar los campos!',
+                
+            })
         }
     }
 
@@ -63,6 +69,12 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingrese una contraseña (minimo 8 caracteres, letra mayúscula, numero, caracter)')
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Asegurate de revisar los campos!',
+                
+            })
         }
     }
 
@@ -73,6 +85,12 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingresar un formato de correo electrónico')
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Asegurate de revisar los campos!',
+                
+            })
         }
     }
 
@@ -82,6 +100,12 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Extensiones permitidas .JPG, .JPEG, .PNG, .GIF')
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Asegurate de revisar los campos!',
+                
+            })
         }
     }
 
@@ -92,7 +116,7 @@ window.onload = function(){
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
-                text: 'Asegurate de completar los campos!',
+                text: 'Asegurate de revisar los campos!',
                 
             })
         }else{
