@@ -21,6 +21,8 @@ router.get('/shop-cart', controller.shopCar)
 const multer= require ('multer');
 const { body } = require('express-validator');
 
+
+
 const validations = [  
     body('nombreCompleto').notEmpty().withMessage('Ingrese su Nombre completo').isLength({
         min: 2
@@ -37,7 +39,7 @@ const validations = [
     body('categoria').notEmpty().withMessage('Elija una opcion'),
     body('avatar').custom((value, {req})=>{
         let file= req.file;
-        let acceptedExtensions = ['.JPG', '.JPEG', '.PNG', '.GIF'];
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
         if(!file){
             throw new Error('Seleccione una imagen');
@@ -49,9 +51,8 @@ const validations = [
         }
         
         return true;
-    })
+    }),
       //Aquí obligo a que el usuario seleccione su avatar
-    
     ]
 
 
@@ -66,6 +67,7 @@ const storage= multer.diskStorage(
         }
     }
 )
+
 const uploadFile =multer ( { storage});
 // formulario de creación
 router.get('/register',guestMiddleware, controller.register);

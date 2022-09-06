@@ -182,8 +182,11 @@ footer p {
 }
 
 .mensaje-alerta{
+    font-size: 13px;
     color: red;
     list-style:none;
+    text-align: left;
+    padding-left: 12px;
 }
 
 

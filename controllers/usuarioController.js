@@ -6,8 +6,7 @@ const db = require('../database/models');
 const sequelize= db.sequelize;
 
 
-
-const {validationResult}=require('express-validator');
+const {validationResult, body}=require('express-validator');
 
 const usuariosJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/users.json')));
 const users = {
@@ -22,6 +21,7 @@ const users = {
                 oldData: req.body
             });
         }
+
         let userInDB = User.findByField('email', req.body.email);
         if (userInDB){
             return res.render('users/register',{
