@@ -5,7 +5,6 @@ const User = require('../models/User');
 const db = require('../database/models');
 const sequelize= db.sequelize;
 
-
 const {validationResult, body}=require('express-validator');
 
 const usuariosJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'../database/users.json')));
