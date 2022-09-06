@@ -1,7 +1,0 @@
-npm init (si es un proyecto nuevo)
-
-
-(si es un proyecto ya dado)
-npm install
-npm install sequile,....
-...

@@ -1,4 +1,0 @@
-En "web" van las vistas que no se requiren mucho, preguntas frecuentes, nosotros, lista de contacto, etc
-las que no requieren de un controlador.
-
-const methodOverride = require('method-override'); (con esto puedo usar los metodos get, post,put, delete)(primero hay que instalarlo) 
