@@ -21,24 +21,32 @@ const users = {
             });
         }
 
-        let userInDB = User.findByField('email', req.body.email);
-        if (userInDB){
-            return res.render('users/register',{
-                errors: {
-                    email:{
-                        msg:'El email ya esta registrado'
-                    }
-                
-                },
-                oldData: req.body
-            });
-        }
-        let userToCreate = {
-            ...req.body,
-            avatar:req.file.filename
-        }
-        let userCreate=User.create(userToCreate);
-        res.redirect('/login');  
+        let userToLogin=db.Usuarios.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        .then(function(userInDB){
+            
+            console.log(userInDB)
+            if (userInDB){
+                return res.render('users/register',{
+                    errors: {
+                        email:{
+                            msg:'El email ya esta registrado'
+                        }
+                    
+                    },
+                    oldData: req.body
+                });
+            }
+            let userToCreate = {
+                ...req.body,
+                avatar:req.file.filename
+            }
+            let userCreate=User.create(userToCreate);
+            res.redirect('/login');  
+        })
     },
     formEditar: (req, res) => {
         db.Usuarios.findByPk(req.session.userLogged.id)
@@ -75,8 +83,7 @@ const users = {
             email: req.body.email ,
             phone: req.body.celular ,
             roll_id: 1,
-            image: req.file.filename,
-            }
+            image: req.file.filename, }
             ,{
                 where:{id: req.session.userLogged.id}
             }) 

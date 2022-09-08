@@ -20,8 +20,9 @@ const storage=multer.diskStorage(
 
 const UploadFile= multer({storage});
 
+
 //panel
-router.get('/administrar', controller.panel)
+router.get('/administrar',autenticadoMiddleware, controller.panel)
 //agregar
 router.get('/agregar',  permisosMiddleware, controller.formCrear);
 router.post('/agregar', UploadFile.single("imagen-auto"), controller.crear);
