@@ -76,7 +76,7 @@ const users = {
             phone: req.body.celular ,
             roll_id: 1,
             image: req.file.filename,
-            state: 1 , }
+            }
             ,{
                 where:{id: req.session.userLogged.id}
             }) 
