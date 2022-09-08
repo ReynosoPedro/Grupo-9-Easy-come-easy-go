@@ -7,10 +7,6 @@ const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
 const controller = require('../controllers/usuarioController');
 
 
-router.get('/login', guestMiddleware, controller.login);
-
-router.post('/login', controller.loginProcess);
-
 router.get('/profile', autenticadoMiddleware, controller.profile);
 
 router.get('/logout', autenticadoMiddleware, controller.logout);
@@ -78,7 +74,16 @@ router.get('/editarPerfil', autenticadoMiddleware, controller.formEditar);
 // procesamiento del formulario de edit
 router.put('/editarPerfil', uploadFile.single("avatar"), controller.editarPerfil);
 
+router.get('/login', guestMiddleware, controller.login);
 
+router.post('/login',[
+    body('email')
+    .notEmpty().withMessage('Agregar un email').bail()
+    .isEmail().withMessage('Ingresar un formato de correo electrónico'),
+    body('password').notEmpty().withMessage('Ingrese una contraseña').isLength({
+        min: 8
+        }).withMessage('Ingrese un minimo de 8 caracteres, letra mayúscula, numero, caracter'),
+    ] ,controller.loginProcess);
 
 
 

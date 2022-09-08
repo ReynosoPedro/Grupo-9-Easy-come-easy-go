@@ -35,7 +35,7 @@ window.onload = function(){
 
 
     form.addEventListener('submit', function(e){
-    e.preventDefault()
+    /*e.preventDefault()*/
 
     campNombre(nombre.value, nombre,errorNombre);
     campEmpty(usuario.value, usuario,errorUsuario, 'Ingrese un usuario');
@@ -46,7 +46,9 @@ window.onload = function(){
     campEmpty(categoria.value, categoria,errorCategoria, 'Ingrese una categoria');
     campImage(image.value, image,errorImage);
     
-    })
+
+
+
 
     function campNombre(valueInput, divInput, errorDiv){
         let reNombre  = /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{2,24}$/gm
@@ -54,6 +56,7 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingrese su Nombre completo (minimo 2 caracteres)')
+            e.preventDefault()
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -69,6 +72,7 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingrese una contraseña (minimo 8 caracteres, letra mayúscula, numero, caracter)')
+            e.preventDefault()
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -85,6 +89,7 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingresar un formato de correo electrónico')
+            e.preventDefault()
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -100,6 +105,7 @@ window.onload = function(){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Extensiones permitidas .JPG, .JPEG, .PNG, .GIF')
+            e.preventDefault()
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -113,6 +119,7 @@ window.onload = function(){
     function campEmpty(valueInput, divInput, errorDiv, inputNombre){
         if (valueInput.length == 0){
             mostrarError(divInput, errorDiv, inputNombre)
+            e.preventDefault()
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -140,6 +147,10 @@ window.onload = function(){
         divInput.style.border = '1.5px solid rgb(19, 204, 2)'
         errorDiv.innerHTML = ''
     }
+
+    })
+
+    
 
 }
 
