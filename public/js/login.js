@@ -25,7 +25,7 @@ window.onload = function(){
                 esconderError(divInput, errorDiv)
                 Swal.fire(
                     'Excelente!',
-                    'Tu registro fue realizado con exito!',
+                    'Log in completo!',
                     'success'
                 )
             }else{

@@ -57,7 +57,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
                     
                 }else {
-                    res.redirect('/formularioVenta');
+                    res.redirect('/agregar');
                 }
                 
 /* LINEAS DE CODIGO JSON 

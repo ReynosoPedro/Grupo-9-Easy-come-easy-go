@@ -4,7 +4,7 @@ window.onload = function(){
     form.marca.focus()
 
     form.addEventListener('submit', function(e){
-    e.preventDefault()
+
 
         let errors = []
 
@@ -150,7 +150,7 @@ window.onload = function(){
         }else{
             Swal.fire(
                 'Excelente!',
-                'Tu registro fue realizado con exito!',
+                'Todo parece estar bien!Sigamos!',
                 'success'
             )
         }

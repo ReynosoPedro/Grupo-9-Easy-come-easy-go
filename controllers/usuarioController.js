@@ -28,7 +28,6 @@ const users = {
         })
         .then(function(userInDB){
             
-            console.log(userInDB)
             if (userInDB){
                 return res.render('users/register',{
                     errors: {
