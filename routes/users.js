@@ -4,12 +4,14 @@ const path = require('path');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
+const userLoggedMiddleware =require('../middlewares/userLoggedMiddleware');
+
 const controller = require('../controllers/usuarioController');
 
 
-router.get('/profile', autenticadoMiddleware, controller.profile);
+router.get('/profile', userLoggedMiddleware, controller.profile);
 
-router.get('/logout', autenticadoMiddleware, controller.logout);
+router.get('/logout', userLoggedMiddleware, controller.logout);
 
 router.get('/shop-cart', controller.shopCar)
 
