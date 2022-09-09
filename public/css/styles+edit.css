@@ -4,6 +4,34 @@
     box-sizing: border-box;
 }
 
+.swal2-container.swal2-center>.swal2-popup{
+    background-color: black !important;
+    border: 3px solid #ccb23e !important;
+
+}
+.swal2-html-container, .swal2-title{
+    color:  #ccb23e !important;
+}
+.swal2-icon.swal2-error {
+    border-color: #ccb23e !important;
+    
+}
+
+span .swal2-x-mark-line-left{
+    background-color: #ccb23e !important;
+}
+
+span .swal2-x-mark-line-right{
+    background-color: #ccb23e !important;
+}
+
+
+button.swal2-confirm.swal2-styled {
+    background-color: black !important;
+    color: #ccb23e!important;
+    border-color: #ccb23e!important;
+}
+
 
 main {
     padding-top: 2%;
