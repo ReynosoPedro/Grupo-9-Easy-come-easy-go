@@ -116,5 +116,3 @@ db.Usuarios.create({
 }
 }
 module.exports= User;
-
-console.log(User.findByField('email', 'abcd@gmail.com'))

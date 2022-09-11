@@ -15,12 +15,36 @@ module.exports = (sequelize, dataTypes)=>{
         image_filename:{
             type:dataTypes.STRING
         },
+        image_filename2:{
+            type:dataTypes.STRING
+        },
+        image_filename3:{
+            type:dataTypes.STRING
+        },
+        image_filename4:{
+            type:dataTypes.STRING
+        },
+        image_filename5:{
+            type:dataTypes.STRING
+        },
         transmission:{
             type:dataTypes.STRING
         },
         conditions:{
             type:dataTypes.STRING
         },
+        type_fuel:{
+            type:dataTypes.STRING
+        },
+        discount: {
+			type: dataTypes.INTEGER
+		},
+        descripcion: {
+			type: dataTypes.TEXT('long')
+		},
+        views : {
+			type: dataTypes.INTEGER
+		},
         stock:{
             type:dataTypes.STRING
         },

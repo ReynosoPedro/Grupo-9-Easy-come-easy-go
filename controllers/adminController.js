@@ -35,7 +35,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 })         
             },
     crear: (req, res) => {
-                if(req.file!=undefined){
+                if(req.files!=undefined){
                     db.Productos.create({
                         name:req.session.userLogged.email,
                         brand_id:req.body.marca,         
@@ -45,7 +45,12 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                         year_id: req.body.year,
                         km_id:  req.body.kilometraje ,
                         prices: req.body.precio,
-                        image_filename: req.file.filename,
+                        type_fuel:req.body.combustible,
+                        image_filename: req.files.imagen[0].filename,
+                        image_filename2: req.files.imagen2[0].filename,
+                        image_filename3: req.files.imagen3[0].filename,
+                        image_filename4: req.files.imagen4[0].filename,
+                        image_filename5: req.files.imagen5[0].filename,
                         transmission: req.body.transmision,
                         conditions: req.body.condicion,
                         stock: "disponible",
@@ -111,6 +116,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
     edit: (req, res) => {
                 db.Productos.update({
+                    image_filename: req.file ? req.file.filename : req.body.oldImagen ,
+                    name:req.session.userLogged.email,
                     brand_id:req.body.marca,         
                     model_id:req.body.modelo,
                     categories_id:req.body.categoria,
@@ -118,9 +125,14 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                     year_id: req.body.year,
                     km_id:  req.body.kilometraje ,
                     prices: req.body.precio,
-                    image_filename: req.file ? req.file.filename : req.body.oldImagen ,
+                    type_fuel:req.body.combustible,
+                    image_filename:  req.files.imagen[0].filename  ? req.files.imagen[0].filename  : req.body.oldImagen ,
+                    image_filename2: req.files.imagen2[0].filename ? req.files.imagen2[0].filename : req.body.oldImagen2 ,
+                    image_filename3: req.files.imagen3[0].filename ? req.files.imagen3[0].filename : req.body.oldImagen3 ,
+                    image_filename4: req.files.imagen4[0].filename ? req.files.imagen4[0].filename : req.body.oldImagen4 ,
+                    image_filename5: req.files.imagen5[0].filename ? req.files.imagen5[0].filename : req.body.oldImagen5 ,
                     transmission: req.body.transmision,
-                    conditions: req.body.condition,
+                    conditions: req.body.condicion,
                     stock: "disponible",
             },{
                 where:{id:req.params.id}

@@ -28,6 +28,9 @@
             <a href="/editarPerfil"><button></i> EDITAR PERFIL</button></a>
         </div>
         <br>
+        <% if(info.vehiculos){ %>
+            <h2  style= 'text-align: left;'> Tus autos publicados : </h2>
+            <% } %>  
                             <section class="contenedor-productos">
                                 <% for(let i= 0; i < info.vehiculos.length; i++){ %>
                                     

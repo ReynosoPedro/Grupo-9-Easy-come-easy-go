@@ -143,6 +143,39 @@ window.onload = function(){
             image.classList.remove('campos-invalidos')
         }
 
+        if(image2.value == ''){
+            e.preventDefault()
+            errors.push('Ingrese una imagen')
+            image.classList.add('campos-invalidos')
+        }else{
+            image.classList.add('campos-validos')
+            image.classList.remove('campos-invalidos')
+        }
+        if(image3.value == ''){
+            e.preventDefault()
+            errors.push('Ingrese una imagen')
+            image.classList.add('campos-invalidos')
+        }else{
+            image.classList.add('campos-validos')
+            image.classList.remove('campos-invalidos')
+        }
+        if(image4.value == ''){
+            e.preventDefault()
+            errors.push('Ingrese una imagen')
+            image.classList.add('campos-invalidos')
+        }else{
+            image.classList.add('campos-validos')
+            image.classList.remove('campos-invalidos')
+        }
+        if(image3.value == ''){
+            e.preventDefault()
+            errors.push('Ingrese una imagen')
+            image.classList.add('campos-invalidos')
+        }else{
+            image.classList.add('campos-validos')
+            image.classList.remove('campos-invalidos')
+        }
+
         
 
         let campError= document.querySelector('.errorescamp');

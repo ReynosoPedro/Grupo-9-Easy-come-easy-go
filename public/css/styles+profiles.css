@@ -77,7 +77,6 @@ body{
 
 
     
-    
 }
 #milochocpx{
     display: block;
@@ -362,7 +361,7 @@ img{
     .productos{
         flex-basis:23%;
         height: 259px;
-        max-width: 30%;
+        max-width: 23%;
     }
     .contenedor-productos{
         align-content: flex-start;
@@ -460,7 +459,8 @@ img{
         display: block;
     }
     .productos{
-        max-width: 23%;
+        max-width: 10%;
+        flex-basis:15%;
     }
 }
 

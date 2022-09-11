@@ -17,6 +17,11 @@
     <main>
         
         <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename2%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename3%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename4%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename5%>" style='height: 30%; width: 30%; object-fit: fill' >
+        
         <ul class="errorescamp"></ul>
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
             <div class="formulario" id="formulario">
@@ -62,6 +67,14 @@
                     <div class="form">
                         <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"   value="<%=bases[6].prices *10%>">
                     </div>
+                    <div class="form">
+                        <p> Combustible </p><select type="text" name="combustible" id="combustible" placeholder="Combustible" value=<%=bases[6].fuel_type%>>  >
+                        <option value="Nafta" >Nafta </option>
+                        <option value="Gasoil" >Gasoil</option>
+                        <option value="GNC" >GNC </option>
+                        <option value="Electrico" >Electrico </option>
+                    </select >
+                    </div>  
 
                 </div>
                 <div class="part2">
@@ -92,6 +105,7 @@
                     <div class="form">
                         <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision"  value=<%=bases[6].transmission%>>
                     </div>
+  
                     <div class="form">
                         <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición" value=<%=bases[6].conditions%>>
                     </div>
@@ -111,10 +125,49 @@
                 </div>
                 <br>
                 <div class="custom-file">
-                    <label for ="imagen-auto">Subi una foto de tu auto </label>
-                    <input type="file"   name="imagen-auto"  id="image" placeholder="Elige una imagen">
+                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename%> />
+                    <label for ="imagen">Subi una foto del costado derecho</label>
+                    <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png" value="" />  
+                    <% if(locals.errors && errors.imagen){ %>
+                        <p class="tableAdmin_Error"><%= errors.imagen.msg  %> </p>
+                    <% } %>
                 </div>
                 <br>
+                <div class="custom-file"> 
+                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename2%> />
+                    <label for ="imagen2">Subi una foto del costado izquierdo </label>
+                <input  type="file" name="imagen2" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  value="" />  
+                <% if(locals.errors && errors.imagen2){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen-auto2.msg  %> </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename3%> />
+                    <label for ="imagen3">Subi una foto del frente </label>
+                <input  type="file" name="imagen3" placeholder="Elige una imagen"  accept= ".jpg, .jpeg .png"  value="" /> 
+                <% if(locals.errors && errors.imagen3){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen3.msg  %>  </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename4%> />
+                    <label for ="imagen4">Subi una foto de atras </label>
+                <input  type="file" name="imagen4" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"   value="" /> 
+                <% if(locals.errors && errors.imagen4){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen4.msg  %>  </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename5%> />
+                    <label for ="imagen5">Subi una foto del interior </label>
+                <input type="file" name="imagen5" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"   value="" /> 
+                <% if(locals.errors && errors.imagen5){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen5.msg  %> </p>
+                <% } %>
+                </div> 
                 <button class="formb" type="submit">Editar</button>   
             </form>
     <%- include('../partials/footer')%>

@@ -21,7 +21,7 @@
             <div class="part1">
                 <div class="form">
                     <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca"  >
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                         <% let testmarca="start" %>
                         <% for(let i= 0; i < bases[0].length; i++){ %>
                         
@@ -36,7 +36,7 @@
                 </div>
                 <div class="form">
                     <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo">
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                     <% for(let i= 0; i < bases[1].length; i++){ %>
                     <% if (testmarca== bases[1][i].model) { %>
                     <% }else {  %>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form">
                     <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" >
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                         <% for(let i= 0; i < bases[3].length; i++){ %>
                         <% if (testmarca== bases[3][i].intervals) { %>
                         <% }else {  %>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="form">
                     <p> Color </p><select type="text" name="color" id="color" placeholder="Color">
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                         <% for(let i= 0; i < bases[5].length; i++){ %>
                         <% if (testmarca== bases[5][i].color) { %>
                         <% }else {  %>
@@ -77,7 +77,7 @@
             <div class="part2">
                 <div class="form">
                     <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  >
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                         <% for(let i= 0; i < bases[4].length; i++){ %>
                         <% if (testmarca== bases[4][i].year) { %>
                         <% }else {  %>
@@ -88,17 +88,31 @@
                         </select >
                 </div>
                 <div class="form">
-                    <p> Combustible </p><input type="text" name="combustible" id="combustible" placeholder="Combustible" >
+                    <p> Combustible </p><select type="text" name="combustible" id="combustible" placeholder="Combustible" >
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
+                    <option value="Nafta" >Nafta </option>
+                    <option value="Gasoil" >Gasoil</option>
+                    <option value="GNC" >GNC </option>
+                    <option value="Electrico" >Electrico </option>
+                </select >
                 </div>
                 <div class="form">
-                    <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision">
+                    <p> Transmision </p><select type="text" name="transmision" id="transmision" placeholder="Transmision">
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
+                    <option value="Manual" >Manual </option>
+                    <option value="Automatica" >Automatica </option>
+                </select >
                 </div>
                 <div class="form">
-                    <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición"  >
+                    <p> Condición </p><select type="text" name="condicion" id="condicion" placeholder="Condición"  >
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
+                    <option value="Nuevo" >Nuevo </option>
+                    <option value="Usado" >Usado </option>
+                </select >
                 </div>
                 <div class="form">
                     <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria" >
-                    <option value="" selected disabled hidden>"Seleccione una opcion "</option>
+                    <option value="" selected disabled hidden>Seleccione una opcion </option>
                     <% for(let i= 0; i < bases[2].length; i++){ %>
                     <% if (testmarca== bases[2][i].type_auto) { %>
                     <% }else {  %>
@@ -112,9 +126,44 @@
             </div>
             <br>
             <div class="custom-file">
-                <label for ="imagen-auto">Subi una foto de tu auto </label>
-                <input type="file"   name="imagen-auto"  id="image" placeholder="Elige una imagen" >
+                <label for ="imagen">Subi una foto del costado derecho</label>
+                <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png" value="" />  
+                <% if(locals.errors && errors.imagen){ %>
+                    <p class="tableAdmin_Error"><%= errors.imagen.msg  %> </p>
+                <% } %>
             </div>
+            <br>
+            <div class="custom-file"> 
+                <label for ="imagen2">Subi una foto del costado izquierdo </label>
+            <input  type="file" name="imagen2" placeholder="image 3" accept= ".jpg, .jpeg .png"  value="" />  
+            <% if(locals.errors && errors.imagen2){ %>
+            <p class="tableAdmin_Error"><%= errors.imagen-auto2.msg  %> </p>
+            <% } %>
+            </div>
+            <br>
+            <div class="custom-file">
+                <label for ="imagen3">Subi una foto del frente </label>
+            <input  type="file" name="imagen3" placeholder="image 1"  accept= ".jpg, .jpeg .png" value="" /> 
+            <% if(locals.errors && errors.imagen3){ %>
+            <p class="tableAdmin_Error"><%= errors.imagen3.msg  %>  </p>
+            <% } %>
+            </div>
+            <br>
+            <div class="custom-file">
+                <label for ="imagen4">Subi una foto de atras </label>
+            <input  type="file" name="imagen4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value="" /> 
+            <% if(locals.errors && errors.imagen4){ %>
+            <p class="tableAdmin_Error"><%= errors.imagen4.msg  %>  </p>
+            <% } %>
+            </div>
+            <br>
+            <div class="custom-file">
+                <label for ="imagen5">Subi una foto del interior </label>
+            <input type="file" name="imagen5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value="" /> 
+            <% if(locals.errors && errors.imagen5){ %>
+            <p class="tableAdmin_Error"><%= errors.imagen5.msg  %> </p>
+            <% } %>
+            </div> 
             <br>
             <button class="formb" type="submit">Publicar</button>   
         </form>
