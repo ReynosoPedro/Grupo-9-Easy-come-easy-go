@@ -25,7 +25,7 @@ INSERT INTO roles
 VALUES (DEFAULT, "Administrador"),(DEFAULT, "Comprador"),(DEFAULT, "Vendedor");
 
 INSERT INTO users
-VALUES (DEFAULT, "Pedro Reynoso", "Qwerty", "$2a$10$4P3Ocf6OoTnfjzIJml/ZTO6pXlgq/SC/hKdbL9UGeUyXRZvfHqV0u", "2020-03-25", "pedro.reynoso.2022@gmail.com", "01114233056", 1, "1660309666675_img.jpg", 9),(DEFAULT, "vanesa", "vane", "$2a$10$7zYfQyl0N0eT6LA5l1.TYOXH0Zc4OTEoQfURo5rFm0FBghVP74IZO", "2019-03-25", "abcd@gmail.com", "1762556362", 1, "1659309134689_img.jpg", 9);
+VALUES (DEFAULT, "Pedro Reynoso", "Qwerty", "$2a$10$4P3Ocf6OoTnfjzIJml/ZTO6pXlgq/SC/hKdbL9UGeUyXRZvfHqV0u", "2020-03-25", "pedro.reynoso.2022@gmail.com", "01114233056", 1, "1660309666675_img.jpg", 9),(DEFAULT, "vanesa", "vane", "$2a$10$vx0FbnEOS3vPQSgmpLrX3uobFFnYT3giyR03bqeHZi/5KOVZd5bsC", "2019-03-25", "abcd@gmail.com", "1762556362", 1, "1659309134689_img.jpg", 9);
 
 INSERT INTO products
 VALUES (DEFAULT, "pedro.reynoso.2022@gmail.com", 1, 2, 2, 1, 1, 6050000, 1, "focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),

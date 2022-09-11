@@ -46,3 +46,12 @@ Car One, Muestra en su sitio web el producto y/o servicio que vamos a estar ofre
 ...Dispondremos de vehiculos con una amplia gama de marcas y modelos, donde en cada uno de ellos se podrá visualizar sus distintas caracteristicas y precios.
 + describir una pagina de las inspiradas , que nos gusta
 + 
+
+
+SPRINT 7
+
+Para este sprint teniamos algunos puntos hechos como las validaciones del back del registro y usuarios, lo que nos ayudo a avanzar con las validaciones del front, pero de igual manera tuvimos que hacer un par de ajustes.
+Empezamos revisando si seguian funcionando las validaciones del back hechas y seguimos ajustando los campos segun lo que se requería. Aplicamos lo mencionado anteriormente para el login. 
+Para productos y edicion de productos se realizaron las validaciones del back ya que no las teniamos hechas.
+Como siguiente paso, creamos los archivos js: "register", "productos", "login" y "productosedit" para comenzar con las validaciones del front.
+Se colocó las 4 tareas en el tablero de trabajo: dos para back, que incluian productos y usuarios y dos para front, que incluian tambien para productos y usuarios. De esta manera nos pudimos dividir mejor las tareas.
