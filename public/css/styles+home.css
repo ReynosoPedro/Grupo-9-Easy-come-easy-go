@@ -3,14 +3,13 @@
     padding: 0px;  
     box-sizing: border-box;
 }
-.contenedor-productos{
+.productoss{
     box-sizing:border-box;
     display: flex;
     flex-direction: column;
     text-align: center;
     padding: 5px;
-    width: 30%;
-    height: 30%;
+    width: 100%;
     
     
 }
@@ -183,7 +182,6 @@ body {
     background-color:  #ccb23e;
     border-radius: 8px;
     border: solid 3px #595959;
-    max-width: 100%;
 }
 
 .ofertas:hover{
@@ -192,6 +190,7 @@ body {
 
 .imagen{
     max-width: 100%;
+    width: 100%;
     border-radius: 8px;
     margin: auto;
 
@@ -242,6 +241,7 @@ footer p {
     }
     .productoss{
         display: flex;
+
         justify-content: space-around;
         /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
     }
@@ -264,8 +264,12 @@ footer p {
     }
     .productoss{
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
         /*box-shadow: 0px 0px 10px rgb(238, 208, 110);*/
+    }
+    .ofertas{
+        max-width: 30%;
     }
     .seccion-barra1 a{
         margin: 0 50px;
@@ -273,7 +277,7 @@ footer p {
     }
     .footer{
         display: flex;
-        justify-content: space-between;
+        justify-content: stretch;
         align-content: center;
         padding: 2px;
     }

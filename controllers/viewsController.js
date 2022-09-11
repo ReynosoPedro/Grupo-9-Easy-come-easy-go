@@ -8,7 +8,7 @@ const vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirna
 const views = {
     home: (req, res) => {
         db.Productos.findAll({
-            order : [["prices","DESC"]],
+            order : [["views","DESC"]],
             limit: 3 ,  
             include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
         })
@@ -31,6 +31,10 @@ const views = {
         res.render('views/productos',{vehiculos: vehiculosDelArchivoJSON})*/
     },
     detalle: (req, res) => {
+        db.Productos.increment(
+            {  views:+1 },
+            { where: { id:req.params.id} }
+        );
         db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
             .then(function(vehiculos){
                 res.render('views/detalle',{vehiculos:vehiculos})
