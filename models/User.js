@@ -66,7 +66,7 @@ db.Usuarios.create({
     full_name: userData.nombreCompleto ,
     user: userData.usuario ,
     password: bcryptjs.hashSync(userData.password, 10) ,
-    date_birth: userData.fechadenacimiento ,
+    date_birth: userData.fechaDeNacimiento ,
     email: userData.email ,
     phone: userData.celular ,
     roll_id: 1,
