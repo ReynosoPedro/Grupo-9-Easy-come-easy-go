@@ -181,6 +181,19 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
         */
     },
     delete: (req, res) => {
+        /*
+        db.Productos.findByPk(req.params.id) 
+        .then(function(vehiculo){
+    
+            fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename));
+             
+            fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename2));
+            fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename3));
+            fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename4));
+            fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename5));
+            
+        })
+        */
 
         db.Productos.destroy({
             where: {
@@ -191,6 +204,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
             res.redirect ('/administrar')
         )
         
+
 /* JSON
         const vId=req.params.id;
         let archivoV =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
