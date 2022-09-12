@@ -125,45 +125,45 @@
                 </div>
                 <br>
                 <div class="custom-file">
-                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename%> />
+                    <input type="hidden" name="oldImage" id="oldImage" value=<%=bases[6].image_filename%> />
                     <label for ="imagen">Subi una foto del costado derecho</label>
-                    <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png" value="" />  
+                    <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  />  
                     <% if(locals.errors && errors.imagen){ %>
                         <p class="tableAdmin_Error"><%= errors.imagen.msg  %> </p>
                     <% } %>
                 </div>
                 <br>
                 <div class="custom-file"> 
-                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename2%> />
+                    <input type="hidden" name="oldImage2" id="oldImage2" value=<%=bases[6].image_filename2%> />
                     <label for ="imagen2">Subi una foto del costado izquierdo </label>
-                <input  type="file" name="imagen2" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  value="" />  
+                <input  type="file" name="imagen2" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  />  
                 <% if(locals.errors && errors.imagen2){ %>
                 <p class="tableAdmin_Error"><%= errors.imagen-auto2.msg  %> </p>
                 <% } %>
                 </div>
                 <br>
                 <div class="custom-file">
-                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename3%> />
+                    <input type="hidden" name="oldImage3" id="oldImage3" value=<%=bases[6].image_filename3%> />
                     <label for ="imagen3">Subi una foto del frente </label>
-                <input  type="file" name="imagen3" placeholder="Elige una imagen"  accept= ".jpg, .jpeg .png"  value="" /> 
+                <input  type="file" name="imagen3" placeholder="Elige una imagen"  accept= ".jpg, .jpeg .png" /> 
                 <% if(locals.errors && errors.imagen3){ %>
                 <p class="tableAdmin_Error"><%= errors.imagen3.msg  %>  </p>
                 <% } %>
                 </div>
                 <br>
                 <div class="custom-file">
-                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename4%> />
+                    <input type="hidden" name="oldImage4" id="oldImage4" value=<%=bases[6].image_filename4%> />
                     <label for ="imagen4">Subi una foto de atras </label>
-                <input  type="file" name="imagen4" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"   value="" /> 
+                <input  type="file" name="imagen4" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  /> 
                 <% if(locals.errors && errors.imagen4){ %>
                 <p class="tableAdmin_Error"><%= errors.imagen4.msg  %>  </p>
                 <% } %>
                 </div>
                 <br>
                 <div class="custom-file">
-                    <input type="hidden" name="oldImage" value=<%=bases[6].image_filename5%> />
+                    <input type="hidden" name="oldImage5" id="oldImage5" value=<%=bases[6].image_filename5%> />
                     <label for ="imagen5">Subi una foto del interior </label>
-                <input type="file" name="imagen5" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"   value="" /> 
+                <input type="file" name="imagen5" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  /> 
                 <% if(locals.errors && errors.imagen5){ %>
                 <p class="tableAdmin_Error"><%= errors.imagen5.msg  %> </p>
                 <% } %>

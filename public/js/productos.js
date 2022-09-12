@@ -39,7 +39,7 @@ window.onload = function(){
         console.log( transmision  );
         console.log(condicion );
         console.log(categoria );
-        console.log(image );        
+        console.log(image ); 
 
         if(marca.value == ''){
             e.preventDefault()
@@ -167,7 +167,7 @@ window.onload = function(){
             image.classList.add('campos-validos')
             image.classList.remove('campos-invalidos')
         }
-        if(image3.value == ''){
+        if(image5.value == ''){
             e.preventDefault()
             errors.push('Ingrese una imagen')
             image.classList.add('campos-invalidos')

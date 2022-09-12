@@ -117,8 +117,8 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
     },
 
     edit: (req, res) => {
+        console.log(req.files)
                 db.Productos.update({
-                    image_filename: req.file ? req.file.filename : req.body.oldImagen ,
                     name:req.session.userLogged.email,
                     brand_id:req.body.marca,         
                     model_id:req.body.modelo,
@@ -128,11 +128,11 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                     km_id:  req.body.kilometraje ,
                     prices: req.body.precio,
                     type_fuel:req.body.combustible,
-                    image_filename:  req.files.imagen[0].filename  ? req.files.imagen[0].filename  : req.body.oldImagen ,
-                    image_filename2: req.files.imagen2[0].filename ? req.files.imagen2[0].filename : req.body.oldImagen2 ,
-                    image_filename3: req.files.imagen3[0].filename ? req.files.imagen3[0].filename : req.body.oldImagen3 ,
-                    image_filename4: req.files.imagen4[0].filename ? req.files.imagen4[0].filename : req.body.oldImagen4 ,
-                    image_filename5: req.files.imagen5[0].filename ? req.files.imagen5[0].filename : req.body.oldImagen5 ,
+                    image_filename:  (req.files.imagen  ? req.files.imagen[0].filename  : req.body.oldImage) ,
+                    image_filename2: (req.files.imagen2 ? req.files.imagen2[0].filename : req.body.oldImage2) ,
+                    image_filename3: (req.files.imagen3 ? req.files.imagen3[0].filename : req.body.oldImage3) ,
+                    image_filename4: (req.files.imagen4 ? req.files.imagen4[0].filename : req.body.oldImage4) ,
+                    image_filename5: (req.files.imagen5 ? req.files.imagen5[0].filename : req.body.oldImage5) ,
                     transmission: req.body.transmision,
                     conditions: req.body.condicion,
                     stock: "disponible",
