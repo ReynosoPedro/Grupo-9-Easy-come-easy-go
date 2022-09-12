@@ -79,10 +79,11 @@ const users = {
             user: req.body.usuario ,
             password: bcryptjs.hashSync(req.body.password, 10) ,
             date_birth: req.body.fechadenacimiento ,
+            image:  (req.file  ? req.file.filename : req.body.oldImage) ,
             email: req.body.email ,
             phone: req.body.celular ,
             roll_id: 1,
-            image: req.file.filename, }
+            }
             ,{
                 where:{id: req.session.userLogged.id}
             }) 

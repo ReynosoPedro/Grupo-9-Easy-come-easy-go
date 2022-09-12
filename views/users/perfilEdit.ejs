@@ -78,6 +78,7 @@
 
             </div>
             <div class="form">
+            <input type="hidden" name="oldImage" id="oldImage" value=<%= usuarioEdit.image %> />
             <label for ="avatar"> </label>
             <input type="file"   name="avatar"  placeholder="Elige una imagen">
             <% if (locals.errors && errors.avatar){ %>
