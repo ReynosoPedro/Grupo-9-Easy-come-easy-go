@@ -109,40 +109,40 @@
             <br>
             <div class="custom-file">
                 <label for ="imagen">Subi una foto del costado derecho</label>
-                <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png" value="" />  
+                <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept=".png, .jpg, .jpeg" value="" />  
                 <% if(locals.errors && errors.imagen){ %>
-                    <p class="mensajeError"><%= errors.imagen.msg  %> </p>
+                    <p class="mensajeError"><%= errors.image.msg  %> </p>
                 <% } %>
             </div>
             <br>
             <div class="custom-file"> 
                 <label for ="imagen2">Subi una foto del costado izquierdo </label>
-            <input  type="file" name="imagen2" id="image2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value="" />  
-            <% if(locals.errors && errors.imagen2){ %>
+            <input  type="file" name="imagen2" id="image2" placeholder="image 2"  accept=".png, .jpg, .jpeg" value="" />  
+            <% if(locals.errors && errors.image2){ %>
             <p class="mensajeError"><%= errors.imagen-auto2.msg  %> </p>
             <% } %>
             </div>
             <br>
             <div class="custom-file">
                 <label for ="imagen3">Subi una foto del frente </label>
-            <input  type="file" name="imagen3"  id="image3" placeholder="image 3"  accept= ".jpg, .jpeg .png" value="" /> 
+            <input  type="file" name="imagen3"  id="image3" placeholder="image 3"  accept=".png, .jpg, .jpeg" value="" /> 
             <% if(locals.errors && errors.imagen3){ %>
-            <p class="mensajeError"><%= errors.imagen3.msg  %>  </p>
+            <p class="mensajeError"><%= errors.image3.msg  %>  </p>
             <% } %>
             </div>
             <br>
             <div class="custom-file">
                 <label for ="imagen4">Subi una foto de atras </label>
-            <input  type="file" name="imagen4" id="image4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value="" /> 
+            <input  type="file" name="imagen4" id="image4" placeholder="image 4"  accept=".png, .jpg, .jpeg"  value="" /> 
             <% if(locals.errors && errors.imagen4){ %>
-            <p class="mensajeError"><%= errors.imagen4.msg  %>  </p>
+            <p class="mensajeError"><%= errors.image4.msg  %>  </p>
             <% } %>
             </div>
             <br>
-            <div class="custom-file">
+            <div class="custom-file">/
                 <label for ="imagen5">Subi una foto del interior </label>
-            <input type="file" name="imagen5"  id="image5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value="" /> 
-            <% if(locals.errors && errors.imagen5){ %>
+            <input type="file" name="imagen5"  id="image5" placeholder="image 5"  accept=".png, .jpg, .jpeg"  value="" /> 
+            <% if(locals.errors && errors.image5){ %>
             <p class="mensajeError"><%= errors.imagen5.msg  %> </p>
             <% } %>
             </div> 

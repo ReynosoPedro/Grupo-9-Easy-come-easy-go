@@ -13,6 +13,83 @@ const { check ,body} = require("express-validator");
 const validateForm = [
 check('marca').notEmpty().withMessage('Debes completar la Marca del vehiculo'),
 check('modelo').notEmpty().withMessage('Debes completar el Modelo del vehiculo'),
+body('image').custom((value, {req})=>{
+    let file= req.file;
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    if(!file){
+        throw new Error('Seleccione una imagen');
+    }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)){
+            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+    }
+    
+    return true;
+}),
+body('image2').custom((value, {req})=>{
+    let file= req.file;
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    if(!file){
+        throw new Error('Seleccione una imagen');
+    }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)){
+            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+    }
+    
+    return true;
+}),
+body('image3').custom((value, {req})=>{
+    let file= req.file;
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    if(!file){
+        throw new Error('Seleccione una imagen');
+    }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)){
+            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+    }
+    
+    return true;
+}),
+body('image4').custom((value, {req})=>{
+    let file= req.file;
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    if(!file){
+        throw new Error('Seleccione una imagen');
+    }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)){
+            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+    }
+    
+    return true;
+}),
+body('image5').custom((value, {req})=>{
+    let file= req.file;
+    let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+
+    if(!file){
+        throw new Error('Seleccione una imagen');
+    }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)){
+            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+        }
+    }
+    
+    return true;
+}),
+
+
 
 ]
 
