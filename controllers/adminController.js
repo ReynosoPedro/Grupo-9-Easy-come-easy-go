@@ -1,5 +1,6 @@
 const path = require('path');
 const fs = require('fs');
+const {validationResult}=require('express-validator');
 const db = require('../database/models');
 const sequelize= db.sequelize;
 let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
@@ -35,38 +36,49 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 })         
             },
     crear: (req, res) => {
-                if(req.files!=undefined){
-                    db.Productos.create({
-                        name:req.session.userLogged.email,
-                        brand_id:req.body.marca,         
-                        model_id:req.body.modelo,
-                        categories_id:req.body.categoria,
-                        color_id: req.body.color,
-                        year_id: req.body.year,
-                        km_id:  req.body.kilometraje ,
-                        prices: req.body.precio,
-                        type_fuel:req.body.combustible,
-                        image_filename: req.files.imagen[0].filename,
-                        image_filename2: req.files.imagen2[0].filename,
-                        image_filename3: req.files.imagen3[0].filename,
-                        image_filename4: req.files.imagen4[0].filename,
-                        image_filename5: req.files.imagen5[0].filename,
-                        transmission: req.body.transmision,
-                        conditions: req.body.condicion,
-                        discount:"Disponible",
-                        stock: "Disponible",
-                        descripcion: "Disponible",
+        let errors= validationResult(req)
+        
+        if (errors.isEmpty()) {
+            db.Productos.create({
+                name:req.session.userLogged.email,
+                brand_id:req.body.marca,         
+                model_id:req.body.modelo,
+                categories_id:req.body.categoria,
+                color_id: req.body.color,
+                year_id: req.body.year,
+                km_id:  req.body.kilometraje ,
+                prices: req.body.precio,
+                type_fuel:req.body.combustible,
+                image_filename: req.files.imagen[0].filename,
+                image_filename2: req.files.imagen2[0].filename,
+                image_filename3: req.files.imagen3[0].filename,
+                image_filename4: req.files.imagen4[0].filename,
+                image_filename5: req.files.imagen5[0].filename,
+                transmission: req.body.transmision,
+                conditions: req.body.condicion,
+                discount:"Disponible",
+                stock: "Disponible",
+                descripcion: "Disponible",
                 })
-                .then(function(){
-                    console.log("se creo el producto")
+                    .then(function(){
+                        console.log("se creo el producto")
                 })
-                res.redirect ('productos/1')
+                    res.redirect ('productos/1')  
+        
+            } else {
+                let marcas =db.Marcas.findAll() 
+                let modelos =db.Modelos.findAll()
+                let categorias =db.Categorias.findAll()
+                let uso =db.Km_intervalos.findAll()
+                let edad =db.Antiguedad.findAll()
+                let color =db.Colores.findAll()
+                Promise.all([marcas,modelos,categorias,uso,edad,color])
+                .then(function(bases){
+                    res.render('admin/formularioVenta' , {bases,errors: errors.mapped(), old: req.body})
+                })
+            }
 
                     
-                }else {
-                    res.redirect('/agregar');
-                }
-                
 /* LINEAS DE CODIGO JSON 
                 // validacion img
                 if(req.file!=undefined){
