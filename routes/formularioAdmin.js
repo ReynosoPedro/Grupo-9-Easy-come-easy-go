@@ -10,26 +10,21 @@ const { check ,body} = require("express-validator");
 
 
 const validateForm = [
-check('marca').isLength({
-    min : 3
-}).withMessage("La Marca del producto no puede tener menos de 3 caracteres"),
-check('modelo').isLength({
-    min : 3
-}).withMessage("El modelo del producto no puede tener menos de 3 caracteres"),
+check('marca').notEmpty().withMessage('Debes completar la Marca del vehiculo'),
+check('modelo').notEmpty().withMessage('Debes completar el Modelo del vehiculo'),
 
 check("image").custom((value, {req}) =>{
     let file = req.files.image;
     let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-    if (!file) {
-        throw new Error("Por favor selecciona una imagen")
-    }else if(file.size > (10 * 1024 * 1024)){
+if(file.size > (10 * 1024 * 1024)){
         fs.unlink(file.path, (err) => {
             if (err) {
                 console.log(err)
             }
         })
         throw new Error("La imagen debe pesar menos de 15 mg")
-    }
+    } 
+
     return true
 })]
 
