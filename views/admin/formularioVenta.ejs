@@ -20,6 +20,7 @@
             
             <div class="part1">
                 <div class="form">
+                    <% console.log(locals.errors) %>
                     <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca"  >
                     <option value="<%= locals.old && locals.old.marca? locals.old.marca : null %>" selected disabled hidden> <%= locals.old  && locals.old.marca ? bases[0][locals.old.marca-1].brand  : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[0].length; i++){ %>
@@ -66,7 +67,7 @@
             <div class="part2">
                 <div class="form">
                     <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  >
-                    <option value="<%= locals.old && locals.old.year? locals.old.year : null %>" selected disabled hidden> <%= locals.old  && locals.old.year ? bases[3][locals.old.year-1].year : "Seleccione una opcion" %></option>
+                    <option value="<%= locals.old && locals.old.year? locals.old.year : null %>" selected disabled hidden> <%= locals.old  && locals.old.year ? bases[4][locals.old.year-1].year : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[4].length; i++){ %>
                                 <option value= <%= bases[4][i].id %> ><%= bases[4][i].year %></option>
                         <% } %>
@@ -97,7 +98,7 @@
                 </div>
                 <div class="form">
                     <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria" >
-                        <option value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>" selected disabled hidden> <%= locals.old  && locals.old.categoria ? bases[3][locals.old.categoria-1].intervals : "Seleccione una opcion" %></option>
+                        <option value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>" selected disabled hidden> <%= locals.old  && locals.old.categoria ? bases[2][locals.old.categoria-1].type_auto : "Seleccione una opcion" %></option>
                     <% for(let i= 0; i < bases[2].length; i++){ %>
                             <option value= <%= bases[2][i].id %> ><%= bases[2][i].type_auto %></option>
                     <% } %>
@@ -110,7 +111,7 @@
                 <label for ="imagen">Subi una foto del costado derecho</label>
                 <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png" value="" />  
                 <% if(locals.errors && errors.imagen){ %>
-                    <p class="tableAdmin_Error"><%= errors.imagen.msg  %> </p>
+                    <p class="mensajeError"><%= errors.imagen.msg  %> </p>
                 <% } %>
             </div>
             <br>
@@ -118,7 +119,7 @@
                 <label for ="imagen2">Subi una foto del costado izquierdo </label>
             <input  type="file" name="imagen2" id="image2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value="" />  
             <% if(locals.errors && errors.imagen2){ %>
-            <p class="tableAdmin_Error"><%= errors.imagen-auto2.msg  %> </p>
+            <p class="mensajeError"><%= errors.imagen-auto2.msg  %> </p>
             <% } %>
             </div>
             <br>
@@ -126,7 +127,7 @@
                 <label for ="imagen3">Subi una foto del frente </label>
             <input  type="file" name="imagen3"  id="image3" placeholder="image 3"  accept= ".jpg, .jpeg .png" value="" /> 
             <% if(locals.errors && errors.imagen3){ %>
-            <p class="tableAdmin_Error"><%= errors.imagen3.msg  %>  </p>
+            <p class="mensajeError"><%= errors.imagen3.msg  %>  </p>
             <% } %>
             </div>
             <br>
@@ -134,7 +135,7 @@
                 <label for ="imagen4">Subi una foto de atras </label>
             <input  type="file" name="imagen4" id="image4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.imagen4){ %>
-            <p class="tableAdmin_Error"><%= errors.imagen4.msg  %>  </p>
+            <p class="mensajeError"><%= errors.imagen4.msg  %>  </p>
             <% } %>
             </div>
             <br>
@@ -142,7 +143,7 @@
                 <label for ="imagen5">Subi una foto del interior </label>
             <input type="file" name="imagen5"  id="image5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.imagen5){ %>
-            <p class="tableAdmin_Error"><%= errors.imagen5.msg  %> </p>
+            <p class="mensajeError"><%= errors.imagen5.msg  %> </p>
             <% } %>
             </div> 
             <br>
@@ -150,6 +151,8 @@
         </form>
     </main>
     <%- include('../partials/footer')%>
+    <script src= "/js/productos.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
