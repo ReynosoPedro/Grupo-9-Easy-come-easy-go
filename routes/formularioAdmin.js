@@ -5,6 +5,7 @@ const controller = require('../controllers/adminController')
 const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
 const permisosMiddleware = require('../middlewares/permisosMiddleware');
 const multer = require('multer');
+const fs = require('fs');
 const { check ,body} = require("express-validator");
 
 
@@ -22,6 +23,11 @@ body('image').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
+            fs.unlink(file.path, (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
             throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
@@ -37,6 +43,11 @@ body('image2').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
+            fs.unlink(file.path, (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
             throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
@@ -52,6 +63,11 @@ body('image3').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
+            fs.unlink(file.path, (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
             throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
@@ -81,6 +97,11 @@ body('image5').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
+            fs.unlink(file.path, (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
             throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
