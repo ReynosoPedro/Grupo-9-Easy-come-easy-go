@@ -14,7 +14,7 @@ const validateForm = [
 check('marca').notEmpty().withMessage('Debes completar la Marca del vehiculo'),
 check('modelo').notEmpty().withMessage('Debes completar el Modelo del vehiculo'),
 body('image').custom((value, {req})=>{
-    let file= req.file;
+    let file= req.files.imagen[0];
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
     if(!file){
@@ -22,14 +22,14 @@ body('image').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
     
     return true;
 }),
 body('image2').custom((value, {req})=>{
-    let file= req.file;
+    let file= req.files.imagen2[0];
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
     if(!file){
@@ -37,14 +37,14 @@ body('image2').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
     
     return true;
 }),
 body('image3').custom((value, {req})=>{
-    let file= req.file;
+    let file= req.files.imagen3[0];
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
     if(!file){
@@ -52,14 +52,14 @@ body('image3').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
     
     return true;
 }),
 body('image4').custom((value, {req})=>{
-    let file= req.file;
+    let file= req.files.imagen4[0];
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 
     if(!file){
@@ -67,22 +67,21 @@ body('image4').custom((value, {req})=>{
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
     
     return true;
 }),
 body('image5').custom((value, {req})=>{
-    let file= req.file;
+    let file= req.files.imagen5[0];
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-
     if(!file){
         throw new Error('Seleccione una imagen');
     }else{
         let fileExtension = path.extname(file.originalname);
         if(!acceptedExtensions.includes(fileExtension)){
-            throw new Error(`Extensiones permitidas son ${acceptedExtensions.join(', ')}`);
+            throw new Error(`Extensiones permitidas son `+acceptedExtensions);
         }
     }
     
