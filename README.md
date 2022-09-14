@@ -46,6 +46,29 @@ Car One, Muestra en su sitio web el producto y/o servicio que vamos a estar ofre
 ...Dispondremos de vehiculos con una amplia gama de marcas y modelos, donde en cada uno de ellos se podrá visualizar sus distintas caracteristicas y precios.
 + describir una pagina de las inspiradas , que nos gusta
 + 
+SPRINT 1
+Para el primer sprint se creó el repositorio donde se agregó a los integrantes del grupo.
+Fuimos reuniendonos por zoom para decidir la tematica de nuestro sitio y despues de muchas sugerencias, pudimos decidir por uno en particular. También fuimos colocando paginas como referencias para guiarnos. 
+Continuamos con los wireframes para las diferntes vistas y en las reuniones se fue decidiendo el logo del sitio.
+
+SPRINT 2
+En el primer sprint comenzamos a organizarnos de a poco. A partir del primer sprint nos dimos cuenta que debemos comenzar a darle importancia a algunos detalles, debemos hacer mas encuentros para poder profundizar estos.
+Debemos continuar consultando cosas que pueden ser sencillas pero importantes para el proyecto, consultar si hay alguna duda y estar en contacto.
+
+SPRINT 3
+Para este sprint implementamos el modulo EJS en las vistas que venimos trabajando. Creamos la carpeta de archivos parciales para poder implementar el footer y el header en las distitas vistas con include.
+Se creó las vistas para poder editar y agregar un vehiculo con los campos correspondientes.
+
+SPRINT 4
+En el cuarto sprint se realizaron los archivos json de productos con sus respectivos campos, de esta manera se realizó lo mismo para usuarios. Se continuo con el CRUD de los productos, donde se hicieron las 7 rutas, utilizando get, post, put y delete.
+
+SPRINT 5
+Para este sprint teniamos algunos campos del regiter y login del sprint anterior por lo que comenzamos con la subida de imagenes y encriptado de contraseñas. Pudimos adelantar las validaciones del back tanto del register como del login. Para las rutas de usuarios y huespedes creamos las carpetas middlewares para implementarlas en las rutas de usuarios y lograr que nos redireccione al perfil o login dependiendo si esta logeado o no.
+
+SPRINT 6
+En este sprint comenzamos colocando los puntos en el tablero de trabajo para poder repartirnos las tareas. Comenzamos con el diagrama de base de datos, para éste arreglamos un zoom y fuimos armando el diagrama y definiendo los tipos de datos. 
+Seguimos con la base de datos, al principio tuvimos unos inconvenientes con los script de estructura y datos pero consultando a los profesores pudimos hacerlas. Nos pasamos los archivos sql para poder trabajar con este.
+Seguimos con la instalacion de sequelize, creación de la carpeta y los modulos, con sus respectivas configuraciones y columnas con claves foraneas. Luego se realizó el CRUD tanto para los usuarios como para los productos, donde se fue implementando la db en lugar del json. 
 
 
 SPRINT 7
