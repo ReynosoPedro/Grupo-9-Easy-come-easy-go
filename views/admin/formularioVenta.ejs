@@ -21,8 +21,8 @@
             <div class="part1">
                 <div class="form">
                     <% console.log(locals.errors) %>
-                    <p> Marca  </p><select onclick="filter()" class="selectMarca" type="text" name="marca" id="marca" placeholder="Marca"  value="<%= locals.old && locals.old.marca? locals.old.marca : null %>">
-                    <option value="<%= locals.old && locals.old.marca? locals.old.marca : null %>" selected > <%= locals.old  && locals.old.marca ? bases[0][locals.old.marca-1].brand  : "Seleccione una opcion" %></option>
+                    <p> Marca  </p><select onclick="empty()" class="selectMarca" type="text" name="marca" id="marca" placeholder="Marca"  value="<%= locals.old && locals.old.marca? locals.old.marca : null %>">
+                    <option  value="<%= locals.old && locals.old.marca? locals.old.marca : null %>" selected > <%= locals.old  && locals.old.marca ? bases[0][locals.old.marca-1].brand  : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[0].length; i++){ %>
                                 <option value=<%= bases[0][i].id %> > <%= bases[0][i].brand %></option>
                         <% } %> 
@@ -34,7 +34,7 @@
                 <% } %>
                 </div>
                 <div class="form">
-                    <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo" value="<%= locals.old && locals.old.modelo? locals.old.modelo : null %>">
+                    <p> Modelo  </p><select onclick="filterModel()" type="text" name="modelo" id="modelo" placeholder="Modelo" value="<%= locals.old && locals.old.modelo? locals.old.modelo : null %>">
                         <option value="<%= locals.old && locals.old.modelo? locals.old.modelo : null %>" selected> <%= locals.old  && locals.old.modelo ? bases[1][locals.old.modelo-1].model : "Seleccione una opcion" %></option>
                     <!--    <% for(let i= 0; i < bases[1].length; i++){ %>
                             <option value=<%= bases[1][i].id %> > <%= bases[1][i].model %></option>
@@ -69,7 +69,7 @@
             </div>
             <div class="part2">
                 <div class="form">
-                    <p> Año </p><select type="number" name="year" id="year" placeholder="Año" value="<%= locals.old && locals.old.year? locals.old.year : null %>" >
+                    <p> Año </p><select  type="number" name="year" id="year" placeholder="Año" value="<%= locals.old && locals.old.year? locals.old.year : null %>" >
                     <option value="<%= locals.old && locals.old.year? locals.old.year : null %>" selected > <%= locals.old  && locals.old.year ? bases[4][locals.old.year-1].year : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[4].length; i++){ %>
                                 <option value= <%= bases[4][i].id %> ><%= bases[4][i].year %></option>

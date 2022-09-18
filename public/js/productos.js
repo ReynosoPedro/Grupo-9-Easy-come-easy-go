@@ -1,4 +1,11 @@
-function filter(){
+function empty (){
+    document.getElementById('modelo').value=0
+    document.getElementById('modelo').innerHTML="Seleccione una opcion";
+
+}
+
+
+function filterModel(){
     console.log(document.getElementById('marca').value);
     fetch("http://localhost:3050/modelosApi")
     .then(function(respuesta){
@@ -18,6 +25,8 @@ function filter(){
     })
 
 }
+
+
 
 
 window.onload = function(){
