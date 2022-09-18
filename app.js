@@ -22,6 +22,10 @@ const rutasUsers = require('./routes/users');
 const rutasAdmin = require('./routes/formularioAdmin');
 //rutas disponibles para todos los usuarios y visitantes home , productos etc
 const rutasViews = require('./routes/views');
+//construccion APIS productos
+const rutasApis = require('./routes/productosApis');
+
+
 
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
@@ -38,6 +42,8 @@ app.use( rutasUsers);
 app.use( rutasViews);
 
 app.use( rutasAdmin);
+
+app.use( rutasApis);
 
 app.use((req,res,next)=> {
     res.status(404).render('views/not-found');
