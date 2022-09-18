@@ -21,6 +21,10 @@ module.exports = (sequelize, dataTypes)=>{
         Año.hasMany(models.Productos, {
             as:"products",
             foreignKey:"year_id"
+        }) ,
+        Año.hasMany(models.Modelos, {
+            as:"models",
+            foreignKey:"year_id"
         }) 
 
     }

@@ -13,6 +13,14 @@ const { check ,body} = require("express-validator");
 
 const validateForm = [
 check('marca').notEmpty().withMessage('Debes completar la Marca del vehiculo'),
+check('kilometraje').notEmpty().withMessage('Debes completar el Kilometraje del vehiculo'),
+check('precio').notEmpty().withMessage('Debes completar el Precio del vehiculo'),
+check('year').notEmpty().withMessage('Debes completar el Año del vehiculo'),
+check('combustible').notEmpty().withMessage('Debes completar el combustible del vehiculo'),
+check('transmision').notEmpty().withMessage('Debes completar la transmision del vehiculo'),
+check('condicion').notEmpty().withMessage('Debes completar la condicion del vehiculo'),
+check('categoria').notEmpty().withMessage('Debes completar la categoria del vehiculo'),
+check('color').notEmpty().withMessage('Debes completar el Color del vehiculo'),
 check('modelo').notEmpty().withMessage('Debes completar el Modelo del vehiculo'),
 body('image').custom((value, {req})=>{
     let file= req.files.imagen[0];

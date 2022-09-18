@@ -20,7 +20,20 @@ module.exports = (sequelize, dataTypes)=>{
         Modelo.hasMany(models.Productos, {
             as:"products",
             foreignKey:"model_id"
+        })
+        Modelo.belongsTo(models.Marcas, {
+            as:"brands",
+            foreignKey:"brand_id"
+        }),
+        Modelo.belongsTo(models.Categorias,{
+            as:"categories",
+            foreignKey:"categories_id"
+        }),
+        Modelo.belongsTo(models.Antiguedad,{
+            as:"years",
+            foreignKey:"year_id"
         }) 
+        
 
     }
 
