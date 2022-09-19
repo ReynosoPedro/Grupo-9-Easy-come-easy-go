@@ -24,7 +24,8 @@ const rutasAdmin = require('./routes/formularioAdmin');
 const rutasViews = require('./routes/views');
 //construccion APIS productos
 const rutasApis = require('./routes/productosApis');
-
+//API usuarios
+const rutasApisUsers = require('./routes/usuariosApis')
 
 
 // lineas para que funciones POST
@@ -44,6 +45,8 @@ app.use( rutasViews);
 app.use( rutasAdmin);
 
 app.use( rutasApis);
+
+app.use( rutasApisUsers);
 
 app.use((req,res,next)=> {
     res.status(404).render('views/not-found');
