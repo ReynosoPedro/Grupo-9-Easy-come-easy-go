@@ -9,6 +9,16 @@ header{
     align-items: center;
 
 }
+#busqueda{
+    display: flex;
+    background-color: #ccb23e;  
+    padding-top: 0px;
+    padding-bottom: 0px;
+    justify-content: center;
+    font-size: auto;
+    width: 100vw;
+    max-width: 100%;
+}
 
 .seccion-barra1 {
     display: none;
