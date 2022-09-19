@@ -43,6 +43,7 @@
 }
 a {
     text-decoration: none;
+    color: rgb(255, 255, 255);
 }
 body {
     background-color: #595959;
@@ -130,7 +131,9 @@ body {
     color: white;
 }
 
-
+.shop-left{
+    margin-left: 0px;
+}
 
 .avatar {
     width: 10%;
@@ -237,6 +240,41 @@ footer p {
     margin-top: 12px;
     margin-bottom: 12px;
 }
+
+
+
+#menu-hamb {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #7c7c79;
+    right: -200px;
+}
+
+
+#menu-hamb.burger-mostrar{
+    right: 0
+}
+
+.productos-titulo{
+    color:rgb(0, 0, 0)
+}
+.productos-precio{
+    color: rgb(0, 0, 0);
+}
+
+#menu-hamb ul li {
+    line-height: 30px;
+    border-bottom: solid 1px #ccb23e;
+}
+#menu-hamb ul{
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+
+
+
 
 @media(min-width:362px){
 

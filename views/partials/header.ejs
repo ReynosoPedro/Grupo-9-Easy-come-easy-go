@@ -37,7 +37,38 @@
     <a class="sesion2" href="/login">Inicia sesion</a>
     <% } %>
   </div>
+
+
+
+
+  
+  <div id="menu-hamb" >
+    <ul type = "none">
+      <li><a href="/">Home</a></li>
+      <% if( locals.userLogged==null){%> <a> </a> <% }else if
+    (locals.userLogged.state== 9 || locals.userLogged.rol== 9) { %>
+    <li><a href="/administrar">Admin</a></li>
+    <% } %> 
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/productos/1">Catálogo</a></li>
+      <li><a href="/agregar">Vende tu auto</a></li>
+      <% if (locals.isLogged) { %>
+      <li><a class="shop-left" class="fa-solid fa-basket-shopping" href="/shop-cart">Carrito</a></li>
+        <%= locals.userLogged.user %>
+      <li><a href="/profile">Mi perfil</a></li>
+      <li><a href="/logout">Cerrar sesion</a></li>
+        <% } else { %>
+      <li><a href="/register">Registrate</a></li>
+      <li><a href="/login">Inicia sesion</a></li>
+      <% } %>
+    </ul>
+  </div>
+
+
+
+
   <a href="#" class="burger-menu"><i class="fas fa-bars"></i></a>
+  <script src= "js/menuBurger.js"></script>
 </header>
 <span id="busqueda">
 <br>
