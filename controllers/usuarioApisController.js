@@ -4,16 +4,8 @@ const sequelize= db.sequelize;
 const controller ={
     list: (req, res) => {
         db.Usuarios.findAll({
-            details : [
-                "id" ,
-                "full_name" ,
-                "user",
-                "date_birth",
-                "email",
-                "phone",
-                "estado",
-                "image"]
-        })
+            attributes: ['id', 'full_name', 'user', 'date_birth','email', 'phone','image']
+    })
             .then(usuario => {
                let response = {
                 info: {
@@ -28,17 +20,9 @@ const controller ={
 
     },
     user: (req, res) => {
-        db.Usuarios.findByPk(req.params.id, {
-            details : [
-                "id" ,
-                "full_name" ,
-                "user",
-                "date_birth",
-                "email",
-                "phone",
-                "estado",
-                "image"]
-        })
+        db.Usuarios.findByPk(req.params.id,{
+            attributes: ['id', 'full_name', 'user', 'date_birth','email', 'phone','image']
+    })
             .then(usuario => {
                let response = {
                 info: {
