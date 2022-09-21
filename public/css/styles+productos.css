@@ -9,6 +9,30 @@ header{
     align-items: center;
 
 }
+
+
+#menu-hamb.burger-mostrar{
+    right: 0
+}
+
+
+#menu-hamb ul li {
+    line-height: 30px;
+    border-bottom: solid 1px #ccb23e;
+}
+#menu-hamb ul{
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+.burger-menu {
+    font-size: 50px;
+    text-align: center;
+}
+
+
+
+
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
@@ -175,6 +199,10 @@ img{
         
         
     }
+    .burger-menu {
+        display: none;
+    }
+    
     .productos{
         flex-basis:35%;
         flex-grow: 2;
