@@ -4,17 +4,22 @@ const sequelize= db.sequelize;
 
 const pruductosApis ={
     list: (req, res) =>  {
-        db.Productos.findAll()
-            .then(function(vehiculos) {
-                return res.status(200).json({
-                    // conteo de los productos
-                    total: vehiculos.length,
-                    // resultado de find 
-                    data : vehiculos,
-                    // resultado de estado
-                    status:200
-                });
-            })
+        db.Productos.findAll({ 
+            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+        })
+        .then(function(vehiculos) {
+            return res.status(200).json({
+                // conteo de los productos
+                total: vehiculos.length,
+                // resultado de find 
+                data : vehiculos,
+                // resultado de estado
+                status:200
+        })
+
+        })
+
+            
 
     },
     show: (req, res) =>  {

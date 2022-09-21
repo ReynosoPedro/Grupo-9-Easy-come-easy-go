@@ -17,7 +17,16 @@
         <ul class="errorescamp"></ul>
         <form method="POST" action="agregar" enctype="multipart/form-data" >
             <div class="formulario" id="formulario">
-            
+            <!--    
+                los datos para el formulario llegan en un array llamado bases=[marcas,modelos,categorias,uso,edad,color]
+                0- marcas 
+                1-modelos
+                2-categorias
+                3-kilometraje
+                4-año (habia un conflicto con year entonces le tuve que ponen edad)
+                5-colores
+                ejemplo si quiero mostrar la marca 1->bases[0][1].brand y su ID seria->bases[0][1].id
+            -->
             <div class="part1">
                 <div class="form">
                     <% console.log(locals.errors) %>
@@ -65,7 +74,7 @@
                                 <option value= <%= bases[5][i].id %> ><%= bases[5][i].color%></option>
                         <% } %>
                         </select >
-                </div>
+                </div>  
             </div>
             <div class="part2">
                 <div class="form">
@@ -107,9 +116,14 @@
                     <% } %>
                     </select >
                 </div>
+
             </div>
             </div>
-            <br>
+        <p> Descripcion </p><input class="description" type="text" name="descripcion" id="descripcion" placeholder="Danos una breve descripcion del estado del vehiculo"  
+                            value="<%= locals.old && locals.old.descripcion? locals.old.descripcion : null %>"></input>
+        <br>
+        <br>
+        <br>
             <div class="custom-file">
                 <label for ="imagen">Subi una foto del costado derecho</label>
                 <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept=".png, .jpg, .jpeg" value="" />  
