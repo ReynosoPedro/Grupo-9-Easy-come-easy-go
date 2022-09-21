@@ -4,27 +4,64 @@ const sequelize= db.sequelize;
 
 const pruductosApis ={
     list: (req, res) =>  {
-        db.Productos.findAll({ 
+        let categories=[];
+        db.Categorias.findAll()
+        .then(function(categorias) { 
+            for(let i=0; i<categorias.length ;i++){
+                categories.push({
+                    id: categorias[i].id,
+                    category: categorias[i].type_auto,
+                    count: 0,
+                })
+                }
+
+            })
+        
+        
+        const products=[];
+        
+        db.Productos.findAll({       
+            order : [["categories_id","ASC"]],    
             include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
         })
-        .then(function(vehiculos) {
-            return res.status(200).json({
-                // conteo de los productos
-                total: vehiculos.length,
-                // resultado de find 
-                data : vehiculos,
-                // resultado de estado
-                status:200
-        })
+            .then(function(vehiculos) {
+                for(let i=0; i<vehiculos.length ;i++){ 
+                    products.push({
+                        id: vehiculos[i].id,
+                        name: vehiculos[i].brands.brand +" "+vehiculos[i].models.model,
+                        categories: vehiculos[i].categories.type_auto,
+                        description: vehiculos[i].descripcion,
+                        detail: "http://localhost:3050/api/products/"+vehiculos[i].id ,
+                    })
+                categories[vehiculos[i].categories_id].count++;
+                }
+                categories=categories.filter((cero)=> cero.count!=0 )
 
+                    return res.status(200).json({
+                        // conteo de los productos
+                        total: products.length,
+                        // conteo de los productos por categoria
+                        countByCategory: categories,
+                        // resultado de find 
+                        data : products,
+                        // resultado de estado
+                        status:200
+            })
         })
+        
+        
 
             
 
     },
     show: (req, res) =>  {
-        db.Productos.findByPk(req.params.id)
+        db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
         .then(function(vehiculo) {
+            vehiculo.image_filename="http://localhost:3050/images/autos/"+vehiculo.image_filename;
+            vehiculo.image_filename2="http://localhost:3050/images/autos/"+vehiculo.image_filename2;
+            vehiculo.image_filename3="http://localhost:3050/images/autos/"+vehiculo.image_filename3;
+            vehiculo.image_filename4="http://localhost:3050/images/autos/"+vehiculo.image_filename4;
+            vehiculo.image_filename5="http://localhost:3050/images/autos/"+vehiculo.image_filename5;
             return res.status(200).json({
                 data: vehiculo,
                 status:200
