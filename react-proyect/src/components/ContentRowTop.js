@@ -1,6 +1,6 @@
 import React from 'react';
 import VehiculosInDb from './VehiculosInDb';
-import ContentRowMovies from './ContentRowMovies';
+import ContentRowProducts from './ContentRowProducts';
 function ContentRowTop(){
     return(
         <React.Fragment>
@@ -11,7 +11,7 @@ function ContentRowTop(){
 					</div>
 				
 					{/*<!-- Content Row Movies-->*/}
-					<ContentRowMovies />
+					<ContentRowProducts />
 					{/*<!-- End movies in Data Base -->*/}
 					
 	
