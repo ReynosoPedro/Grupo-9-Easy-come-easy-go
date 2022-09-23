@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Editar Producto</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-wid th">
+    <meta charset="utf-8">
+    <link href="/css/styles+home.css" rel="stylesheet">
+    <link href="/css/styles+edit.css" rel="stylesheet">
+    <link href="/css/styles vender.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <%- include('../partials/header')%>
+    <main>
+        
+        <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename2%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename3%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename4%>" style='height: 30%; width: 30%; object-fit: fill' >
+        <img src="\images\autos\<%=bases[6].image_filename5%>" style='height: 30%; width: 30%; object-fit: fill' >
+        
+        <ul class="errorescamp"></ul>
+        <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
+            <div class="formulario" id="formulario">
+                <div class="part1">
+                    <div class="form">
+                        <p> Marca  </p><select type="text" name="marca" id="marca" placeholder="Marca"  >
+                            <option value=<%=bases[0][(bases[6].brand_id-1)].brand %> selected disabled hidden><%=bases[0][(bases[6].brand_id-1)].brand %></option>
+                            <% let testmarca="start" %>
+                            <% for(let i= 0; i < bases[0].length; i++){ %>
+                            <% if (testmarca== bases[0][i].brand) { %>
+                            <% }else {  %>
+                                    <option value=<%= bases[0][i].id %> > <%= bases[0][i].brand %></option>
+                                    <%   testmarca=bases[0][i].brand; %>
+                            <% } %>
+                            
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <p> Modelo  </p><select  type="text" name="modelo" id="modelo" placeholder="Modelo"  >
+                            <option value=<%= bases[1][(bases[6].model_id-1)].model %> selected disabled hidden><%= bases[1][(bases[6].model_id-1)].model %></option>
+                        <% for(let i= 0; i < bases[1].length; i++){ %>
+                        <% if (testmarca== bases[1][i].model) { %>
+                        <% }else {  %>
+                                <option value=<%= bases[1][i].id %> > <%= bases[1][i].model %></option>
+                                <%   testmarca=bases[1][i].model; %>
+                        <% } %>
+                        <% } %>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje"  >
+                            <option value=<%=bases[3][(bases[6].km_id-1)].intervals%> selected disabled hidden><%=bases[3][(bases[6].km_id-1)].intervals%></option>
+                            <% for(let i= 0; i < bases[3].length; i++){ %>
+                            <% if (testmarca== bases[3][i].intervals) { %>
+                            <% }else {  %>
+                                    <option value= <%= bases[3][i].id %> ><%= bases[3][i].intervals %></option>
+                                    <%   testmarca=bases[2][i].intervals; %>
+                            <% } %>
+                            <% } %>
+                            </select >
+                    </div>
+                    <div class="form">
+                        <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"   value="<%=bases[6].prices *10%>">
+                    </div>
+                    <div class="form">
+                        <p> Combustible </p><select type="text" name="combustible" id="combustible" placeholder="Combustible" value=<%=bases[6].fuel_type%>>  >
+                        <option value="Nafta" >Nafta </option>
+                        <option value="Gasoil" >Gasoil</option>
+                        <option value="GNC" >GNC </option>
+                        <option value="Electrico" >Electrico </option>
+                    </select >
+                    </div>  
+
+                </div>
+                <div class="part2">
+                    <div class="form">
+                        <p> Color </p><select type="text" name="color" id="color" placeholder="Color"  >
+                            <option value=<%= bases[5][(bases[6].color_id-1)].color%>selected disabled hidden><%= bases[5][(bases[6].color_id-1)].color%></option>
+                            <% for(let i= 0; i < bases[5].length; i++){ %>
+                            <% if (testmarca== bases[5][i].color) { %>
+                            <% }else {  %>
+                                    <option value= <%= bases[5][i].id %> ><%= bases[5][i].color%></option>
+                                    <%   testmarca=bases[5][i].color; %>
+                            <% } %>
+                            <% } %>
+                            </select >
+                    </div>
+                    <div class="form">
+                        <p> Año </p><select type="number" name="year" id="year" placeholder="Año"  value="<%=bases[6].year%>">>
+                            <option value=<%=bases[4][(bases[6].year_id-1)].year%> selected disabled hidden><%=bases[4][(bases[6].year_id-1)].year%></option>
+                            <% for(let i= 0; i < bases[4].length; i++){ %>
+                            <% if (testmarca== bases[4][i].year) { %>
+                            <% }else {  %>
+                                    <option value= <%= bases[4][i].id %> ><%= bases[4][i].year %></option>
+                                    <%   testmarca=bases[4][i].year; %>
+                            <% } %>
+                            <% } %>
+                            </select >
+                    </div>
+                    <div class="form">
+                        <p> Transmision </p><input type="text" name="transmision" id="transmision" placeholder="Transmision"  value=<%=bases[6].transmission%>>
+                    </div>
+  
+                    <div class="form">
+                        <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición" value=<%=bases[6].conditions%>>
+                    </div>
+                    <div class="form">
+                        <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria"  >
+                        <option value=<%=bases[2][(bases[6].categories_id)].type_auto%> selected disabled hidden><%=bases[2][(bases[6].categories_id)].type_auto%></option>
+                        <% for(let i= 0; i < bases[2].length; i++){ %>
+                        <% if (testmarca== bases[2][i].type_auto) { %>
+                        <% }else {  %>
+                                <option value= <%= bases[2][i].id %> ><%= bases[2][i].type_auto %></option>
+                                <%   testmarca=bases[2][i].type_auto; %>
+                        <% } %>
+                        <% } %>
+                        </select >
+                    </div>
+                </div>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage" id="oldImage" value=<%=bases[6].image_filename%> />
+                    <label for ="imagen">Subi una foto del costado derecho</label>
+                    <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  />  
+                    <% if(locals.errors && errors.imagen){ %>
+                        <p class="tableAdmin_Error"><%= errors.imagen.msg  %> </p>
+                    <% } %>
+                </div>
+                <br>
+                <div class="custom-file"> 
+                    <input type="hidden" name="oldImage2" id="oldImage2" value=<%=bases[6].image_filename2%> />
+                    <label for ="imagen2">Subi una foto del costado izquierdo </label>
+                <input  type="file" name="imagen2" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  />  
+                <% if(locals.errors && errors.imagen2){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen-auto2.msg  %> </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage3" id="oldImage3" value=<%=bases[6].image_filename3%> />
+                    <label for ="imagen3">Subi una foto del frente </label>
+                <input  type="file" name="imagen3" placeholder="Elige una imagen"  accept= ".jpg, .jpeg .png" /> 
+                <% if(locals.errors && errors.imagen3){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen3.msg  %>  </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage4" id="oldImage4" value=<%=bases[6].image_filename4%> />
+                    <label for ="imagen4">Subi una foto de atras </label>
+                <input  type="file" name="imagen4" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  /> 
+                <% if(locals.errors && errors.imagen4){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen4.msg  %>  </p>
+                <% } %>
+                </div>
+                <br>
+                <div class="custom-file">
+                    <input type="hidden" name="oldImage5" id="oldImage5" value=<%=bases[6].image_filename5%> />
+                    <label for ="imagen5">Subi una foto del interior </label>
+                <input type="file" name="imagen5" placeholder="Elige una imagen" accept= ".jpg, .jpeg .png"  /> 
+                <% if(locals.errors && errors.imagen5){ %>
+                <p class="tableAdmin_Error"><%= errors.imagen5.msg  %> </p>
+                <% } %>
+                </div> 
+                <button class="formb" type="submit">Editar</button>   
+            </form>
+    <%- include('../partials/footer')%>
+    <script src= "/js/productosedit.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
