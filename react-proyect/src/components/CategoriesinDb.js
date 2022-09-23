@@ -1,12 +1,12 @@
 
 import React, { Component } from 'react';
-import Vehicle  from './Vehicle';
+import Category  from './Category';
 
-class VehiculosInDb extends Component  {
+class CategoriesinDb extends Component  {
     constructor(){
         super()
         this.state = {
-            vehicleList:[],
+            CategoriesList:[],
         }
     }
 
@@ -16,7 +16,7 @@ class VehiculosInDb extends Component  {
                 return respuesta.json()
             })
             .then(products =>{
-                this.setState({vehicleList: products.data})
+                this.setState({CategoriesList: products.countByCategory})
             })
             .catch(error => console.log(error))
 
@@ -34,16 +34,14 @@ class VehiculosInDb extends Component  {
                             <div className="card-body">
                                 <div className="row">
                                     {    
-                                        this.state.vehicleList.map((vehicle,index)=>{
-                                           
-                                            return  <Vehicle  {...vehicle}  key={index} />
+                                        this.state.CategoriesList.map((category,index)=>{
+                                            return  <Category  {...category}  key={index} />
                                         })
                                     }
                                 </div>
                             </div>
                         </div>
                     </div>
-               
             </React.Fragment>
         )
     
@@ -53,4 +51,4 @@ class VehiculosInDb extends Component  {
 
 
 
-export default VehiculosInDb;
+export default CategoriesinDb;

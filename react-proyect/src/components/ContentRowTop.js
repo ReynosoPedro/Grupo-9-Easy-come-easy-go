@@ -1,5 +1,6 @@
 import React from 'react';
 import VehiculosInDb from './VehiculosInDb';
+import CategoriesinDb from './CategoriesinDb'
 import ContentRowProducts from './ContentRowProducts';
 function ContentRowTop(){
     return(
@@ -30,8 +31,10 @@ function ContentRowTop(){
 						{/*<!-- Genres in DB -->*/}
 						<VehiculosInDb />
 
-						{/*<!--End Genres In Db-->*/}		
+						{/*<!--End Genres In Db-->*/}	
+						<CategoriesinDb />	
 					</div>
+					
 				</div>
 				{/*<!--End Content Row Top-->*/}
 
