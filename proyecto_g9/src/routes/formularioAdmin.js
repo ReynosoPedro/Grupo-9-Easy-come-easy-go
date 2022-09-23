@@ -125,7 +125,7 @@ body('image5').custom((value, {req})=>{
 const storage=multer.diskStorage(
     {
         destination:function(req,file,cb){
-            let folder=path.join(__dirname,'../public/images/autos');
+            let folder = path.join(__dirname, "../../public/images/autos");
             cb(null,folder);
     },
         filename: function (req,file, cb){

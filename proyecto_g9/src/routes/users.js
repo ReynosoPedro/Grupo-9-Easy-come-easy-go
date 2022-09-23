@@ -57,7 +57,8 @@ const validations = [
 const storage= multer.diskStorage(
     {
         destination: (req,file,cb)=> {
-            cb (null , './public/images/usuarios');
+            let folder = path.join(__dirname, "../../public/images/usuarios");
+            cb (null , folder);
         },
         filename: function (req,file, cb){
             let fileName= `${Date.now()}_img${path.extname(file.originalname)}`;
