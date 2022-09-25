@@ -214,7 +214,6 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
         .then(function(vehiculo){
     
             fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename));
-             
             fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename2));
             fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename3));
             fs.unlinkSync(path.resolve(__dirname,'..','public/images/autos',vehiculo.image_filename4));

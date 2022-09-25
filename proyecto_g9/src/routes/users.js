@@ -23,8 +23,6 @@ const { body } = require('express-validator');
 
 const validations = [  
     body('nombreCompleto').notEmpty().withMessage('Ingrese su Nombre completo'),
-    body('nombreCompleto').isLength({
-        min: 2 }).withMessage('Ingrese un minimo de dos caracteres'),
     body('usuario').isLength({min: 1
         }).withMessage('Ingrese un Usuario'),
     body('password').notEmpty().withMessage('Ingrese una contraseña').isLength({
@@ -73,7 +71,7 @@ router.get('/register',guestMiddleware, controller.register);
 // procesamiento del formulario de creación
 router.post('/register', uploadFile.single("avatar"), validations,controller.newUser);
 // formulario de edit
-router.get('/editarPerfil', permisosMiddleware, controller.formEditar);
+router.get('/editarPerfil', permisosMiddleware,  validations, controller.formEditar);
 // procesamiento del formulario de edit
 router.put('/editarPerfil', uploadFile.single("avatar"), controller.editarPerfil);
 
