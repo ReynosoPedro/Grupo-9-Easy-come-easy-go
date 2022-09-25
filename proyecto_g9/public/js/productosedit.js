@@ -1,3 +1,35 @@
+function empty (){
+    document.getElementById('modelo').value=0
+    document.getElementById('modelo').innerHTML="Seleccione una opcion";
+
+}
+
+
+function filterModel(){
+    console.log(document.getElementById('marca').value);
+    fetch("http://localhost:3050/modelosApi")
+    .then(function(respuesta){
+        return respuesta.json();
+    })
+    .then(function(informacion){
+        let select = document.getElementById('modelo');
+        let filter = document.getElementById('marca').value;
+        for (let i=0; i< informacion.data.length ;i++){
+            if (informacion.data[i].brand_id==filter){
+                var opt = document.createElement('option');
+                opt.value = informacion.data[i].id;
+                opt.innerHTML = informacion.data[i].model;
+                select.appendChild(opt);
+            }
+        }
+    })
+
+}
+
+
+
+
+
 window.onload = function(){
 
     let form = document.querySelector('form')
