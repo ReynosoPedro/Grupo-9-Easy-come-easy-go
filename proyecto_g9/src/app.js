@@ -16,6 +16,10 @@ app.use(session({
 
 app.use(userLoggedMiddleware);
 
+let url="http://localhost:3050/productos/1";
+let numeroPagina= url.split("/");
+console.log(numeroPagina)
+
 
 const rutasUsers = require('./routes/users');
 //rutas disponibles para el ADM  valga la redundancia
