@@ -102,19 +102,15 @@ header span{
     display: flex;
     background-color: #ccb23e;  
     padding-bottom: 0px;
-    margin-bottom: 5px;
     justify-content: center;
     font-size: auto;
     width: 100vw;
 }
 #busqueda h4{
-    border-radius: 5px;
     width: 90%;   
     background-color: white;
     text-align: center;
     color: gray;
-    margin: 7px 0px ;
-    padding: 2px;
 }
 
 body {

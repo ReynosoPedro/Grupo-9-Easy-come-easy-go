@@ -49,6 +49,7 @@ body {
     background-color: #595959;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0%;
+    padding-bottom: 0%;
 }
 
 .main-header{
@@ -148,6 +149,8 @@ body {
     font-size: auto;
     width: 100vw;
     max-width: 100%;
+
+
 }
 #busqueda h4{
     border-radius: 5px;
@@ -155,8 +158,8 @@ body {
     background-color: white;
     text-align: center;
     color: gray;
-    margin: 7px 0px ;
-    padding: 2px;
+
+
 }
 
 .burger-menu {

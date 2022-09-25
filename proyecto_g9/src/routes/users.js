@@ -22,9 +22,9 @@ const { body } = require('express-validator');
 
 
 const validations = [  
-    body('nombreCompleto').notEmpty().withMessage('Ingrese su Nombre completo').isLength({
-        min: 2
-        }).withMessage('Ingrese un minimo de dos caracteres'),
+    body('nombreCompleto').notEmpty().withMessage('Ingrese su Nombre completo'),
+    body('nombreCompleto').isLength({
+        min: 2 }).withMessage('Ingrese un minimo de dos caracteres'),
     body('usuario').isLength({min: 1
         }).withMessage('Ingrese un Usuario'),
     body('password').notEmpty().withMessage('Ingrese una contraseña').isLength({

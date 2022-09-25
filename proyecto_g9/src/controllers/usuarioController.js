@@ -86,11 +86,12 @@ const users = {
             }
             ,{
                 where:{id: req.session.userLogged.id}
-            }) 
-            .then (function (user){
-                req.session.destroy();
-                res.redirect('/login'); 
-            }) 
+            })
+            db.Usuarios.findByPk(req.session.userLogged.id)
+            .then(function(usuario){
+            req.session.userLogged = usuario;
+            res.redirect('/'); 
+        })
 
     },
     shopCar: (req, res) => {

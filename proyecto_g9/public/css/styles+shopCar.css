@@ -12,8 +12,6 @@ body{
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
-    padding-top: 0px;
-    padding-bottom: 0px;
     justify-content: center;
     font-size: auto;
     width: 100vw;
