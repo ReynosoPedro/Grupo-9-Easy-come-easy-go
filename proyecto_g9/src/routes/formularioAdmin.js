@@ -5,6 +5,7 @@ const controller = require('../controllers/adminController')
 const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
 const permisosMiddleware = require('../middlewares/permisosMiddleware');
 const validateForm = require('../middlewares/validacionesProductosMiddleware');
+const validateFormEdit = require('../middlewares/validacionesEditMiddleware');
 
 const multer = require('multer');
 const fs = require('fs');
@@ -55,7 +56,7 @@ router.get('/agregar',  permisosMiddleware, controller.formCrear);
 router.post('/agregar', multipleUpload,  validateForm , controller.crear);
 //edit
 router.get('/editar/:id', permisosMiddleware, controller.formEdit);
-router.put('/editar/:id', multipleUpload ,  validateForm ,controller.edit);
+router.put('/editar/:id', multipleUpload ,  validateFormEdit ,controller.edit);
 //delete
 router.get('/delete/:id', permisosMiddleware, controller.formDelete)
 router.delete ('/delete/:id', controller.delete)

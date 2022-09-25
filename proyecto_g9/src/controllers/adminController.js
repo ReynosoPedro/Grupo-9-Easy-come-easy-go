@@ -129,7 +129,10 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
     },
 
     edit: (req, res) => {
-        console.log(req.files)
+    
+        let errors= validationResult(req)
+        
+        if (errors.isEmpty()) {
                 db.Productos.update({
                     name:req.session.userLogged.email,
                     brand_id:req.body.marca,         
@@ -152,6 +155,19 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 where:{id:req.params.id}
             })
             res.redirect ('/productos/1')
+        } else {
+            let vehEditar=db.Productos.findByPk(req.params.id)
+            let marcas =db.Marcas.findAll() 
+            let modelos =db.Modelos.findAll()
+            let categorias =db.Categorias.findAll()
+            let uso =db.Km_intervalos.findAll()
+            let edad =db.Antiguedad.findAll()
+            let color =db.Colores.findAll()
+            Promise.all([marcas,modelos,categorias,uso,edad,color,vehEditar])
+                .then(function(bases){
+                    res.render('admin/formularioEdit' , {bases,errors: errors.mapped(), old: req.body})
+                })
+        }
                 
     /* JSON EDIT 
 
