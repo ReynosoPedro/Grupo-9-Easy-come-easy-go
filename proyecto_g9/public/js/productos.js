@@ -6,7 +6,6 @@ function empty (){
 
 
 function filterModel(){
-    console.log(document.getElementById('marca').value);
     fetch("http://localhost:3050/modelosApi")
     .then(function(respuesta){
         return respuesta.json();

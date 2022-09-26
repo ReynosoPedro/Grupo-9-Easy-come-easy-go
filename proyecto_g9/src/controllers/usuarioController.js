@@ -121,19 +121,20 @@ const users = {
             if(usuario){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, usuario.password);
             if(isOkThePassword){
-                delete usuario.password;
-                req.session.userLogged = usuario;
-                return res.redirect('/login');}
+                    delete usuario.password;
+                        req.session.userLogged = usuario;
+                            return res.redirect('/login');} 
+            
                 return res.render('users/login',{
                     errors:{
-                        usuario:{
+                        password:{
                             msg: 'Contraseñas invalidas'
                         }
                     }
                 });}
                 return res.render('users/login',{
                     errors:{
-                        usuario:{
+                        email:{
                             msg: 'Usuario no registrado'
                         }
                     }

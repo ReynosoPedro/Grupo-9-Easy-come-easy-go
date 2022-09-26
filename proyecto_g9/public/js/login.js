@@ -1,3 +1,4 @@
+
 window.onload = function(){
 
     let form = document.querySelector('form')
@@ -23,11 +24,6 @@ window.onload = function(){
             let reEmail  = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             if(reEmail.test(valueInput) == true){
                 esconderError(divInput, errorDiv)
-                Swal.fire(
-                    'Excelente!',
-                    'Log in completo!',
-                    'success'
-                )
             }else{
                 mostrarError(divInput, errorDiv, 'Ingresar un formato de correo electrónico')
                 e.preventDefault()
