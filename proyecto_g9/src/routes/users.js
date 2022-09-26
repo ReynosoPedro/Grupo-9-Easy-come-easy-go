@@ -3,7 +3,6 @@ const router = express.Router();
 const path = require('path');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
-const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
 const permisosMiddleware =require('../middlewares/permisosMiddleware');
 
 const controller = require('../controllers/usuarioController');

@@ -3,6 +3,7 @@ const path = require('path');
 const router = express.Router();
 const controller = require('../controllers/adminController')
 const autenticadoMiddleware = require('../middlewares/autenticadoMiddleware');
+const DeleteEditMiddleware  = require('../middlewares/DeleteEditMiddleware');
 const permisosMiddleware = require('../middlewares/permisosMiddleware');
 const validateForm = require('../middlewares/validacionesProductosMiddleware');
 const validateFormEdit = require('../middlewares/validacionesEditMiddleware');
@@ -55,10 +56,10 @@ router.get('/administrar',autenticadoMiddleware, controller.panel)
 router.get('/agregar',  permisosMiddleware, controller.formCrear);
 router.post('/agregar', multipleUpload,  validateForm , controller.crear);
 //edit
-router.get('/editar/:id', permisosMiddleware, controller.formEdit);
+router.get('/editar/:id', DeleteEditMiddleware, controller.formEdit);
 router.put('/editar/:id', multipleUpload ,  validateFormEdit ,controller.edit);
 //delete
-router.get('/delete/:id', permisosMiddleware, controller.formDelete)
+router.get('/delete/:id', DeleteEditMiddleware, controller.formDelete)
 router.delete ('/delete/:id', controller.delete)
 
 

@@ -23,7 +23,7 @@ const validateForm = [
         if(!file){
             throw new Error('Seleccione una imagen');
         }else{
-            let fileExtension = path.extname(file.originalname);
+            let fileExtension = path.extname(file[0].originalname);
             if(!acceptedExtensions.includes(fileExtension)){
                 fs.unlink(file[0].path, (err) => {
                     if (err) {
@@ -37,15 +37,15 @@ const validateForm = [
         return true;
     }),
     body('image2').custom((value, {req})=>{
-        let file= req.files.imagen2;
+        let file2= req.files.imagen2;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     
-        if(!file){
+        if(!file2){
             throw new Error('Seleccione una imagen');
         }else{
-            let fileExtension = path.extname(file.originalname);
+            let fileExtension = path.extname(file2[0].originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                fs.unlink(file[0].path, (err) => {
+                fs.unlink(file2[0].path, (err) => {
                     if (err) {
                         console.log(err)
                     }
@@ -57,15 +57,15 @@ const validateForm = [
         return true;
     }),
     body('image3').custom((value, {req})=>{
-        let file= req.files.imagen3;
+        let file3= req.files.imagen3;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     
-        if(!file){
+        if(!file3){
             throw new Error('Seleccione una imagen');
         }else{
-            let fileExtension = path.extname(file.originalname);
+            let fileExtension = path.extname(file3[0].originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                fs.unlink(file[0].path, (err) => {
+                fs.unlink(file3[0].path, (err) => {
                     if (err) {
                         console.log(err)
                     }
@@ -77,15 +77,15 @@ const validateForm = [
         return true;
     }),
     body('image4').custom((value, {req})=>{
-        let file= req.files.imagen4;
+        let file4= req.files.imagen4;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     
-        if(!file){
+        if(!file4){
             throw new Error('Seleccione una imagen');
         }else{
-            let fileExtension = path.extname(file.originalname);
+            let fileExtension = path.extname(file4[0].originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                fs.unlink(file[0].path, (err) => {
+                fs.unlink(file4[0].path, (err) => {
                     if (err) {
                         console.log(err)
                     }
@@ -97,14 +97,14 @@ const validateForm = [
         return true;
     }),
     body('image5').custom((value, {req})=>{
-        let file= req.files.imagen5;
+        let file5= req.files.imagen5;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-        if(!file){
+        if(!file5){
             throw new Error('Seleccione una imagen');
         }else{
-            let fileExtension = path.extname(file.originalname);
+            let fileExtension = path.extname(file5[0].originalname);
             if(!acceptedExtensions.includes(fileExtension)){
-                fs.unlink(file[0].path, (err) => {
+                fs.unlink(file5[0].path, (err) => {
                     if (err) {
                         console.log(err)
                     }
