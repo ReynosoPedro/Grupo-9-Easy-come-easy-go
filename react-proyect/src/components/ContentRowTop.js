@@ -1,8 +1,32 @@
-import React from 'react';
+import React,{useState,useEffect} from "react";
+import LastProductInDb from './LastProductInDb';
 import VehiculosInDb from './VehiculosInDb';
 import CategoriesinDb from './CategoriesinDb'
 import ContentRowProducts from './ContentRowProducts';
 function ContentRowTop(){
+
+	const [productos, setProductos] = useState(["productos"])
+
+	let ultimoProduct;
+	
+	const fetchProductos = async () => {
+	  const res = await fetch("http://localhost:3050/api/products/", {
+		  method: 'GET',
+		  headers: {
+			  Accept: 'application/json',
+			  'Content-Type': 'application/json',
+		  },
+	  })
+	  const productoArr = await res.json()
+	  setProductos(productoArr.data)
+  }
+  useEffect(()=>{
+	  fetchProductos()
+  },[])
+  
+  if(productos[productos.length-1].id){
+	  ultimoProduct = productos[productos.length-1]
+	}
     return(
         <React.Fragment>
 				{/*<!-- Content Row Top -->*/}
@@ -19,13 +43,7 @@ function ContentRowTop(){
 					{/*<!-- Content Row Last Movie in Data Base -->*/}
 					<div className="row">
 						{/*<!-- Last Movie in DB -->*/}
-						<div className="col-lg-6 mb-4">
-							<div className="card shadow mb-4">
-								<div className="card-header py-3">
-									<h5 className="m-0 font-weight-bold text-gray-800">Paneles</h5>
-								</div>
-							</div>
-						</div>
+						<LastProductInDb {...ultimoProduct}/>
 						{/*<!-- End content row last movie in Data Base -->*/}
 
 						{/*<!-- Genres in DB -->*/}
