@@ -55,17 +55,17 @@ const users = {
         })}
         ,
     editarPerfil:(req, res) => {
+        console.log(req.body)
         const resultValidation = validationResult (req);
-        console.log(resultValidation)
         if (resultValidation.errors.length > 0){
-            return res.render('users/register',{
+            return res.render('users/perfilEdit',{
                 errors: resultValidation.mapped(),
-                oldData: req.body
+                old: req.body  
             });
         }
         let userInDB = User.findByField('email', req.body.email);
         if (userInDB){
-            return res.render('users/register',{
+            return res.render('users/perfilEdit',{
                 errors: {
                     email:{
                         msg:'El email ya esta registrado'

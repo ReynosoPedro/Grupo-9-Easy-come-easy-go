@@ -31,8 +31,7 @@
                 <div class="form">
                     <label for="usuario"></label>
                     <input type="text" name="usuario" id="usuario" placeholder="Usuario"
-                    value="<%= locals.oldData ? oldData.usuario : null %>"
-                    >
+                    value="<%= locals.oldData ? oldData.usuario : null %>">
                     <div id = "errorUsuario" class="containerError"></div>
                     <% if (locals.errors && errors.usuario){ %>
                         <div class="mensajeError">
@@ -78,7 +77,7 @@
                             <div class="mensajeError">
                                 <%= errors.celular.msg %>
                             </div>
-                           <% } %>
+                        <% } %>
                     </span>
                 </div>
                 
