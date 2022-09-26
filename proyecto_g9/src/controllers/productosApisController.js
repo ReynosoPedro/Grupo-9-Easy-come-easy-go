@@ -31,6 +31,7 @@ const pruductosApis ={
                         name: vehiculos[i].brands.brand +" "+vehiculos[i].models.model,
                         categories: vehiculos[i].categories.type_auto,
                         description: vehiculos[i].descripcion,
+                        imagen:"http://localhost:3050/images/autos/"+vehiculos[i].image_filename,
                         detail: "http://localhost:3050/api/products/"+vehiculos[i].id ,
                     })
                 categories[vehiculos[i].categories_id].count++;
