@@ -9,7 +9,7 @@ function LastMovieInDb(props){
                 </div>
                 <div className="card-body">
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={`https://github.com/ReynosoPedro/Grupo-9-Easy-come-easy-go/tree/main/proyecto_g9/public/images/autos/${props.imagen}?raw=true `} alt="ultimoProduct"/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={props.imagen} alt="ultimoProduct"/>
                     </div>
                     <p>{props.description}</p>
                         <a className="btn btn-danger"  rel="nofollow" href={`http://localhost:3050/detalle/${props.id}`}>view Product detail</a>
