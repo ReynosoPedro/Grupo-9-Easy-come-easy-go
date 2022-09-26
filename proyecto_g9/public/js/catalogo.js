@@ -19,7 +19,21 @@ window.onload = function(){
 
         }
 
+
+
     })
+
+    let selectNext= document.getElementById('next');
+    let selectPreview= document.getElementById('preview');
+    let url=window.location.href;
+    let numeroPagina= url.split("/");
+    let paginaNext=Number(numeroPagina[4])+1;
+    let paginaPreview=1;
+    if( Number(numeroPagina)>1){
+        paginaPreview=Number(numeroPagina[4])-1;
+    }    
+    selectNext.setAttribute('href', "/productos/"+paginaNext);
+    selectPreview.setAttribute('href', "/productos/"+paginaPreview);
 
 
 }
