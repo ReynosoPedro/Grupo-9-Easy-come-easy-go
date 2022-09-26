@@ -1,8 +1,108 @@
-*{
+* {
     margin: 0px;
-    padding: 0px;    
+    padding: 0px;
     box-sizing: border-box;
 }
+
+
+/* -------------------------------------------------------------------------------------- */
+
+body {
+    font-family: Arial;
+    
+}
+
+
+img {
+    vertical-align: middle;
+    border-radius: 0 !important;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+    position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #222;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: black;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Six columns side by side */
+.column {
+    float: left;
+    width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+/* -------------------------------------------------------------------------------------- */
+
+
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
@@ -38,24 +138,20 @@ header span{
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
-    padding-bottom: 0px;
-    margin-bottom: 5px;
     justify-content: center;
     font-size: auto;
     width: 100vw;
 }
 #busqueda h4{
-    border-radius: 5px;
     width: 90%;   
     background-color: white;
     text-align: center;
     color: gray;
-    margin: 7px 0px ;
-    padding: 2px;
 }
 
 body{
     background-color: #595959;
+    background-image: url("https://wallup.net/wp-content/uploads/2018/09/27/18458-abstract-yellow-grunge-squares.jpg"); 
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: left;
@@ -80,9 +176,9 @@ footer p {
 .productos{
     box-sizing:border-box;
     display: flex;
-    width: 50%;
+    width: 60%;
     border:  solid gray;    
-    border-radius: 20px;
+    border-radius: 2px;
     color: black;
     padding: 10;
     background-color: white;
@@ -107,9 +203,10 @@ main {
     box-sizing:border-box;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    height: 70%;
-    justify-content: center;
+    text-align: left;
+    justify-content: left;
+    width: 1200px;
+    margin-left: 10px;
 }
 
 

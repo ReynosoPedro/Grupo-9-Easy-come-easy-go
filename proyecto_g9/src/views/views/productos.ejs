@@ -113,7 +113,7 @@
                         <h4 class="productos-titulo"><%= vehiculos[i].brands.brand %></h4>
                         <h4 class="productos-titulo"><%= vehiculos[i].categories.type_auto+" "+vehiculos[i].models.model %></h4>
                         <p class="productos-detalles"><%= vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions %></p>
-                        <p class="productos-precio"><%= "$"+ vehiculos[i].prices + " "+vehiculos[i].stock %></p></a>
+                        <p class="productos-precio"><%= "$"+  new Intl.NumberFormat('de-DE').format(vehiculos[i].prices )  + " "+vehiculos[i].stock %></p></a>
                     </div>
                 <% } %>                 
 
