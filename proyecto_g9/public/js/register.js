@@ -47,11 +47,10 @@ window.onload = function(){
     campImage(image.value, image,errorImage);
     
 
-
-
+///(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{2,24}$/gm //
 
     function campNombre(valueInput, divInput, errorDiv){
-        let reNombre  = /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{2,24}$/gm
+        let reNombre  = /^[a-zA-Z]{1,24}\s?[a-zA-Z]{2,24}\s?/gi
         if(reNombre.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
