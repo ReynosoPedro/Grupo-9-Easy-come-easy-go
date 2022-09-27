@@ -51,7 +51,9 @@
                 </div>
                 <div class="form">
                     <label for="fecha-de-nacimiento"></label>
-                    <input type="date" name="fechaDeNacimiento" id="fechadenacimiento" placeholder="Fecha de nacimiento">
+                    <input type="date" name="fechaDeNacimiento" id="fechadenacimiento" placeholder="Fecha de nacimiento"
+                    value="<%= locals.oldData ? oldData.fechaDeNacimiento : null %>"
+                    >
                     <div id = "errorFecha" class="containerError"></div>
                 </div>
                 <div class="form">
