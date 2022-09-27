@@ -6,6 +6,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-wid th">
     <meta charset="utf-8">
+    <link href="/css/styles+header.css" rel="stylesheet">
     <link href="/css/sltyles+register-login.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
 </head>
@@ -41,7 +42,8 @@
                 </div>
                 <div class="form">
                     <label for="password"></label>
-                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <input type="password" name="password" id="password" placeholder="Contraseña"
+                    value="">
                     <div id = "errorPassword" class="containerError"></div>
                     <% if (locals.errors && errors.password){ %>
                         <div class="mensajeError">

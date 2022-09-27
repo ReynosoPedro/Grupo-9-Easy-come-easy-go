@@ -1,4 +1,4 @@
-
+/*
 header{
     background-color: black;
     display: flex;
@@ -8,7 +8,7 @@ header{
     color: white;
     align-items: center;
 
-}
+}*/
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
@@ -17,7 +17,7 @@ header{
     width: 100vw;
     max-width: 100%;
 }
-
+/*
 .seccion-barra1 {
     display: none;
 }
@@ -48,17 +48,17 @@ header a {
     display: flex;
     font-size: 50px;
 }
-
+*/
 a {
     text-decoration: none; 
     color: black; 
 }
-
+/*
 header img{
     max-width: 100px;
     max-height: 100px;
     object-fit: scale-down;
-}
+}*/
 header span{
     width: 80%;
     visibility:hidden;
@@ -171,7 +171,7 @@ img{
 }
 
 
-
+/*
 
 #menu-hamb {
     position: fixed;
@@ -198,7 +198,7 @@ img{
 
 
 
-
+*/
 
 
 @media (min-width: 556px) {
@@ -227,18 +227,18 @@ img{
         max-height: 63%;
         object-fit: scale-down;
     }
-    header span{
+/*    header span{
         display: flex;
         visibility:visible;
         justify-content: space-around;
         align-items: center;
         
-    }
+    }*/
 
 }
 
 @media (min-width: 769px) {
-    .burger-menu {
+ /*   .burger-menu {
         display: none;
     }
     header div{
@@ -257,7 +257,7 @@ img{
         display: flex;
         justify-content: space-between;
         /*justify-content: flex-start;*/
-    }
+  /*  }
     
     .logo{
         max-width: 100px;
@@ -289,7 +289,7 @@ img{
         /*font-size: 16px;
         color:white;
         align-self: center;*/
-    }
+ /*   }
     
     .seccion-barra2 a{
         flex-direction: row;
@@ -298,11 +298,11 @@ img{
         margin: 0 5px;
         padding: 0px 33px;
         /*align-items:center;*/
-        font-size: 16px;
-    }
+       /* font-size: 16px;
+ /*   }
     #burger-menu {
         display: none;
-    }
+    }*/
 
     .filtros-mobile{
         display: none;
@@ -413,7 +413,7 @@ img{
         align-content: flex-start;
     }
     #busqueda{
-        width: 80%;
+        /*width: 80%;*/
         padding-left: 10%;
         padding-right: 10%;
 
@@ -422,7 +422,7 @@ img{
 
 @media (min-width: 1280px) {
     
-   
+   /*
     header div{
         display: flex;
         justify-content: space-between;
@@ -439,7 +439,7 @@ img{
         display: flex;
         justify-content: space-between;
         /*justify-content: flex-start;*/
-    }
+  /*  }
     
     .logo{
         max-width: 100px;
@@ -471,7 +471,7 @@ img{
         /*font-size: 16px;
         color:white;
         align-self: center;*/
-    }
+  /*  }
     
     .seccion-barra2 a{
         flex-direction: row;
@@ -480,8 +480,8 @@ img{
         margin: 0 5px;
         padding: 0px 33px;
         /*align-items:center;*/
-        font-size: 16px;
-    }
+       /* font-size: 16px;
+    }*/
     
     
     .footer {

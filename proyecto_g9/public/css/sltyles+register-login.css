@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;    
     box-sizing: border-box;
-}
+}/*
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
@@ -13,7 +13,7 @@
     width: 100vw;
     max-width: 100%;
 }
-
+/*
 header{
     background-color: black;
     display: flex;
@@ -23,7 +23,7 @@ header{
     color: white;
     align-items: center;
 
-}
+}*/
 .swal2-container.swal2-center>.swal2-popup{
     background-color: black !important;
     border: 3px solid #ccb23e !important;
@@ -52,15 +52,15 @@ button.swal2-confirm.swal2-styled {
     border-color: #ccb23e!important;
 }
 
-
+/*
 .seccion-barra1 {
     display: none;
 }
 
 .seccion-barra2 {
     display: none;
-}
-
+}*/
+/*
 a:link { text-decoration: none; }
 
 
@@ -70,21 +70,22 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 
 
-a:active { text-decoration: none; }
-
+a:active { text-decoration: none; }*/
+/*
 header a {
     color: white;
 }
 
 .main-header{
     justify-content: space-between;
-}
+}*/
+/*
 .navbar{
     display: flex;
     flex-direction: row;
-}
+}*/
 
-
+/*
 header img{
     max-width: 100px;
     max-height: 100px;
@@ -97,7 +98,7 @@ header span{
 }
 .nav-link{
     color: white;
-}
+}*/
 #busqueda{
     display: flex;
     background-color: #ccb23e;  
@@ -114,25 +115,25 @@ header span{
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
-
+/*
 #logo {
     width: 25%;
 }
 
 .burger-menu {
     font-size: 50px;
-    text-align: end;
+    text-align: center !important;
 }
-
+*/
 h2 {
     font-size: 30px;
     margin-top: 40px;
@@ -161,11 +162,11 @@ h2 {
     border: solid 2px rgb(137, 137, 137);
     transition: 0.5s;
 }
-
+/*
 .checkbox {
     justify-content: center;
     margin: 5px;
-}
+}*/
 
 button {
     background-color: rgb(196, 196, 196);
@@ -223,74 +224,43 @@ footer p {
     padding-left: 12px;
 }
 
+/*
+
+
+#menu-hamb {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #7c7c79;
+    right: -200px;
+}
+
+#menu-hamb.burger-mostrar{
+    right: 0 !important;
+}
+
+#menu-hamb ul li {
+    line-height: 30px;
+    border-bottom: solid 1px #ccb23e;
+}
+#menu-hamb ul{
+    padding-left: 12px;
+    padding-top: 5px;
+}
+
+
+
+
+
+*/
+
+
+
+
+
 
 @media (min-width: 769px) {
-    
-    header div{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-         
-    .main-header{
-        background-color: black;
-        padding:15px;
-        display: flex;
-        justify-content: space-between;
-        /*justify-content: flex-start;*/
-    }
-    
-    .logo{
-        max-width: 100px;
-    }
-    
-    .seccion-barra1 {
-        display: flex;
-        font-size: 12px;
-        color:white;
-        align-self: center;
-    }
-    
-    .seccion-barra1 a{
-        flex-direction: row;
-        color:white;
-        text-decoration: none;
-        margin: 0 20px;
-        font-size: 16px;
-        margin: 0px 8px;
-    }
-    
-    
-    
-    .seccion-barra2{
-        display: flex;
-        font-size: 12px;
-        color:white;
-        align-items: center;
-        /*font-size: 16px;
-        color:white;
-        align-self: center;*/
-    }
-    
-    .seccion-barra2 a{
-        flex-direction: row;
-        color:white;
-        text-decoration: none;
-        margin: 0 5px;
-        padding: 0px 33px;
-        /*align-items:center;*/
-        font-size: 16px;
-    }
-
-    header span{
-        visibility: visible;
-        text-align: center;       
-    }
-
+/*
     #micuenta {
         white-space: nowrap;
     }
@@ -327,12 +297,10 @@ footer p {
         text-decoration: none;
         color: white;
     }
+    */
+
+
     
-
-
-    .burger-menu {
-        display: none;
-    }
 
     .form input {
         width: 50vw
@@ -367,72 +335,6 @@ footer p {
 }
 
 @media (min-width: 1280px) {
-    header div{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-    }
-         
-    .main-header{
-        background-color: black;
-        padding:15px;
-        display: flex;
-        justify-content: space-between;
-        /*justify-content: flex-start;*/
-    }
-    
-    .logo{
-        max-width: 100px;
-    }
-    
-    .seccion-barra1 {
-        display: flex;
-        font-size: 12px;
-        color:white;
-        align-self: center;
-    }
-    
-    .seccion-barra1 a{
-        flex-direction: row;
-        color:white;
-        text-decoration: none;
-        margin: 0 20px;
-        font-size: 16px;
-        margin: 0px 8px;
-    }
-    
-    
-    
-    .seccion-barra2{
-        display: flex;
-        font-size: 12px;
-        color:white;
-        align-items: center;
-        /*font-size: 16px;
-        color:white;
-        align-self: center;*/
-    }
-    
-    .seccion-barra2 a{
-        flex-direction: row;
-        color:white;
-        text-decoration: none;
-        margin: 0 5px;
-        padding: 0px 33px;
-        /*align-items:center;*/
-        font-size: 16px;
-    }
-    
-    
-    
-    header span{
-        visibility: visible;
-        text-align: center;       
-    }
 
     .form input {
         width: 40vw

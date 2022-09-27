@@ -17,7 +17,7 @@
 main {
     padding-top: 3%;
     padding-bottom: 3%;
-}
+}/*
 header{
     background-color: black;
     display: flex;
@@ -34,7 +34,7 @@ header img{
     max-height: 100px;
     object-fit: scale-down;
 }
-
+*/
 header span{
     width: 80%;
     visibility: hidden;
@@ -67,7 +67,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
+/*
 #logo {
     width: 25%;
 }
@@ -76,7 +76,7 @@ body {
     font-size: 50px;
     text-align: right;
 }
-
+*/
 h2 {
     font-size: 30px;
     margin-top: -20px;
@@ -142,7 +142,7 @@ footer p {
 }
 
 @media (min-width: 769px) {
-    
+ /*   
     header span{
         visibility: visible;
         text-align: center;       
@@ -188,7 +188,7 @@ footer p {
     #burger-menu {
         display: none;
     }
-
+*/
     .footer{
         display: flex;
         justify-content: space-between;
@@ -246,10 +246,10 @@ footer p {
 }
 
 @media (min-width: 1280px) {
-    header span{
+ /*   header span{
         visibility: visible;
         text-align: center;       
-    }
+    }*/
 
     .footer {
         display: flex;

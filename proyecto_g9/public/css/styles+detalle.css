@@ -114,7 +114,7 @@ body {
     max-width: 100%;
 }
 
-
+/*
 header{
     background-color: black;
     display: flex;
@@ -134,7 +134,7 @@ header span{
     width: 80%;
     visibility:hidden;
 }
-
+*/
 #busqueda{
     display: flex;
     background-color: #ccb23e;  

@@ -47,7 +47,7 @@ button.swal2-confirm.swal2-styled {
 main {
     padding-top: 2%;
     padding-bottom: 0%;
-}
+}/*
 header{
     background-color: black;
     display: flex;
@@ -68,7 +68,7 @@ header img{
 header span{
     width: 80%;
     visibility: hidden;
-}
+}*/
 
 #busqueda{
     display: flex;
@@ -98,7 +98,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
-
+/*
 #logo {
     width: 25%;
 }
@@ -106,7 +106,7 @@ body {
 #burger-menu {
     font-size: 50px;
     text-align: right;
-}
+}*/
 
 h2 {
     font-size: 30px;
@@ -194,7 +194,7 @@ footer p {
         padding-bottom: 3%;
     }
 
-
+/*
     #micuenta {
         white-space: nowrap;
     }
@@ -237,7 +237,7 @@ footer p {
     #burger-menu {
         display: none;
     }
-
+*/
     .form input {
         width: 50vw
     }
