@@ -126,7 +126,7 @@ header span{
 }
 
 body {
-
+    background-image: none !important; 
     background-color: #cacaca;
     font-family: 'Roboto', sans-serif;
     align-items: center;

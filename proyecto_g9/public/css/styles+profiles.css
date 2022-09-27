@@ -138,9 +138,20 @@ footer p {
     justify-content: center;
     padding-bottom: 10px;
 }
+.productos-views{
+    position: relative;
+    color: white;
+    width: 30%;
+    bottom:240px;
+    left: 200px;
+
+
+}
+
 .filtros-mobile{
     color:black;
     border: solid gray;
+   
     
 }
 img{
