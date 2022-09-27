@@ -102,27 +102,9 @@ main {
     padding-top: 4%;
     padding-bottom: 5%;
 }
-header{
-    background-color: black;
-    display: flex;
-    width: 100%;
-    box-sizing:border-box;
-    padding: 15px;
-    color: white;
-    align-items: center;
 
-}
 
-header img{
-    max-width: 100px;
-    max-height: 100px;
-    object-fit: scale-down;
-}
 
-header span{
-    width: 80%;
-    visibility: hidden;
-}
 
 #busqueda{
     display: flex;
@@ -151,15 +133,6 @@ body {
     text-align: center;
     min-height: 100vh;
     overflow-x: hidden;
-}
-
-#logo {
-    width: 25%;
-}
-
-#burger-menu {
-    font-size: 50px;
-    text-align: right;
 }
 
 h2 {
@@ -266,53 +239,6 @@ footer p {
         padding-right: 0%;
     }
     
-    header span{
-        visibility: visible;
-        text-align: center;       
-    }
-
-    #micuenta {
-        white-space: nowrap;
-    }
-    #micuenta a:link {
-        text-decoration: none;
-        color: white;
-    }
-    #micuenta a:visited {
-        text-decoration: none;
-        color: white;
-    }
-    #micuenta a:hover {
-        text-decoration: none;
-        color: white;
-    }
-    #micuenta a:active {
-        text-decoration: none;
-        color: white;
-    }
-
-    #carrito a:link {
-        text-decoration: none;
-        color: white;
-    }
-    #carrito a:visited {
-        text-decoration: none;
-        color: white;
-    }
-    #carrito a:hover {
-        text-decoration: none;
-        color: white;
-    }
-    #carrito a:active {
-        text-decoration: none;
-        color: white;
-    }
-    
-
-
-    #burger-menu {
-        display: none;
-    }
 
     .form input {
         width: 50vw
@@ -375,10 +301,7 @@ footer p {
 }
 
 @media (min-width: 1280px) {
-    header span{
-        visibility: visible;
-        text-align: center;       
-    }
+
 
     .form input {
         width: 40vw
