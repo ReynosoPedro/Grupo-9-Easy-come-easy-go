@@ -1,3 +1,38 @@
+
+image.onchange = evt => {
+    const [file] = image.files
+    if (file) {
+    blah.src = URL.createObjectURL(file)
+    }
+}
+image2.onchange = evt => {
+    const [file] = image2.files
+    if (file) {
+    blah2.src = URL.createObjectURL(file)
+    }
+}
+image3.onchange = evt => {
+    const [file] = image3.files
+    if (file) {
+    blah3.src = URL.createObjectURL(file)
+    }
+}
+image4.onchange = evt => {
+    const [file] = image4.files
+    if (file) {
+    blah4.src = URL.createObjectURL(file)
+    }
+}
+image5.onchange = evt => {
+    const [file] = image5.files
+    if (file) {
+    blah5.src = URL.createObjectURL(file)
+    }
+}
+
+
+
+
 function empty (){
     document.getElementById('modelo').value=0
     document.getElementById('modelo').innerHTML="Seleccione una opcion";
@@ -29,6 +64,8 @@ function filterModel(){
 
 
 window.onload = function(){
+
+    
     
 
     let form = document.querySelector('form')
