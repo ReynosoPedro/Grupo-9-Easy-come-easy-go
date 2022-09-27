@@ -13,10 +13,9 @@
         <%- include('../partials/header')%>
         <br>
         <br>  
-        <h2 style="text-align:center"><%= vehiculos.brands.brand + " "+vehiculos.models.model + " "+vehiculos.categories.type_auto + " "+vehiculos.colors.color %></h2>
+        <h2 class="titulo" style="text-align:center"><%= vehiculos.brands.brand + " "+vehiculos.models.model + " "+vehiculos.categories.type_auto + " "+vehiculos.colors.color %></h2>
         <main>   
             <div class="productos">
-
                 <div class="container">
                     <div class="mySlides">
                         <div class="numbertext">1 / 5</div>
@@ -73,11 +72,16 @@
                     </div>
                 </div>
                 <div class="detalleProductos">
+                    <h2> Características </h2>
+                    <br>
                     <p class="productos-detalles">Año: <%= vehiculos.years.year %></p>
                     <p class="productos-detalles">Kilomentraje: <%= vehiculos.km_intervals.intervals %> kms</p>
-                    <p class="productos-detalles">Transmisión: <%= vehiculos.transmission %></p>
-                    <p class="productos-precio">Precio: <%= "$"+  new Intl.NumberFormat('de-DE').format(vehiculos.prices)%></p>
+                    <p class="productos-detalles">Transmisión: <%= vehiculos.transmission %></p> 
                     <p class="productos-detalles">Condicion: <%= vehiculos.conditions + " "+vehiculos.stock %></p>
+        
+                    <p class="productos-precio">Precio: <%= "$"+  new Intl.NumberFormat('de-DE').format(vehiculos.prices)%></p>
+                    <br>
+                    <button class="productos-detalles">¡Me interesa! </button>
                     </div>
             </div>
             
