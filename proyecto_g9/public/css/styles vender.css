@@ -83,6 +83,7 @@ button.swal2-confirm.swal2-styled {
     font-size: 12px;
 }
 
+
 .form .campos-invalidos {
     /*color: #842029;*/
     border: 1px solid rgb(248, 89, 89);
@@ -177,14 +178,18 @@ h2 {
     width: 600px;    
 }
 
+ .part2{
+    max-width: 100% !important;
+ }
+
 .form select {
     
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
-    border: solid 2px rgb(197, 197, 197);
-    width: 600px;    
+    border: solid 2px rgb(197, 197, 197);   
     max-height: 100%;
+     max-width: 100% !important;
 }
 
 datalist option {
