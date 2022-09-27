@@ -29,7 +29,7 @@
         </div>
         <br>
         <% if(info.vehiculos){ %>
-            <h2  style= 'text-align: left;'> Tus autos publicados : </h2>
+            <h2  style= 'text-align: left; padding-left: 10px;'> Tus autos publicados : </h2>
             <% } %>  
                             <section class="contenedor-productos">
                                 <% for(let i= 0; i < info.vehiculos.length; i++){ %>
@@ -41,6 +41,7 @@
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].categories.type_auto+" "+info.vehiculos[i].models.model %></h4>
                                         <p class="productos-detalles"><%= info.vehiculos[i].years.year +" "+info.vehiculos[i].km_intervals.intervals +" km "+ info.vehiculos[i].transmission + " "+info.vehiculos[i].conditions %></p>
                                         <p class="productos-precio"><%= "$"+ info.vehiculos[i].prices + " "+info.vehiculos[i].stock %></p>
+                                        <p class="productos-views">vistas: <%=  info.vehiculos[i].views %></p>
                                     </div>
                                     </a>
                                 <% } %>      
