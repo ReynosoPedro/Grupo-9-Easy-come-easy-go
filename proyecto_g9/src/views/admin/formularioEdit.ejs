@@ -6,8 +6,8 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <meta name="viewport" content="width=device-wid th">
     <meta charset="utf-8">
-    <link href="/css/styles+home.css" rel="stylesheet">
-    <link href="/css/styles+edit.css" rel="stylesheet">
+    <link href="/css/styles+header.css" rel="stylesheet">
+
     <link href="/css/styles vender.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
 </head>
@@ -16,12 +16,9 @@
     <%- include('../partials/header')%>
     <main>
         
-        <img src="\images\autos\<%=bases[6].image_filename%>" style='height: 30%; width: 30%; object-fit: fill' >
-        <img src="\images\autos\<%=bases[6].image_filename2%>" style='height: 30%; width: 30%; object-fit: fill' >
-        <img src="\images\autos\<%=bases[6].image_filename3%>" style='height: 30%; width: 30%; object-fit: fill' >
-        <img src="\images\autos\<%=bases[6].image_filename4%>" style='height: 30%; width: 30%; object-fit: fill' >
-        <img src="\images\autos\<%=bases[6].image_filename5%>" style='height: 30%; width: 30%; object-fit: fill' >
-        
+        <h2> ELIMINAR VEHICULO </h2>
+        <br>
+        <br>
         <ul class="errorescamp"></ul>
         <form action="/editar/<%=bases[6].id%>?_method=PUT" method="POST"  enctype="multipart/form-data" >
             <div class="formulario" id="formulario">
@@ -108,38 +105,66 @@
                     <% } %>
                 </div>
                 <br>
-                <div class="custom-file"> 
-                    <label for ="imagen2">Subi una foto del costado izquierdo </label>
-                <input  type="file" name="imagen2" id="image2" placeholder="image 2"  accept=".png, .jpg, .jpeg" value="" />  
-                <% if(locals.errors && errors.image2){ %>
-                <p class="mensajeError"><%= errors.image2.msg %> </p>
-                <% } %>
+                <div class="contenedor-img">
+                    <div class="custom-file">
+                        <label for ="image" >
+                            <img id="blah" src="\images\autos\<%=bases[6].image_filename%>"alt="" />
+                        </label>
+                        <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept=".png, .jpg, .jpeg" value="" />  
+                        <% if(locals.errors && errors.image){ %>
+                            <p class="mensajeError"><%= errors.image.msg  %> </p>
+                        <% } %>
+                    </div>
+                    <br>
+                    <div class="custom-file"> 
+                        <label for ="image2">
+                            <img id="blah2" src="\images\autos\<%=bases[6].image_filename2%>" alt="" />
+                        </label>
+                    <input  type="file" name="imagen2" id="image2" placeholder="image 2"  accept=".png, .jpg, .jpeg" value="" />  
+        
+                    <% if(locals.errors && errors.image2){ %>
+                    <p class="mensajeError"><%= errors.image2.msg %> </p>
+                    <% } %>
+                    </div>
+                    <br>
+                    <div class="custom-file">
+                        <label for ="image3">
+                            <img id="blah3" src="\images\autos\<%=bases[6].image_filename3%>" alt="" />
+                        </label>
+                    <input  type="file" name="imagen3"  id="image3" placeholder="image 3"  accept=".png, .jpg, .jpeg" value="" /> 
+                    
+                    <% if(locals.errors && errors.image3){ %>
+                    <p class="mensajeError"><%= errors.image3.msg  %>  </p>
+                    <% } %>
+                    </div>
+                    <br>
+                    <div class="custom-file">
+                        <label for ="image4">
+                            <img id="blah4" src="\images\autos\<%=bases[6].image_filename4%>" alt="" />
+                        </label>
+                    <input  type="file" name="imagen4" id="image4" placeholder="image 4"  accept=".png, .jpg, .jpeg"  value="" /> 
+                    
+                    <% if(locals.errors && errors.image4){ %>
+                    <p class="mensajeError"><%= errors.image4.msg  %>  </p>
+                    <% } %>
+                    </div>
+                    <br>
+                    <div class="custom-file">
+                        <label for ="image5">
+                            <img id="blah5" src="\images\autos\<%=bases[6].image_filename5%>" alt="" />
+                        </label>
+                    <input type="file" name="imagen5"  id="image5" placeholder="image 5"  accept=".png, .jpg, .jpeg"  value="" /> 
+                    
+                    <% if(locals.errors && errors.image5){ %>
+                    <p class="mensajeError"><%= errors.image5.msg  %> </p>
+                    <% } %>
+                    </div> 
                 </div>
                 <br>
-                <div class="custom-file">
-                    <label for ="imagen3">Subi una foto del frente </label>
-                <input  type="file" name="imagen3"  id="image3" placeholder="image 3"  accept=".png, .jpg, .jpeg" value="" /> 
-                <% if(locals.errors && errors.image3){ %>
-                <p class="mensajeError"><%= errors.image3.msg  %>  </p>
-                <% } %>
-                </div>
                 <br>
-                <div class="custom-file">
-                    <label for ="imagen4">Subi una foto de atras </label>
-                <input  type="file" name="imagen4" id="image4" placeholder="image 4"  accept=".png, .jpg, .jpeg"  value="" /> 
-                <% if(locals.errors && errors.image4){ %>
-                <p class="mensajeError"><%= errors.image4.msg  %>  </p>
-                <% } %>
-                </div>
-                <br>
-                <div class="custom-file">
-                    <label for ="imagen5">Subi una foto del interior </label>
-                <input type="file" name="imagen5"  id="image5" placeholder="image 5"  accept=".png, .jpg, .jpeg"  value="" /> 
-                <% if(locals.errors && errors.image5){ %>
-                <p class="mensajeError"><%= errors.image5.msg  %> </p>
-                <% } %>
-                </div> 
                 <button class="formb" type="submit">Editar</button>   
+                <br>
+                <br>
             </form>
     <%- include('../partials/footer')%>
     <script src= "/js/productosedit.js"></script>
