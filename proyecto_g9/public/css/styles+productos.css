@@ -73,7 +73,7 @@ header a {
     font-size: 50px;
 }
 */
-a {
+.descripcion-de-vehiculo {
     text-decoration: none; 
     color: black; 
 }
@@ -161,6 +161,9 @@ footer p {
     flex-direction: row;
     justify-content: center;
     padding-bottom: 10px;
+}
+#paginas a{
+    color: black;
 }
 .filtros-mobile{
     color:black;
