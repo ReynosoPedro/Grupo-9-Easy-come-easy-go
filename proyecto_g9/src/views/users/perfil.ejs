@@ -5,7 +5,6 @@
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <meta name="viewport" content="width=device-width">
         <meta charset="utf-8">
-        <link href="/css/styles+header.css" rel="stylesheet">
         <link href="/css/styles+profiles.css" rel="stylesheet">     
         <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
     </head>
@@ -41,7 +40,7 @@
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].brands.brand %></h4>
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].categories.type_auto+" "+info.vehiculos[i].models.model %></h4>
                                         <p class="productos-detalles"><%= info.vehiculos[i].years.year +" "+info.vehiculos[i].km_intervals.intervals +" km "+ info.vehiculos[i].transmission + " "+info.vehiculos[i].conditions %></p>
-                                        <p class="productos-precio"><%= "$"+ info.vehiculos[i].prices + " "+info.vehiculos[i].stock %></p>
+                                        <p class="productos-precio"><%= "$"+  new Intl.NumberFormat('de-DE').format(info.vehiculos[i].prices )  + " "+info.vehiculos[i].stock %></p>
                                         <p class="productos-views">vistas: <%=  info.vehiculos[i].views %></p>
                                     </div>
                                     </a>
