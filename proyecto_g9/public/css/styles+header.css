@@ -68,6 +68,10 @@ a {
 #menu-hamb ul li {
     line-height: 30px;
     border-bottom: solid 1px #ccb23e;
+    text-align: left;
+}
+#text{
+    text-align: left;
 }
 #menu-hamb ul{
     padding-left: 12px;
