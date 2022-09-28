@@ -23,8 +23,8 @@
 
 .contenedor-img{
     display: flex;
-    flex-direction: row;
-
+    flex-direction: column;
+    max-width: 100%;
 }
 .contenedor-img img{
     width: 100px;
@@ -32,14 +32,16 @@
 }
 
 .description {
-    margin-top: 3px;
+    margin-top: 6px;
     justify-content: left;
     width: 83%;
     height: 100px;
-    border-radius: 5px;
+    border-radius: 10px;
     justify-content: flex-start;
     padding: 12px 20px;
     box-sizing: border-box;
+
+
 }
 .swal2-container.swal2-center>.swal2-popup{
     background-color: black !important;
@@ -148,7 +150,8 @@ h2 {
     margin: 10px;
     border-radius: 10px;
     border: solid 2px rgb(197, 197, 197);
-    width: 600px;    
+    width: 600px;   
+    max-width: 95% !important; 
 }
 
  .part2{
@@ -162,7 +165,8 @@ h2 {
     border-radius: 10px;
     border: solid 2px rgb(197, 197, 197);   
     max-height: 100%;
-     max-width: 100% !important;
+    max-width: 95% !important;
+    width: 600px; 
 }
 
 datalist option {
@@ -238,11 +242,14 @@ footer p {
         padding-left: 0%;
         padding-right: 0%;
     }
+    .contenedor-img{
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+    }
     
 
-    .form input {
-        width: 50vw
-    }
+
 
     .footer{
         display: flex;
