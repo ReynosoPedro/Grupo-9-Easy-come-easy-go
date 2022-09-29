@@ -11,9 +11,12 @@
     </head>
     <body>
         <%- include('../partials/header')%>
-        <span id="busqueda">
-            <br>
-        </span>
+        <div class="col-7 col-md-6">
+            <div class="search-form">
+                <input type="text" name="keywords" placeholder="Buscar productos por marca y modelo" class="search-form_input">
+                <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
         <main>   
             <div class="headerfiltros">
                 <span id="titular-filtro">FILTRO</span>

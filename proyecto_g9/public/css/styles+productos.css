@@ -41,6 +41,28 @@ header{
     width: 100vw;
     max-width: 100%;
 }
+
+.search-form
+{
+    display: flex;
+    background-color: #ccb23e;  
+    justify-content: center;
+    font-size: auto;
+    width: 100vw;
+    max-width: 100%;
+    padding-left: 13%;
+    padding-bottom: 5px;
+}
+
+.search-form_input{
+    font-size: 16px;
+    display: flex; 
+    justify-content: center;
+    font-size: auto;
+    width: 80vw;
+    max-width: 100%;
+}
+
 /*
 .seccion-barra1 {
     display: none;
@@ -400,8 +422,8 @@ img{
     .contenedor-productos{
         align-content: flex-start;
     }
-    #busqueda{
-       /* width: 80%;*/
+    #search-form{
+        width: 80%;
         padding-left: 10%;
         padding-right: 10%;
 

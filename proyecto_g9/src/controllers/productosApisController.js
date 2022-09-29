@@ -74,8 +74,8 @@ const pruductosApis ={
 
     },
     raw: (req, res) =>  {
-        db.Productos.findAll({   
-            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+        db.Productos.findAll({           
+                include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
         })
             .then(function(vehiculos) {  
                 return res.status(200).json({

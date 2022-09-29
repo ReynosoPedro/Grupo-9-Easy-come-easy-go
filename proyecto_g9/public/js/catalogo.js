@@ -15,7 +15,7 @@ async function fetchProducts() {
     })
     const info = await res.json()
 
-    return info
+    return info.data
 }
 
 
@@ -33,19 +33,23 @@ async function ready() {
 function displayProds(PRODUCTS) {
     let container = document.getElementById("contenedor-productos")
     container.innerHTML= ``
-    for (let i=0; i<PRODUCTS.data.length; i++) {
-        console.log(PRODUCTS.data[i].image_filename)
+    let url=window.location.href;
+    let numeroPagina= url.split("/");
+    let pagina=Number(numeroPagina[4]);
+    let i=(pagina-1)*12
+    for (let f=0; f<12; f++) {
         container.innerHTML += `
             <div class="productos" >
-                        <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS.data[i].id}">
-                        <img src="/images/autos/${PRODUCTS.data[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
-                        <h4 class="productos-titulo"> ${PRODUCTS.data[i].brands.brand} </h4>
-                        <h4 class="productos-titulo"> ${PRODUCTS.data[i].categories.type_auto} ${PRODUCTS.data[i].models.model} </h4>
-                        <p class="productos-detalles"> ${PRODUCTS.data[i].years.year} ${PRODUCTS.data[i].km_intervals.intervals}  km ${PRODUCTS.data[i].transmission} ${PRODUCTS.data[i].conditions} </p>
-                        <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS.data[i].prices)}  ${PRODUCTS.data[i].stock} </p>
+                        <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS[i].id}">
+                        <img src="/images/autos/${PRODUCTS[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
+                        <h4 class="productos-titulo"> ${PRODUCTS[i].brands.brand} </h4>
+                        <h4 class="productos-titulo"> ${PRODUCTS[i].categories.type_auto} ${PRODUCTS[i].models.model} </h4>
+                        <p class="productos-detalles"> ${PRODUCTS[i].years.year} ${PRODUCTS[i].km_intervals.intervals}  km ${PRODUCTS[i].transmission} ${PRODUCTS[i].conditions} </p>
+                        <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS[i].prices)}  ${PRODUCTS[i].stock} </p>
                         </a>
                 </div>
         `
+        i++;
     }
 }
 
@@ -54,10 +58,7 @@ function filtrado(busqueda, PRODUCTS) {
         displayProds(PRODUCTS)
     }
     else {
-        let filtro = PRODUCTS.filter(row => row.name.toLowerCase().includes(busqueda.toLowerCase()) || row.description.toLowerCase().includes(busqueda.toLowerCase()))
-        filtro.sort((a,b) => {
-            return a.price - b.price
-        })
+        let filtro = PRODUCTS.filter(row => row.brands.brand.toLowerCase().includes(busqueda.toLowerCase()) || row.models.model.toLowerCase().includes(busqueda.toLowerCase()))
         displayProds(filtro)
     }
 
