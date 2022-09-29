@@ -1,15 +1,4 @@
 window.onload = function(){
-    let menuHam = document.querySelector('.burger-menu')
-    
-    menuHam.addEventListener('click', function(){
-
-        document.getElementById('menu-hamb').classList.toggle('burger-mostrar')
-    })
-
-    let burgerToggle = document.querySelector('#menu-hamb')
-    burgerToggle.addEventListener('click', function(){
-        document.getElementById('menu-hamb').classList.toggle('burger-mostrar')
-    })
 
     let form = document.querySelector('form')
     form.nombre.focus()
@@ -61,12 +50,12 @@ window.onload = function(){
 ///(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{2,24}$/gm //
 
     function campNombre(valueInput, divInput, errorDiv){
-        let reNombre  = /^[a-zA-Z]{1,24}\s?[a-zA-Z]{2,24}\s?/gi
+        let reNombre  = /^[a-zA-Z]{0,24}\s?[a-zA-Z]{2,24}\s?/gi
         if(reNombre.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
-            mostrarError(divInput, errorDiv, 'Ingrese su Nombre completo (minimo 2 caracteres)')
             e.preventDefault()
+            mostrarError(divInput, errorDiv, 'Ingrese su Nombre completo (minimo 2 caracteres)')
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -81,8 +70,8 @@ window.onload = function(){
         if(rePassword.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
-            mostrarError(divInput, errorDiv, 'Ingrese una contraseña (minimo 8 caracteres, letra mayúscula, numero, caracter)')
             e.preventDefault()
+            mostrarError(divInput, errorDiv, 'Ingrese una contraseña (minimo 8 caracteres, letra mayúscula, numero, caracter)')
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -98,8 +87,8 @@ window.onload = function(){
         if(reEmail.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
-            mostrarError(divInput, errorDiv, 'Ingresar un formato de correo electrónico')
             e.preventDefault()
+            mostrarError(divInput, errorDiv, 'Ingresar un formato de correo electrónico')
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -114,8 +103,8 @@ window.onload = function(){
         if(reImage.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
-            mostrarError(divInput, errorDiv, 'Extensiones permitidas .JPG, .JPEG, .PNG, .GIF')
             e.preventDefault()
+            mostrarError(divInput, errorDiv, 'Extensiones permitidas .JPG, .JPEG, .PNG, .GIF')
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
@@ -128,8 +117,8 @@ window.onload = function(){
 
     function campEmpty(valueInput, divInput, errorDiv, inputNombre){
         if (valueInput.length == 0){
-            mostrarError(divInput, errorDiv, inputNombre)
             e.preventDefault()
+            mostrarError(divInput, errorDiv, inputNombre)
             Swal.fire({
                 icon: 'Error',
                 title: 'Oops...',
