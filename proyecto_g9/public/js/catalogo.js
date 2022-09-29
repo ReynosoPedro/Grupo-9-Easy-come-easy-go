@@ -1,3 +1,69 @@
+if (document.readyState == "loading") {
+    document.addEventListener("DOMContentLoaded", ready)
+}
+else {
+    ready()
+}
+
+async function fetchProducts() {
+    const res = await fetch('http://localhost:3050/api/productsRaw', {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    const info = await res.json()
+
+    return info
+}
+
+
+async function ready() {
+    const PRODUCTOS = await fetchProducts()
+    displayProds(PRODUCTOS)
+    let searchBar = document.querySelector(".search-form_input")
+    searchBar.addEventListener("change", (e) => {
+        filtrado(e.target.value, PRODUCTOS)
+    })
+}
+
+
+
+function displayProds(PRODUCTS) {
+    let container = document.getElementById("contenedor-productos")
+    container.innerHTML= ``
+    for (let i=0; i<PRODUCTS.data.length; i++) {
+        console.log(PRODUCTS.data[i].image_filename)
+        container.innerHTML += `
+            <div class="productos" >
+                        <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS.data[i].id}">
+                        <img src="/images/autos/${PRODUCTS.data[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
+                        <h4 class="productos-titulo"> ${PRODUCTS.data[i].brands.brand} </h4>
+                        <h4 class="productos-titulo"> ${PRODUCTS.data[i].categories.type_auto} ${PRODUCTS.data[i].models.model} </h4>
+                        <p class="productos-detalles"> ${PRODUCTS.data[i].years.year} ${PRODUCTS.data[i].km_intervals.intervals}  km ${PRODUCTS.data[i].transmission} ${PRODUCTS.data[i].conditions} </p>
+                        <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS.data[i].prices)}  ${PRODUCTS.data[i].stock} </p>
+                        </a>
+                </div>
+        `
+    }
+}
+
+function filtrado(busqueda, PRODUCTS) {
+    if (busqueda == "") {
+        displayProds(PRODUCTS)
+    }
+    else {
+        let filtro = PRODUCTS.filter(row => row.name.toLowerCase().includes(busqueda.toLowerCase()) || row.description.toLowerCase().includes(busqueda.toLowerCase()))
+        filtro.sort((a,b) => {
+            return a.price - b.price
+        })
+        displayProds(filtro)
+    }
+
+}
+
+
 window.onload = function(){
     
     let menuHam = document.querySelector('.burger-menu')
