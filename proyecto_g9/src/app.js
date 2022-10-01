@@ -27,6 +27,7 @@ const rutasApis = require('./routes/productosApis');
 const rutasApisUsers = require('./routes/usuariosApis')
 
 
+
 // lineas para que funciones POST
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());

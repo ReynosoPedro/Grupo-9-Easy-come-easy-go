@@ -55,8 +55,8 @@ const users = {
         })}
         ,
     editarPerfil:(req, res) => {
-        console.log(req.body)
         const resultValidation = validationResult (req);
+        console.log(resultValidation)
         if (resultValidation.errors.length > 0){
             return res.render('users/perfilEdit',{
                 errors: resultValidation.mapped(),
@@ -88,11 +88,21 @@ const users = {
             ,{
                 where:{id: req.session.userLogged.id}
             })
+            .then(function (){
             db.Usuarios.findByPk(req.session.userLogged.id)
             .then(function(usuario){
-            req.session.userLogged = usuario;
+            req.session.userLogged.fullname = usuario.fullname ;
+            req.session.userLogged.user = usuario.user ;
+            req.session.userLogged.date_birth = usuario.date_birth ;
+            req.session.userLogged.email = usuario.email  ;
+            req.session.userLogged.phone = usuario.phone ;
+            req.session.userLogged.roll_id = usuario.roll_id ;
+            req.session.userLogged.image = usuario.image ;
+            req.session.userLogged.state = usuario.state ;
             res.redirect('/'); 
         })
+            })
+            
 
     },
     shopCar: (req, res) => {

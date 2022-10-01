@@ -61,7 +61,6 @@ const validations = [
             .notEmpty().withMessage('Agregar un email').bail()
             .isEmail().withMessage('Ingresar un formato de correo electrónico'),
         body('celular').isLength({min: 10}).withMessage('Ingrese un minimo de 10 caracteres'),
-        body('categoria').notEmpty().withMessage('Elija una opcion'),
         body('avatar').custom((value, {req})=>{
             let file= req.file;
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];

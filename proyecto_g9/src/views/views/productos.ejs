@@ -21,7 +21,7 @@
             <div class="headerfiltros">
                 <span id="titular-filtro">FILTRO</span>
                 <span id="titular-seleccion"> |Reset all| Filtros aplicados x |</span>
-                <span id="titular-orden"> Ordenar: Mas relevante <i class="fa-solid fa-arrow-down"></i></span>
+                <span onclick="change()" id="titular-orden"> Ordenar: Mas baratos ↓</span>
             </div>
             <section id="marketplace">
             <div class="filtros-mobile">
@@ -32,15 +32,17 @@
                 <span><i class="fa-solid fa-arrow-down"></i></span>
             </div>
             <div class="filtros">
-                <ul>Categorias
-                    <li>SUVs</li>
-                    <li>Hatchbacks</li>
-                    <li>Sedan</li>
-                    <li>Coupes</li>
-                    <li>Sports</li>
-                    <li>Convertibles</li>
-                    <li>Utilitario</li>
-                </ul>
+
+                <button class="collapsible">Categorias</button>
+                <div class="content">
+                    <p>SUV</p>
+                    <p>Hatchback</p>
+                    <p>Sedan</p>
+                    <p>Coupe</p>
+                    <p>Sport</p>
+                    <p>Convertible</p>
+                    <p>Utilitario</p>
+                </div>
                 <ul>Año
                     <li>2022</li>
                     <li>2021</li>
