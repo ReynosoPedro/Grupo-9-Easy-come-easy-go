@@ -40,7 +40,8 @@ function displayProds(PRODUCTS) {
     select=document.getElementById("orden").value;
     PRODUCTS=ordenamiento(PRODUCTS)
         for (let f=0; f<12; f++) {
-            container.innerHTML += `
+            if(PRODUCTS[i]){
+                container.innerHTML += `
                 <div class="productos" >
                             <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS[i].id}">
                             <img src="/images/autos/${PRODUCTS[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
@@ -51,16 +52,32 @@ function displayProds(PRODUCTS) {
                             </a>
                     </div>
             `
+            }
+            else {
+                container.innerHTML += `
+                <div class="productos" id="elementosvacios">
+                            <a class = "descripcion-de-vehiculo" href= "/detalle">
+                            <img src="/images/autos/" style='height: 100%; width: 100%; object-fit: fill' >  
+                            <h4 class="productos-titulo">  </h4>
+                            <h4 class="productos-titulo">  </h4>
+                            <p class="productos-detalles"> </p>
+                            <p class="productos-precio"> $  </p>
+                            </a>
+                    </div>
+            `
+            }
+            
             i++;
         }
 
 }
 
+
+
 function ordenamiento(PRODUCTS) {
     select=document.getElementById("orden").value;
     if (select == 1) {
         PRODUCTS.sort((a, b) => parseFloat(a.prices) - parseFloat(b.prices));
-        console.log("entre acaaa!!! ")
     }
     else if (select == 2){
         PRODUCTS.sort((a, b) => parseFloat(b.prices) - parseFloat(a.prices));
@@ -72,17 +89,66 @@ function ordenamiento(PRODUCTS) {
 }
 
 function filtrado(busqueda, PRODUCTS) {
-    if (busqueda == "") {
-        displayProds(PRODUCTS)
+    selectCategories=document.getElementById("filtroCategories").innerHTML;
+    let products1=PRODUCTS;
+    if (selectCategories == '') {
     }
     else {
-        let filtro = PRODUCTS.filter(row => row.brands.brand.toLowerCase().includes(busqueda.toLowerCase()) || row.models.model.toLowerCase().includes(busqueda.toLowerCase()))
+        products1= products1.filter(row => row.categories.type_auto.toLowerCase().includes(selectCategories.toLowerCase()))
+        console.log(products1)
+    }
+    
+    if (busqueda == "") {
+        displayProds(products1)
+    }
+    else {
+        console.log("entre aca")
+        let filtro = products1.filter(row => row.brands.brand.toLowerCase().includes(busqueda.toLowerCase()) || row.models.model.toLowerCase().includes(busqueda.toLowerCase()))
         displayProds(filtro)
     }
 
 }
 
+
+
+function filter (category){
+    select=document.getElementById("filtroCategories");
+
+    if(category){
+    select.innerHTML=document.getElementById("cat"+category).innerHTML;}
+    else{select.innerHTML=" " }
+    ready();
+    
+}
+
+
 // botones de filtros
+/*
+    fetch("http://localhost:3050/api/products")
+    .then(function(respuesta){
+        return respuesta.json();
+    })
+    .then(function(informacion){
+        let select = document.getElementById('marcaContent');
+        for (let i=0; i< informacion.countByCategory.length ;i++){
+                var opt = document.createElement('p');
+                opt.value = informacion.countByCategory[i].id;
+                opt.innerHTML = informacion.countByCategory[i].category; 
+                opt.onclick = function () {
+
+                    filtrado(opt.innerHTML, PRODUCTS)
+                    
+                    };
+                select.appendChild(opt);
+
+        }
+    })
+*/
+
+
+
+
+
 var coll = document.getElementsByClassName("collapsible");
 var i;
 for (i = 0; i < coll.length; i++) {
