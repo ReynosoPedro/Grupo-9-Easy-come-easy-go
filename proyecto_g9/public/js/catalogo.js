@@ -37,23 +37,39 @@ function displayProds(PRODUCTS) {
     let numeroPagina= url.split("/");
     let pagina=Number(numeroPagina[4]);
     let i=(pagina-1)*12
-    for (let f=0; f<12; f++) {
-        container.innerHTML += `
-            <div class="productos" >
-                        <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS[i].id}">
-                        <img src="/images/autos/${PRODUCTS[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
-                        <h4 class="productos-titulo"> ${PRODUCTS[i].brands.brand} </h4>
-                        <h4 class="productos-titulo"> ${PRODUCTS[i].categories.type_auto} ${PRODUCTS[i].models.model} </h4>
-                        <p class="productos-detalles"> ${PRODUCTS[i].years.year} ${PRODUCTS[i].km_intervals.intervals}  km ${PRODUCTS[i].transmission} ${PRODUCTS[i].conditions} </p>
-                        <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS[i].prices)}  ${PRODUCTS[i].stock} </p>
-                        </a>
-                </div>
-        `
-        i++;
-    }
+    select=document.getElementById("orden").value;
+    PRODUCTS=ordenamiento(PRODUCTS)
+        for (let f=0; f<12; f++) {
+            container.innerHTML += `
+                <div class="productos" >
+                            <a class = "descripcion-de-vehiculo" href= "/detalle/${PRODUCTS[i].id}">
+                            <img src="/images/autos/${PRODUCTS[i].image_filename}" style='height: 100%; width: 100%; object-fit: fill' >  
+                            <h4 class="productos-titulo"> ${PRODUCTS[i].brands.brand} </h4>
+                            <h4 class="productos-titulo"> ${PRODUCTS[i].categories.type_auto} ${PRODUCTS[i].models.model} </h4>
+                            <p class="productos-detalles"> ${PRODUCTS[i].years.year} ${PRODUCTS[i].km_intervals.intervals}  km ${PRODUCTS[i].transmission} ${PRODUCTS[i].conditions} </p>
+                            <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS[i].prices)}  ${PRODUCTS[i].stock} </p>
+                            </a>
+                    </div>
+            `
+            i++;
+        }
+
 }
 
-
+function ordenamiento(PRODUCTS) {
+    select=document.getElementById("orden").value;
+    if (select == 1) {
+        PRODUCTS.sort((a, b) => parseFloat(a.prices) - parseFloat(b.prices));
+        console.log("entre acaaa!!! ")
+    }
+    else if (select == 2){
+        PRODUCTS.sort((a, b) => parseFloat(b.prices) - parseFloat(a.prices));
+    }else 
+    {
+        PRODUCTS.sort((a, b) => parseFloat(a.views) - parseFloat(b.views));
+    }
+    return PRODUCTS;
+}
 
 function filtrado(busqueda, PRODUCTS) {
     if (busqueda == "") {

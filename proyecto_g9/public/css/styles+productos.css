@@ -52,6 +52,7 @@ header{
     max-width: 100%;
     padding-left: 13%;
     padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .collapsible {
@@ -360,7 +361,7 @@ img{
         color: white;
         background-color: #ccb23e;
         border-radius: 5px;
-        width: 17%;
+        width: 15%;
 
     }
     #titular-orden{
@@ -373,7 +374,12 @@ img{
         width: 60%;  
         text-align: left; 
         padding-left: 30px;
-
+        
+    }
+    .ordenar {
+        position: absolute;
+        right : 34px;
+ 
     }
     .filtros{
         box-sizing: border-box;
