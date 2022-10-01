@@ -30,7 +30,7 @@
                 ejemplo si quiero mostrar la marca 1->bases[0][1].brand y su ID seria->bases[0][1].id
             -->
             <div class="part1">
-                <div class="form">
+                <div class="form" id="error1">
                     <p> Marca  </p><select onclick="empty()" class="selectMarca" type="text" name="marca" id="marca" placeholder="Marca"  value="<%= locals.old && locals.old.marca? locals.old.marca : null %>">
                     <option  value="<%= locals.old && locals.old.marca? locals.old.marca : null %>" selected > <%= locals.old  && locals.old.marca ? bases[0][locals.old.marca-1].brand  : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[0].length; i++){ %>
@@ -43,7 +43,7 @@
                         <p class="mensajeError"><%= errors.marca.msg  %> </p>
                 <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error2">
                     <p> Modelo  </p><select onclick="filterModel()" type="text" name="modelo" id="modelo" placeholder="Modelo" value="<%= locals.old && locals.old.modelo? locals.old.modelo : null %>">
                         <option value="<%= locals.old && locals.old.modelo? locals.old.modelo : null %>" selected> <%= locals.old  && locals.old.modelo ? bases[1][locals.old.modelo-1].model : "Seleccione una opcion" %></option>
                     <!--    <% for(let i= 0; i < bases[1].length; i++){ %>
@@ -55,7 +55,7 @@
                         <p class="mensajeError"><%= errors.modelo.msg  %> </p>
                     <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error3">
                     <p> Kilometraje </p><select type="number" name="kilometraje" id="kilometraje" placeholder="Kilometraje" value="<%= locals.old && locals.old.kilometraje? locals.old.kilometraje : null %>">
                     <option value="<%= locals.old && locals.old.kilometraje? locals.old.kilometraje : null %>" selected  > <%= locals.old  && locals.old.kilometraje ? bases[3][locals.old.kilometraje-1].intervals : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[3].length; i++){ %>
@@ -67,13 +67,13 @@
                         <% } %>
                     
                 </div>
-                <div class="form">
+                <div class="form" id="error4">
                     <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio" value="<%= locals.old && locals.old.precio? locals.old.precio : null %>">
                 </div>
                 <% if(locals.errors && errors.precio ){ %>
                     <p class="mensajeError"><%= errors.precio.msg  %> </p>
                 <% } %>
-                <div class="form">
+                <div class="form" id="error5"> 
                     <p> Color </p><select type="text" name="color" id="color" placeholder="Color" value="<%= locals.old && locals.old.color? locals.old.color : null %>">
                     <option value="<%= locals.old && locals.old.color? locals.old.color : null %>" selected  > <%= locals.old  && locals.old.color ? bases[5][locals.old.color-1].color : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[5].length; i++){ %>
@@ -87,7 +87,7 @@
                 </div>  
             </div>
             <div class="part2">
-                <div class="form">
+                <div class="form" id="error6">
                     <p> Año </p><select  type="number" name="year" id="year" placeholder="Año" value="<%= locals.old && locals.old.year? locals.old.year : null %>" >
                     <option value="<%= locals.old && locals.old.year? locals.old.year : null %>" selected > <%= locals.old  && locals.old.year ? bases[4][locals.old.year-1].year : "Seleccione una opcion" %></option>
                         <% for(let i= 0; i < bases[4].length; i++){ %>
@@ -98,7 +98,7 @@
                             <p class="mensajeError"><%= errors.year.msg  %> </p>
                         <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error7">
                     <p> Combustible </p><select type="text" name="combustible" id="combustible" placeholder="Combustible" value="<%= locals.old && locals.old.combustible? locals.old.combustible : null %>">
                     <option value="<%= locals.old && locals.old.combustible? locals.old.combustible : null %>" selected > <%= locals.old  && locals.old.combustible ? locals.old.combustible : "Seleccione una opcion" %></option>
                     <option value="Nafta" >Nafta </option>
@@ -110,7 +110,7 @@
                     <p class="mensajeError"><%= errors.combustible.msg  %> </p>
                 <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error8">
                     <p> Transmision </p><select type="text" name="transmision" id="transmision" placeholder="Transmision" value="<%= locals.old && locals.old.transmision? locals.old.transmision : null %>">
                     <option value="<%= locals.old && locals.old.transmision? locals.old.transmision : null %>" selected> <%= locals.old  && locals.old.transmision ? locals.old.transmision : "Seleccione una opcion" %></option>
                     <option value="Manual" >Manual </option>
@@ -120,7 +120,7 @@
                     <p class="mensajeError"><%= errors.transmision.msg  %> </p>
                 <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error9">
                     <p> Condición </p><select type="text" name="condicion" id="condicion" placeholder="Condición" value="<%= locals.old && locals.old.condicion? locals.old.condicion : null %>" >
                         <option value="<%= locals.old && locals.old.condicion? locals.old.condicion : null %>" selected> <%= locals.old  && locals.old.condicion ? locals.old.condicion : "Seleccione una opcion" %></option>
                     <option value="Nuevo" >Nuevo </option>
@@ -130,7 +130,7 @@
                     <p class="mensajeError"><%= errors.condicion.msg  %> </p>
                 <% } %>
                 </div>
-                <div class="form">
+                <div class="form" id="error10">
                     <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria"  value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>">
                         <option value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>" selected > <%= locals.old  && locals.old.categoria ? bases[2][locals.old.categoria-1].type_auto : "Seleccione una opcion" %></option>
                     <% for(let i= 0; i < bases[2].length; i++){ %>
@@ -153,8 +153,8 @@
             <% } %>
             <br>
         <br>
-        <div class="contenedor-img">
-            <div class="custom-file">
+        <div class="contenedor-img" >
+            <div class="custom-file" id="error11">
                 <label for ="image" >
                     <img id="blah" src="/images/pngwing.png" alt="" />
                 </label>
@@ -164,7 +164,7 @@
                 <% } %>
             </div>
             <br>
-            <div class="custom-file"> 
+            <div class="custom-file" id="error12"> 
                 <label for ="image2">
                     <img id="blah2" src="/images/pngwing.png" alt="" />
                 </label>
@@ -175,7 +175,7 @@
             <% } %>
             </div>
             <br>
-            <div class="custom-file">
+            <div class="custom-file" id="error13">
                 <label for ="image3">
                     <img id="blah3" src="/images/pngwing.png" alt="" />
                 </label>
@@ -186,7 +186,7 @@
             <% } %>
             </div>
             <br>
-            <div class="custom-file">
+            <div class="custom-file" id="error14">
                 <label for ="image4">
                     <img id="blah4" src="/images/pngwing.png" alt="" />
                 </label>
@@ -197,7 +197,7 @@
             <% } %>
             </div>
             <br>
-            <div class="custom-file">
+            <div class="custom-file" id="error15">
                 <label for ="image5">
                     <img id="blah5" src="/images/pngwing.png" alt="" />
                 </label>

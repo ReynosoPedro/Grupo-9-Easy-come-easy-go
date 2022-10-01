@@ -21,8 +21,8 @@ async function fetchProducts() {
 
 async function ready() {
     const PRODUCTOS = await fetchProducts()
-    displayProds(PRODUCTOS)
     let searchBar = document.querySelector(".search-form_input")
+    filtrado(searchBar.value ,PRODUCTOS)
     searchBar.addEventListener("change", (e) => {
         filtrado(e.target.value, PRODUCTOS)
     })
@@ -53,6 +53,8 @@ function displayProds(PRODUCTS) {
     }
 }
 
+
+
 function filtrado(busqueda, PRODUCTS) {
     if (busqueda == "") {
         displayProds(PRODUCTS)
@@ -62,6 +64,21 @@ function filtrado(busqueda, PRODUCTS) {
         displayProds(filtro)
     }
 
+}
+
+// botones de filtros
+var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
 }
 
 

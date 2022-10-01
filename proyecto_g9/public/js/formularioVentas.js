@@ -110,21 +110,10 @@ window.onload = function(){
         let categoria = document.querySelector('#categoria')
 
         let image = document.querySelector('#image')
-        console.log(marca );
-        console.log(modelo);
-        console.log(kilometraje);
-        console.log(precio );
-        console.log(color);
-        console.log(year);
-        console.log(combustible );
-        console.log( transmision  );
-        console.log(condicion );
-        console.log(categoria );
-        console.log(image ); 
 
         if(marca.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar la marca del vehiculo')
+            errors.push('1*Debe ingresar la marca del vehiculo')
             marca.classList.add('campos-invalidos')
         }else{
             marca.classList.add('campos-validos')
@@ -133,7 +122,7 @@ window.onload = function(){
 
         if(modelo.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el modelo del vehiculo')
+            errors.push('2*Debe ingresar el modelo del vehiculo')
             modelo.classList.add('campos-invalidos')
         }else{
             modelo.classList.add('campos-validos')
@@ -142,7 +131,7 @@ window.onload = function(){
 
         if(kilometraje.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el kilometraje del vehiculo')
+            errors.push('3*Debe ingresar el kilometraje del vehiculo')
             kilometraje.classList.add('campos-invalidos')
         }else{
             kilometraje.classList.add('campos-validos')
@@ -151,7 +140,7 @@ window.onload = function(){
 
         if(precio.value == '' || precio.value == 0){
             e.preventDefault()
-            errors.push('Debe ingresar el precio del vehiculo')
+            errors.push('4*Debe ingresar el precio del vehiculo')
             precio.classList.add('campos-invalidos')
         }else{
             precio.classList.add('campos-validos')
@@ -160,7 +149,7 @@ window.onload = function(){
 
         if(color.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el color del vehiculo')
+            errors.push('5*Debe ingresar el color del vehiculo')
             color.classList.add('campos-invalidos')
         }else{
             color.classList.add('campos-validos')
@@ -169,7 +158,7 @@ window.onload = function(){
 
         if(year.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el año de frabricación del vehiculo')
+            errors.push('6*Debe ingresar el año de frabricación del vehiculo')
             year.classList.add('campos-invalidos')
         }else{
             year.classList.add('campos-validos')
@@ -178,7 +167,7 @@ window.onload = function(){
 
         if(combustible.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el tipo de combustible que usa su vehiculo')
+            errors.push('7*Debe ingresar el tipo de combustible que usa su vehiculo')
             combustible.classList.add('campos-invalidos')
         }else{
             combustible.classList.add('campos-validos')
@@ -187,7 +176,7 @@ window.onload = function(){
 
         if(transmision.value == ''){
             e.preventDefault()
-            errors.push('Debe ingresar el tipo de transmisión que usa su vehiculo')
+            errors.push('8*Debe ingresar el tipo de transmisión que usa su vehiculo')
             transmision.classList.add('campos-invalidos')
         }else{
             transmision.classList.add('campos-validos')
@@ -197,7 +186,7 @@ window.onload = function(){
 
         if(condicion.value == ''){
             e.preventDefault()
-            errors.push('Ingrese en que condicion se encuentra su vehiculo')
+            errors.push('9*Ingrese en que condicion se encuentra su vehiculo')
             condicion.classList.add('campos-invalidos')
         }else{
             condicion.classList.add('campos-validos')
@@ -206,7 +195,7 @@ window.onload = function(){
 
         if(categoria.value == ''){
             e.preventDefault()
-            errors.push('Ingrese la categoria a la que pertenece su vehiculo')
+            errors.push('10*Ingrese la categoria a la que pertenece su vehiculo')
             condicion.classList.add('campos-invalidos')
         }else{
             categoria.classList.add('campos-validos')
@@ -217,7 +206,7 @@ window.onload = function(){
 
         if(image.value == ''){
             e.preventDefault()
-            errors.push('Ingrese una imagen')
+            errors.push('11*Ingrese una imagen')
             image.classList.add('campos-invalidos')
         }else{
             image.classList.add('campos-validos')
@@ -226,7 +215,7 @@ window.onload = function(){
 
         if(image2.value == ''){
             e.preventDefault()
-            errors.push('Ingrese una imagen')
+            errors.push('12*Ingrese una imagen')
             image.classList.add('campos-invalidos')
         }else{
             image.classList.add('campos-validos')
@@ -234,7 +223,7 @@ window.onload = function(){
         }
         if(image3.value == ''){
             e.preventDefault()
-            errors.push('Ingrese una imagen')
+            errors.push('13*Ingrese una imagen')
             image.classList.add('campos-invalidos')
         }else{
             image.classList.add('campos-validos')
@@ -242,7 +231,7 @@ window.onload = function(){
         }
         if(image4.value == ''){
             e.preventDefault()
-            errors.push('Ingrese una imagen')
+            errors.push('14*Ingrese una imagen')
             image.classList.add('campos-invalidos')
         }else{
             image.classList.add('campos-validos')
@@ -250,7 +239,7 @@ window.onload = function(){
         }
         if(image5.value == ''){
             e.preventDefault()
-            errors.push('Ingrese una imagen')
+            errors.push('15*Ingrese una imagen')
             image.classList.add('campos-invalidos')
         }else{
             image.classList.add('campos-validos')
@@ -262,19 +251,34 @@ window.onload = function(){
         let campError= document.querySelector('.errorescamp');
         campError.classList.add('mensaje-alerta')
         campError.innerHTML='';
+        console.log(errors);
         if(errors.length > 0){
-            for(let i = 0; i < errors.length;  i ++){
-                campError.innerHTML += `<li> ${errors[i]} </li>`
-                Swal.fire({
-                    
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Asegurate de completar los campos!',
-                    
-                }
-                )
+            let x=0;
+            for(let i = 1; i < 16;  i ++){
+            let numeracion=errors[x].split("*");
+            console.log(numeracion[0]+"    "+i);
+            if(numeracion[0]!=i){
                 
             }
+            else {
+                var error = document.createElement('p');
+                error.innerHTML= errors[x];
+                error.classList.add("mensajeError")
+                select= document.getElementById('error'+(numeracion[0]))
+                select.appendChild(error)
+                console.log("x vale "+x+"  agregue en en el "+ 'ERROR'+(numeracion[0])+" el contenido " + errors[x])
+                x++;
+            }
+            
+            }
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Asegurate de completar los campos!',
+                
+            })
+
+            
         }else{
             Swal.fire(
                 'Excelente!',
@@ -286,5 +290,5 @@ window.onload = function(){
 
 
     })
- 
+
 }
