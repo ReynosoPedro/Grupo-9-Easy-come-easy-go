@@ -43,7 +43,6 @@ window.onload = function(){
     campEmpty(fechadenacimiento.value, fechadenacimiento,errorFecha, 'Ingrese su fecha de nacimiento');
     campEmail(email.value, email,erroremail);
     campEmpty(celular.value, celular,errorcelular, 'Ingrese un numero de celular');
-    campEmpty(categoria.value, categoria,errorCategoria, 'Ingrese una categoria');
     campImage(image.value, image,errorImage);
     
 
@@ -117,6 +116,7 @@ window.onload = function(){
 
 
     function campEmpty(valueInput, divInput, errorDiv, inputNombre){
+        console.log(errorDiv)
         if (valueInput.length == 0){
             mostrarError(divInput, errorDiv, inputNombre)
             e.preventDefault()

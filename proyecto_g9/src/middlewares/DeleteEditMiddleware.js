@@ -7,10 +7,11 @@ function DeleteEditMiddleware(req, res, next) {
 	}
 	db.Productos.findByPk(req.params.id)
 	.then(function(vehiculo){
-		if(req.session.userLogged.email!=vehiculo.name){
-			return res.redirect('/login');
-		}else {
+		if(req.session.userLogged.email==vehiculo.name || req.session.userLogged.state==9){
 			next();
+		}else {
+			
+			return res.redirect('/login');
 		}
 	})
 	

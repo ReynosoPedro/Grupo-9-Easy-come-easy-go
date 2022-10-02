@@ -41,9 +41,7 @@
                                         <img src="\images\autos\<%=info.vehiculos[i].image_filename%>" style='height: 100%; width: 100%; object-fit: fill' > 
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].brands.brand %></h4>
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].categories.type_auto+" "+info.vehiculos[i].models.model %></h4>
-                                        <p class="productos-detalles"><%= info.vehiculos[i].years.year +" "+info.vehiculos[i].km_intervals.intervals +" km "+ info.vehiculos[i].transmission + " "+info.vehiculos[i].conditions %></p>
-                                        <p class="productos-precio"><%= "$"+  new Intl.NumberFormat('de-DE').format(info.vehiculos[i].prices )  + " "+info.vehiculos[i].stock %></p>
-                                        <p class="productos-views">vistas: <%=  info.vehiculos[i].views %></p>
+                                        <p class="productos-precio"><%= "$"+  new Intl.NumberFormat('de-DE').format(info.vehiculos[i].prices )  + "  "+info.vehiculos[i].stock +" "%><a href= "/editar/<%=info.vehiculos[i].id%>"><button>  Editar</button></a></p>
                                     </div>
                                     </a>
                                 <% } %>      

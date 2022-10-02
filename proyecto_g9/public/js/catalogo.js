@@ -116,7 +116,7 @@ function filter (category){
 
     if(category){
     select.innerHTML=document.getElementById("cat"+category).innerHTML;}
-    else{select.innerHTML=" " }
+    else{select.innerHTML="" }
     ready();
     
 }
