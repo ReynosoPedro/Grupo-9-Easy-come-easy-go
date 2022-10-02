@@ -1,13 +1,16 @@
 
 image.onchange = evt => {
+    console.log(1)
     const [file] = image.files
     if (file) {
+        
     blah.src = URL.createObjectURL(file)
     }
 }
 image2.onchange = evt => {
     const [file] = image2.files
     if (file) {
+        console.log(blah2.src)
     blah2.src = URL.createObjectURL(file)
     }
 }

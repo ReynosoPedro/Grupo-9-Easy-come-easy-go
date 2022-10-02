@@ -95,15 +95,15 @@
                 </div>
                 </div>
                 <br>
-                <br>
-                <div class="custom-file">
+                <p> Descripcion </p><input class="description" type="text" name="descripcion" id="descripcion" placeholder="Danos una breve descripcion del estado del vehiculo"  
+                value="<%= locals.old && locals.old.descripcion? locals.old.descripcion : bases[6].descripcion %>"></input>
 
-                    <label for ="imagen">Subi una foto del costado derecho</label>
-                    <input type="file"   name="imagen"  id="image" placeholder="Elige una imagen" accept=".png, .jpg, .jpeg" value="" />  
-                    <% if(locals.errors && errors.image){ %>
-                        <p class="mensajeError"><%= errors.image.msg  %> </p>
-                    <% } %>
-                </div>
+            <br>
+            <% if(locals.errors && errors.descripcion){ %>
+                <p class="mensajeError"><%= errors.descripcion.msg %> </p>
+            <% } %>
+            <br>
+
                 <br>
                 <div class="contenedor-img">
                     <div class="custom-file">

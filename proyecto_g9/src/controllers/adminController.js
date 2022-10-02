@@ -59,7 +59,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 discount:"Disponible",
                 stock: "Disponible",
                 views: 0,
-                descripcion: req.body.description,
+                descripcion: req.body.descripcion,
                 })
                     .then(function(){
                         console.log("se creo el producto")
@@ -151,6 +151,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                     image_filename5: (req.files.imagen5 ? req.files.imagen5[0].filename : req.body.oldImage5) ,
                     transmission: req.body.transmision,
                     conditions: req.body.condicion,
+                    descripcion: req.body.descripcion,
                     stock: "disponible",
             },{
                 where:{id:req.params.id}
