@@ -34,13 +34,17 @@ image5.onchange = evt => {
 
 
 function empty (){
-    document.getElementById('modelo').value=0
-    document.getElementById('modelo').innerHTML="Seleccione una opcion";
+    var x=document.getElementById('modelo')
+    x.options[x.selectedIndex].text="Seleccione una opcion"
+    var y=document.getElementById('categoria')
+    y.options[y.selectedIndex].text="Seleccione una opcion"
 
 }
 
 
 function filterModel(){
+    var y=document.getElementById('categoria')
+    y.options[y.selectedIndex].text="Seleccione una opcion"
     fetch("http://localhost:3050/modelosApi")
     .then(function(respuesta){
         return respuesta.json();
@@ -60,6 +64,33 @@ function filterModel(){
 
 }
 
+function filterCategories(){
+    fetch("http://localhost:3050/modelosApi")
+    .then(function(respuesta){
+        return respuesta.json();
+    })
+    .then(function(informacion){
+        let selectcat = document.getElementById('categoria');
+        let filter = document.getElementById('modelo').value;
+        if (filter=='' ){
+
+        }
+        else{
+            document.getElementById('categoria').value=1;
+            var optionCategory = document.createElement('option');
+            modeloID=document.getElementById('modelo').value;
+            modeloCategoria=informacion.data[modeloID-1].categories_id
+            optionCategory.value = modeloCategoria;
+            optionCategory .innerHTML = informacion.categories[modeloCategoria-1].type_auto ;
+            selectcat.appendChild(optionCategory );
+        }
+
+
+
+    })
+
+
+}
 
 
 

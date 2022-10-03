@@ -131,16 +131,21 @@
                 <% } %>
                 </div>
                 <div class="form" id="error10">
-                    <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria"  value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>">
+                    <p> Categoria </p><select onclick="filterCategories()" type="text" name="categoria" id="categoria" placeholder="Categoria"  value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>">
                         <option value="<%= locals.old && locals.old.categoria? locals.old.categoria : null %>" selected > <%= locals.old  && locals.old.categoria ? bases[2][locals.old.categoria-1].type_auto : "Seleccione una opcion" %></option>
-                    <% for(let i= 0; i < bases[2].length; i++){ %>
+                     <!-- 
+                        <% for(let i= 0; i < bases[2].length; i++){ %>
                             <option value= <%= bases[2][i].id %> ><%= bases[2][i].type_auto %></option>
                     <% } %>
+                        -->
                     </select >
                     <% if(locals.errors && errors.categoria){ %>
                         <p class="mensajeError"><%= errors.categoria.msg  %> </p>
                     <% } %>
                 </div>
+
+
+    
 
             </div>
             </div>

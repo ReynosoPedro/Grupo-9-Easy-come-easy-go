@@ -111,10 +111,13 @@ const pruductosApis ={
 
     },
     listModels : (req, res) =>  {
-        db.Modelos.findAll()
-        .then(function(modelos) {
+        let modelos=db.Modelos.findAll()
+        let categorias =db.Categorias.findAll()
+        Promise.all([modelos,categorias])
+        .then(function(info) {
             return res.status(200).json({
-                data:modelos,
+                data:info[0],
+                categories: info[1],
                 status:200,
                 check:"ok",
             });

@@ -25,7 +25,9 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 let modelos =db.Modelos.findAll()
                 let categorias =db.Categorias.findAll()
                 let uso =db.Km_intervalos.findAll()
-                let edad =db.Antiguedad.findAll()
+                let edad =db.Antiguedad.findAll({
+                    order : [["year","DESC"]]}
+                )
                 let color =db.Colores.findAll()
                 Promise.all([marcas,modelos,categorias,uso,edad,color])
                 .then(function(bases){
