@@ -52,6 +52,22 @@ button.swal2-confirm.swal2-styled {
     border-color: #ccb23e!important;
 }
 
+.mi-perfil{
+    background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-style: solid;
+    border-color: #6e6d6d;
+}
+.foto-perfil{
+    border-style: solid;
+    border-color: #6e6d6d;
+}
+img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 /*
 .seccion-barra1 {
     display: none;

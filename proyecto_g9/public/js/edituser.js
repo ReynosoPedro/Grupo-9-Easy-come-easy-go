@@ -42,7 +42,7 @@ window.onload = function(){
     campPassword(password.value, password,errorPassword);
     campEmpty(fechadenacimiento.value, fechadenacimiento,errorFecha, 'Ingrese su fecha de nacimiento');
     campEmail(email.value, email,erroremail);
-    campEmpty(celular.value, celular,errorcelular, 'Ingrese un numero de celular');
+    campCelular(celular.value, celular,errorcelular);
     campImage(image.value, image,errorImage);
     
 
@@ -50,11 +50,27 @@ window.onload = function(){
 
 
     function campNombre(valueInput, divInput, errorDiv){
-        let reNombre  = /(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{2,24}$/gm
+        let reNombre  = /^[a-zA-Z]{0,24}\s?[a-zA-Z]{2,24}\s?/gi
         if(reNombre.test(valueInput) == true){
             esconderError(divInput, errorDiv)
         }else{
             mostrarError(divInput, errorDiv, 'Ingrese su Nombre completo (minimo 2 caracteres)')
+            e.preventDefault()
+            Swal.fire({
+                icon: 'Error',
+                title: 'Oops...',
+                text: 'Asegurate de revisar los campos!',
+                
+            })
+        }
+    }
+
+    function campCelular(valueInput, divInput, errorDiv){
+        let reCelular  = /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/g
+        if(reCelular.test(valueInput) == true){
+            esconderError(divInput, errorDiv)
+        }else{
+            mostrarError(divInput, errorDiv, 'Ingrese su numero de celular (10 numeros)')
             e.preventDefault()
             Swal.fire({
                 icon: 'Error',
