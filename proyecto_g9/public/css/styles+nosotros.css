@@ -75,6 +75,7 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 20px;
     text-align: justify;
+    color: #4e4e4e;
 }
 
 .parrafo-imagen{
@@ -89,15 +90,52 @@ body {
 
 
 
+.foto-para-nosotros4{
+    display: flex;
+
+}
+.foto-para-nosotros4 img{
+    width: 40%;
+    height: 30%;
+    margin-left: 20px;
+}
+.parrafo-sucursal{
+    text-align: center;
+    padding: 90px;
+}
+.foto-para-nosotros4 p{
+    /*padding: 80px;*/
+    line-height: 30px;
+    text-align: justify;
+    border-bottom: #7c7c7c solid 1px;
+    padding-bottom: 15px;
+}
+h2{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-top: #7c7c7c solid 1px;
+}
 
 
 
+.foto-para-nosotros2{
+    display: flex;
 
+}
 
+.foto-para-nosotros2 img{
+    width: 40%;
+    height: 30%;
+    margin-right: 20px;
+}
 
-
-
-
+.foto-para-nosotros2 p{
+    /*padding: 80px;*/
+    line-height: 30px;
+    text-align: justify;
+    border-bottom: #7c7c7c solid 1px;
+    padding-bottom: 15px;
+}
 
 
 
