@@ -16,6 +16,19 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 color VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE exchangerate (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+tc float
+);
+CREATE TABLE inflation (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+inflation float
+);
+CREATE TABLE promotions (
+id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+promotions float
+);
+
 CREATE TABLE km_intervals (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
 intervals DECIMAL(10,0) NOT NULL
@@ -79,10 +92,17 @@ discount VARCHAR(100),
 descripcion VARCHAR(300) NULL,
 views int ,
 stock VARCHAR(100),
+exchange_id  INT UNSIGNED NOT NULL,
+inflation_id  INT UNSIGNED NOT NULL,
+promos_id INT UNSIGNED NOT NULL,
 FOREIGN KEY (brand_id) REFERENCES brands (id),
 FOREIGN KEY (color_id) REFERENCES colors (id),
 FOREIGN KEY (model_id) REFERENCES models (id),
 FOREIGN KEY (year_id) REFERENCES years (id),
 FOREIGN KEY (km_id) REFERENCES km_intervals (id),
-FOREIGN KEY (categories_id) REFERENCES categories (id)
+FOREIGN KEY (categories_id) REFERENCES categories (id),
+FOREIGN KEY (exchange_id) REFERENCES exchangerate (id),
+FOREIGN KEY (inflation_id) REFERENCES inflation (id),
+FOREIGN KEY (promos_id) REFERENCES promotions (id)
+
 );

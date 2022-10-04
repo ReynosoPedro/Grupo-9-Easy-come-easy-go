@@ -48,7 +48,7 @@ function displayProds(PRODUCTS) {
                             <h4 class="productos-titulo"> ${PRODUCTS[i].brands.brand} </h4>
                             <h4 class="productos-titulo"> ${PRODUCTS[i].categories.type_auto} ${PRODUCTS[i].models.model} </h4>
                             <p class="productos-detalles"> ${PRODUCTS[i].years.year} ${PRODUCTS[i].km_intervals.intervals}  km ${PRODUCTS[i].transmission} ${PRODUCTS[i].conditions} </p>
-                            <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS[i].prices)}  ${PRODUCTS[i].stock} </p>
+                            <p class="productos-precio"> $  ${new Intl.NumberFormat('de-DE').format(PRODUCTS[i].prices*PRODUCTS[i].exchangerate.tc*(PRODUCTS[i].inflation.inflation/100+1)*(PRODUCTS[i].promotions.promotions/100+1))}  ${PRODUCTS[i].stock} </p>
                             </a>
                     </div>
             `

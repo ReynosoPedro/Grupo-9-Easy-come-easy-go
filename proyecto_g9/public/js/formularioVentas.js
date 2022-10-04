@@ -35,16 +35,16 @@ image5.onchange = evt => {
 
 function empty (){
     var x=document.getElementById('modelo')
-    x.options[x.selectedIndex].text="Seleccione una opcion"
     var y=document.getElementById('categoria')
-    y.options[y.selectedIndex].text="Seleccione una opcion"
-
+    x.value=""
+    x.innerHTML=""
+    y.value=""
+    y.innerHTML=""
 }
 
 
 function filterModel(){
     var y=document.getElementById('categoria')
-    y.options[y.selectedIndex].text="Seleccione una opcion"
     fetch("http://localhost:3050/modelosApi")
     .then(function(respuesta){
         return respuesta.json();
@@ -52,6 +52,10 @@ function filterModel(){
     .then(function(informacion){
         let select = document.getElementById('modelo');
         let filter = document.getElementById('marca').value;
+        if (select.hasChildNodes()){}
+        else
+            
+            {
         for (let i=0; i< informacion.data.length ;i++){
             if (informacion.data[i].brand_id==filter){
                 var opt = document.createElement('option');
@@ -60,6 +64,8 @@ function filterModel(){
                 select.appendChild(opt);
             }
         }
+    }
+        
     })
 
 }
@@ -71,8 +77,8 @@ function filterCategories(){
     })
     .then(function(informacion){
         let selectcat = document.getElementById('categoria');
-        let filter = document.getElementById('modelo').value;
-        if (filter=='' ){
+        let filter = document.getElementById('modelo');
+        if (filter.value=='' || selectcat.hasChildNodes()){
 
         }
         else{

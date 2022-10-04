@@ -12,6 +12,14 @@ INSERT INTO km_intervals
 VALUES (DEFAULT, 1000),(DEFAULT, 20000),(DEFAULT, 10000),(DEFAULT, 50000),(DEFAULT, 110000),(DEFAULT, 120000),(DEFAULT, 30000);
 
 
+INSERT INTO exchangerate
+VALUES (DEFAULT, 1);
+
+INSERT INTO inflation
+VALUES (DEFAULT, 1);
+
+INSERT INTO promotions
+VALUES (DEFAULT, 1),(DEFAULT, 1),(DEFAULT, 1);
 
 
 INSERT INTO years
@@ -28,20 +36,20 @@ INSERT INTO users
 VALUES (DEFAULT, "Pedro Reynoso", "Qwerty", "$2a$10$4P3Ocf6OoTnfjzIJml/ZTO6pXlgq/SC/hKdbL9UGeUyXRZvfHqV0u", "2020-03-25", "pedro.reynoso.2022@gmail.com", "01114233056", 1, "1660309666675_img.jpg", 9),(DEFAULT, "vanesa", "vane", "$2a$10$vx0FbnEOS3vPQSgmpLrX3uobFFnYT3giyR03bqeHZi/5KOVZd5bsC", "2019-03-25", "abcd@gmail.com", "1762556362", 1, "1659309134689_img.jpg", 9);
 
 INSERT INTO products
-VALUES (DEFAULT, "pedro.reynoso.2022@gmail.com", 1, 2, 2, 1, 1, 6050000, 1, "focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 2, 2, 3, 1, 2, 6050000, 2, "nissan k.jpeg","nissan k.jpeg", "nissan k.jpeg", "nissan k.jpeg", "nissan k.jpeg",  "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "pedro.reynoso.2022@gmail.com", 3, 1, 4, 4, 3, 6050000, 3, "chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 4, 3, 5, 5, 4, 10050000, 4, "peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 5, 1, 6, 3, 5, 7050000, 5, "renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 5, 3, 7, 2, 4, 8050000, 6, "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 6, 1, 8, 5, 6, 4050000, 7, "volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "pedro.reynoso.2022@gmail.com", 7, 3, 9, 2, 3, 7050000, 3, "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo", 8, 1, 10, 3, 7, 12050000, 2, "jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible"),
-        (DEFAULT, "Vehículo",70,1,23,5,1,7000000,7,"1661804527.jpg","1661804527.jpg","1661804527.jpg","1661804527.jpg","1661804527.jpg","Automatica","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible"),
-        (DEFAULT, "Vehículo",6,4,1195,5,5,9000000,3,"1661868446.jpg","1661868446.jpg","1661868446.jpg","1661868446.jpg","1661868446.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible"),
-        (DEFAULT, "Vehículo",6,3,1216,4,6,6123456,7,"1661868752.jpg","1661868752.jpg","1661868752.jpg","1661868752.jpg","1661868752.jpg","Automatica","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible"),
-        (DEFAULT, "pedro.reynoso.2022@gmail.com",1,5,40,3,1,12123456,7,"1661869033.jpg","1661869033.jpg","1661869033.jpg","1661869033.jpg","1661869033.jpg","Manual","Usada","Nafta","Ninguno","texto descriptivo",0,"Disponible"),
-        (DEFAULT, "Vehículo",39,9,315,5,3,1988888,5,"1661869299.jpg","1661869299.jpg","1661869299.jpg","1661869299.jpg","1661869299.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible"),
-        (DEFAULT, "Vehículo",48,1,376,4,7,2333666,7,"1661869939.jpg","1661869939.jpg","1661869939.jpg","1661869939.jpg","1661869939.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible");
+VALUES (DEFAULT, "pedro.reynoso.2022@gmail.com", 1, 2, 2, 1, 1, 6050, 1, "focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg","focus.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,1),
+        (DEFAULT, "Vehículo", 2, 2, 3, 1, 2, 6050, 2, "nissan k.jpeg","nissan k.jpeg", "nissan k.jpeg", "nissan k.jpeg", "nissan k.jpeg",  "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,2),
+        (DEFAULT, "pedro.reynoso.2022@gmail.com", 3, 1, 4, 4, 3, 6050, 3, "chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg","chevrolet cruze.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,3),
+        (DEFAULT, "Vehículo", 4, 3, 5, 5, 4, 10050, 4, "peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg","peugeot active.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,1),
+        (DEFAULT, "Vehículo", 5, 1, 6, 3, 5, 7050, 5, "renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg","renault kwid.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,2),
+        (DEFAULT, "Vehículo", 5, 3, 7, 2, 4, 8050, 6, "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "reno-capture.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,3),
+        (DEFAULT, "Vehículo", 6, 1, 8, 5, 6, 4050, 7, "volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg","volkswagenamarok.jpg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,1),
+        (DEFAULT, "pedro.reynoso.2022@gmail.com", 7, 3, 9, 2, 3, 7050, 3, "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "audia4.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,2),
+        (DEFAULT, "Vehículo", 8, 1, 10, 3, 7, 12050, 2, "jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg","jeep compas.jpeg", "Manual", "Nuevo","Nafta","Ninguno","texto descriptivo",0, "Disponible",1,1,3),
+        (DEFAULT, "Vehículo",70,1,23,5,1,7000,7,"1661804527.jpg","1661804527.jpg","1661804527.jpg","1661804527.jpg","1661804527.jpg","Automatica","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,1),
+        (DEFAULT, "Vehículo",6,4,1195,5,5,9000,3,"1661868446.jpg","1661868446.jpg","1661868446.jpg","1661868446.jpg","1661868446.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,2),
+        (DEFAULT, "Vehículo",6,3,1216,4,6,6123,7,"1661868752.jpg","1661868752.jpg","1661868752.jpg","1661868752.jpg","1661868752.jpg","Automatica","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,3),
+        (DEFAULT, "pedro.reynoso.2022@gmail.com",1,5,40,3,1,12123,7,"1661869033.jpg","1661869033.jpg","1661869033.jpg","1661869033.jpg","1661869033.jpg","Manual","Usada","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,3),
+        (DEFAULT, "Vehículo",39,9,315,5,3,19888,5,"1661869299.jpg","1661869299.jpg","1661869299.jpg","1661869299.jpg","1661869299.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,1),
+        (DEFAULT, "Vehículo",48,1,376,4,7,9333,7,"1661869939.jpg","1661869939.jpg","1661869939.jpg","1661869939.jpg","1661869939.jpg","Manual","Nuevo","Nafta","Ninguno","texto descriptivo",0,"Disponible",1,1,2);
 
 

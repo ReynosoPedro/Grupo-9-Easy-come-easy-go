@@ -52,6 +52,12 @@ const multipleUpload = upload.fields(
 
 //panel
 router.get('/administrar',autenticadoMiddleware, controller.panel)
+//panel
+router.get('/administrarUsuarios',autenticadoMiddleware, controller.panelUsuarios)
+//panel
+router.get('/administrarPrecios',autenticadoMiddleware, controller.panelPrecios)
+//panel
+router.put('/administrarPrecios',autenticadoMiddleware , controller.cambiosPrecios);
 //agregar
 router.get('/agregar',  permisosMiddleware, controller.formCrear);
 router.post('/agregar', multipleUpload,  validateForm , controller.crear);

@@ -19,7 +19,7 @@ const pruductosApis ={
         
         db.Productos.findAll({       
             order : [["categories_id","ASC"]],    
-            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}, {association:"inflation"}, {association:"km_intervals"}, {association:"km_intervals"}]
         })
             .then(function(vehiculos) {
                 for(let i=0; i<vehiculos.length ;i++){ 
@@ -75,7 +75,7 @@ const pruductosApis ={
     },
     raw: (req, res) =>  {
         db.Productos.findAll({           
-                include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+                include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}, {association:"inflation"}, {association:"exchangerate"}, {association:"promotions"}]
         })
             .then(function(vehiculos) {  
                 return res.status(200).json({

@@ -18,7 +18,6 @@
 		<div class = "fondo-perfil">
 			<div style= 'text-align: center;'>
                 <h2> <%= info.user.nombreCompleto %></h2>
-                <h2 class = "mi-perfil">Mi perfil</h2>
 				<a><img class="foto-perfil"  src="/images/usuarios/<%= info.user.image %>"  style= 'width: 20rem; height: 20rem; 'alt="Foto"></a>
 				<br>
 				<br>
@@ -41,7 +40,7 @@
                                         <img src="\images\autos\<%=info.vehiculos[i].image_filename%>" style='height: 100%; width: 100%; object-fit: fill' > 
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].brands.brand %></h4>
                                         <h4 class="productos-titulo"><%= info.vehiculos[i].categories.type_auto+" "+info.vehiculos[i].models.model %></h4>
-                                        <p class="productos-precio"><%= "$"+  new Intl.NumberFormat('de-DE').format(info.vehiculos[i].prices )  + "  "+info.vehiculos[i].stock +" "%><a href= "/editar/<%=info.vehiculos[i].id%>"><button>  Editar</button></a></p>
+                                        <p class="productos-precio"><%= "$"+   new Intl.NumberFormat('de-DE').format(info.vehiculos[i].prices*info.vehiculos[i].exchangerate.tc*(info.vehiculos[i].inflation.inflation/100+1)*(info.vehiculos[i].promotions.promotions/100+1))  + "  "+info.vehiculos[i].stock +" "%><a href= "/editar/<%=info.vehiculos[i].id%>"><button>  Editar</button></a></p>
                                     </div>
                                     </a>
                                 <% } %>      

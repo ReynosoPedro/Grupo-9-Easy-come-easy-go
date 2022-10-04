@@ -17,7 +17,7 @@
         <h2 class = "mi-perfil">Edita tu perfil</h2>
         <section id="formulario">
             <a><img  class="foto-perfil" src="/images/usuarios/<%= locals.old && locals.old. oldImage? locals.old.oldImage: usuarioEdit.image %>"  style= 'width: 20rem; height: 20rem; 'alt="Foto"></a>
-            <form method="POST" action="/editarPerfil?_method=PUT"" enctype="multipart/form-data" >
+            <form method="POST" action="/editarPerfil?_method=PUT" enctype="multipart/form-data" >
                 <div class="form">
                     <label for="nombre"></label>
                     <input type="text" name="nombreCompleto" id="nombre" placeholder="Nombre completo"

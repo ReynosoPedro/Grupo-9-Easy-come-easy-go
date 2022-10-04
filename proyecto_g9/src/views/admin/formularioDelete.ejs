@@ -80,7 +80,7 @@
                     <p class="productos-detalles">Transmisión: <%= vehiculos.transmission %></p> 
                     <p class="productos-detalles">Condicion: <%= vehiculos.conditions + " "+vehiculos.stock %></p>
         
-                    <p class="productos-precio">Precio: <%= "$"+  new Intl.NumberFormat('de-DE').format(vehiculos.prices)%></p>
+                    <p class="productos-precio">Precio: <%= "$"+   new Intl.NumberFormat('de-DE').format(vehiculos.prices*vehiculos.exchangerate.tc*(vehiculos.inflation.inflation/100+1)*(vehiculos.promotions.promotions/100+1)) %></p>
                     <br>
                     
                     <form method="POST" action="/delete/<%=vehiculos.id%>?_method=DELETE" enctype="multipart/form-data" >

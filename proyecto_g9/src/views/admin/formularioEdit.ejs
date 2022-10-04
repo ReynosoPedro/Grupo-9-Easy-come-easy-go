@@ -15,7 +15,7 @@
 <body>
     <%- include('../partials/header')%>
     <main>
-        
+
         <h2> EDITAR VEHICULO </h2>
         <br>
         <br>
@@ -48,7 +48,7 @@
                             </select >
                     </div>
                     <div class="form">
-                        <p> Precio </p><input type="number" name="precio" id="precio" placeholder="Precio"   value="<%=bases[6].prices *10%>">
+                        <p> Precio USD</p><input type="number" name="precio" id="precio" placeholder="Precio"   value="<%=bases[6].prices *10%>">
                     </div>
                     <div class="form">
                         <p> Combustible </p><select type="text" name="combustible" id="combustible" placeholder="Combustible" value=<%=bases[6].fuel_type%>>  >
@@ -85,7 +85,7 @@
                         <p> Condición </p><input type="text" name="condicion" id="condicion" placeholder="Condición" value=<%=bases[6].conditions%>>
                     </div>
                     <div class="form">
-                        <p> Categoria </p><select type="text" name="categoria" id="categoria" placeholder="Categoria"  >
+                        <p> Categoria </p><select onclick="filterCategories()"  type="text" name="categoria" id="categoria" placeholder="Categoria"  >
                         <option value=<%=bases[2][(bases[6].categories_id)].type_auto%> selected disabled hidden><%=bases[2][(bases[6].categories_id)].type_auto%></option>
                         <% for(let i= 0; i < bases[2].length; i++){ %>
                                 <option value= <%= bases[2][i].id %> ><%= bases[2][i].type_auto %></option>
@@ -166,6 +166,8 @@
                 <br>
                 <br>
             </form>
+            
+    </main>
     <%- include('../partials/footer')%>
     <script src= "/js/productosedit.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

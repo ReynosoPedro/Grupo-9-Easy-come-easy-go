@@ -37,15 +37,19 @@ image5.onchange = evt => {
 
 
 
-function empty (){
-    document.getElementById('modelo').value=0
-    document.getElementById('modelo').innerHTML="Seleccione una opcion";
 
+function empty (){
+    var x=document.getElementById('modelo')
+    var y=document.getElementById('categoria')
+    x.value=""
+    x.innerHTML=""
+    y.value=""
+    y.innerHTML=""
 }
 
 
 function filterModel(){
-    console.log(document.getElementById('marca').value);
+    var y=document.getElementById('categoria')
     fetch("http://localhost:3050/modelosApi")
     .then(function(respuesta){
         return respuesta.json();
@@ -53,6 +57,10 @@ function filterModel(){
     .then(function(informacion){
         let select = document.getElementById('modelo');
         let filter = document.getElementById('marca').value;
+        if (select.hasChildNodes()){}
+        else
+            
+            {
         for (let i=0; i< informacion.data.length ;i++){
             if (informacion.data[i].brand_id==filter){
                 var opt = document.createElement('option');
@@ -61,10 +69,39 @@ function filterModel(){
                 select.appendChild(opt);
             }
         }
+    }
+        
     })
 
 }
 
+function filterCategories(){
+    fetch("http://localhost:3050/modelosApi")
+    .then(function(respuesta){
+        return respuesta.json();
+    })
+    .then(function(informacion){
+        let selectcat = document.getElementById('categoria');
+        let filter = document.getElementById('modelo');
+        if (filter.value=='' || selectcat.hasChildNodes()){
+
+        }
+        else{
+            document.getElementById('categoria').value=1;
+            var optionCategory = document.createElement('option');
+            modeloID=document.getElementById('modelo').value;
+            modeloCategoria=informacion.data[modeloID-1].categories_id
+            optionCategory.value = modeloCategoria;
+            optionCategory .innerHTML = informacion.categories[modeloCategoria-1].type_auto ;
+            selectcat.appendChild(optionCategory );
+        }
+
+
+
+    })
+
+
+}
 
 
 

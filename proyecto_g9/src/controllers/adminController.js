@@ -8,7 +8,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 const admin = {
     panel: (req, res) => {
         db.Productos.findAll({
-            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]
+            include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}, {association:"inflation"}, {association:"exchangerate"}, {association:"promotions"}]
         })
             .then(function(vehiculos) {
                 res.render('admin/detalleAdministrar',{vehiculos:vehiculos})
@@ -19,6 +19,59 @@ const admin = {
 let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname,'..','database','vehiculos.json')));
         res.render('admin/detalleAdministrar' , {vehiculosDelArchivoJSON})
 */
+    },
+    panelUsuarios: (req, res) => {
+        db.Usuarios.findAll()
+            .then(function(usuarios) {
+                res.render('admin/usuariosAdministrar',{usuarios})
+            })
+
+
+    },
+    panelPrecios: (req, res) => {
+        let exchangerate =db.Exchangerate.findAll() 
+        let inflacion =db.Inflacion.findAll()
+        let promos =db.Promos.findAll()
+        Promise.all([exchangerate,inflacion,promos])
+        .then(function(bases){
+            res.render('admin/preciosAdministrar' ,{bases})
+        })
+
+
+    },
+    cambiosPrecios: (req, res) => {
+        console.log(req.body)
+        let exchangerate =db.Exchangerate.update({
+            tc:req.body.tc
+        },{
+        where:{id:1}
+        }) ;
+        let inflacion =db.Inflacion.update({
+            inflation:req.body.inflacion
+        },{
+        where:{id:1}
+        }) ;
+        let promo1 =db.Promos.update({
+            promotions:req.body.promo1
+        },{
+        where:{id:1}
+        });
+        let promo2 =db.Promos.update({
+            promotions:req.body.promo2
+        },{
+        where:{id:2}
+        });
+        let promo3 =db.Promos.update({
+            promotions:req.body.promo3
+        },{
+        where:{id:3}
+        });
+        Promise.all([exchangerate,inflacion,promo1,promo2,promo3])
+        .then(function(bases){
+            res.redirect('administrarPrecios')
+        })
+
+
     },
     formCrear: (req, res) => {           
                 let marcas =db.Marcas.findAll() 
@@ -56,6 +109,9 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
                 image_filename3: req.files.imagen3[0].filename,
                 image_filename4: req.files.imagen4[0].filename,
                 image_filename5: req.files.imagen5[0].filename,
+                exchange_id: 1,
+                inflation_id: 1,
+                promos_id: 1,
                 transmission: req.body.transmision,
                 conditions: req.body.condicion,
                 discount:"Disponible",
@@ -109,6 +165,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 */
         
     },    formEdit: (req, res) => {
+        
         let vehEditar=db.Productos.findByPk(req.params.id)
         let marcas =db.Marcas.findAll() 
         let modelos =db.Modelos.findAll()
@@ -132,7 +189,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
     },
 
     edit: (req, res) => {
-    
+        
         let errors= validationResult(req)
         
         if (errors.isEmpty()) {
@@ -197,7 +254,7 @@ let vehiculosDelArchivoJSON =  JSON.parse(fs.readFileSync(path.resolve(__dirname
 
     }  ,    formDelete: (req, res) => {
 
-        db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}]})
+        db.Productos.findByPk(req.params.id,{include:[{association:"brands"}, {association:"models"}, {association:"categories"}, {association:"colors"}, {association:"years"}, {association:"km_intervals"}, {association:"inflation"}, {association:"exchangerate"}, {association:"promotions"}]})
             .then(function(vehiculos){
                 res.render('admin/formularioDelete',{vehiculos:vehiculos})
             }) 

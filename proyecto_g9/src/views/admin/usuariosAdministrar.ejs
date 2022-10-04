@@ -33,28 +33,47 @@
             <thead>
             <tr>  
                 <th scope="col">Id</th>
-                <th class="ubicacion-nombre"scope="col">Nombre</th>
-                <th scope="col">Precio USD</th>
-                <th scope="col">Precio $</th>
-                <th scope="col">Ver</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Borrar</th>
+                <th class="ubicacion-nombre"scope="col">Datos de usuario</th>
+                <th class="ubicacion-nombre"scope="col">Estado</th>
             </tr>
             </thead>
             <tbody>
-            <%let i=vehiculos.length-1 %>
+            <%let i=usuarios.length-1 %>
             <% while (i!=-1) { %> 
             <tr class="interlineado-productos">
-                <td><%= vehiculos[i].id%> </td>
-                <td class="detallevehiculos"><%= vehiculos[i].brands.brand + " "+vehiculos[i].models.model + " "+vehiculos[i].categories.type_auto + " "+vehiculos[i].colors.color+" "+ vehiculos[i].years.year +" "+vehiculos[i].km_intervals.intervals +" km "+ vehiculos[i].transmission + " "+vehiculos[i].conditions %> </td>
-                <td class="detallevehiculos"><%=  "USD "+ new Intl.NumberFormat('de-DE').format(vehiculos[i].prices) %> </td>                
-                <td class="detallevehiculos"><%=  "$   "+ new Intl.NumberFormat('de-DE').format(vehiculos[i].prices*vehiculos[i].exchangerate.tc*(vehiculos[i].inflation.inflation/100+1)*(vehiculos[i].promotions.promotions/100+1)) %> </td>
-                <td><a class="edicion-texto2" href="/detalle/<%= vehiculos[i].id%> "> ver</a></td>
-                <td><a class="edicion-texto2" href="/editar/<%= vehiculos[i].id%> "> editar</ion-icon></a></td>
-                <td><a class="edicion-texto2" href="/delete/<%= vehiculos[i].id%>"> delete</a></td>
+                <td><%= usuarios[i].id%> </td>
+                <td class="detallevehiculos"><%= usuarios[i].full_name + " " + usuarios[i].user + " " + usuarios[i].email %> </td>
+                <td><div class="status-page-link">
+                    <div class="status-dot"></div>
+                    </div>
+                </td>
             </tr>
             <%i--;%>
             <% }; %>
+            <%let y=10-i; %>
+            <% while (y!=0) { %> 
+                <tr class="interlineado-productos">
+                    <td></td>
+                    <td class="detallevehiculos"></td>
+                    <td><div class="status-page-link">
+                        
+                        </div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <%y--;%>
+            <% }; %>
+
+                <td> </td>
+                <td > </td>
+                <td>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+
             </tbody>
         </table> 
 

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario de edicion</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-wid th">
+    <meta charset="utf-8">
+    <link href="/css/styles+header.css" rel="stylesheet">
+    <link href="/css/styles+edicion.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3500cfe31.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include('../partials/header')%>
+
+    <main>
+        <article>
+            <div class="panelAdmin">
+
+                <a class="opcionesAdmin" href="/administrar"><h2>Overview de productos</h2></a>
+
+                <a class="opcionesAdmin" href="/administrarUsuarios"><h2>Vista de Usuarios</h2></a>
+
+                <a class="opcionesAdmin" href="/administrarPrecios"><h2>Panel de control precios</h2></a>
+
+            </div>
+            
+        </article>
+        <br>
+        <br>
+        <div class="tableroGeneral">
+            <div class="tableroExchange">
+                <p>TIPO DE CAMBIO: <%= bases[0][0].tc%></p>
+            </div>
+            <div class="tableroInflacion">
+                <p>INFLACION:  <%= bases[1][0].inflation%> %</p>
+            </div>
+            <div  class="tableroPromos">
+                <div class="promo1">
+                    <p>PROMO 1: <%= bases[2][0].promotions%> %</p>
+                </div>
+                <div class="promo2">
+                    <p>PROMO 2: <%= bases[2][1].promotions%> %</p>
+                </div>
+                <div class="promo3">
+                    <p>PROMO 3: <%= bases[2][2].promotions%> %</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+            <div class="tableroGeneral">
+            <form method="POST" action="/administrarPrecios?_method=PUT">
+                <div class="tableroExchange2">
+                    <p display:none>-</p>
+                    <p>TIPO DE CAMBIO: <input type="number" step="0.01" name="tc" id="tc" placeholder="Ingrese tipo de cambio" value="<%= bases[0][0].tc%>"  ></p>
+                    <p display:none>-</p>
+                </div>
+                <div class="tableroInflacion2">
+                    <p display:none>-</p>
+                    <p>INFLACION: <input type="number" step="0.01" name="inflacion" id="inflacion" placeholder="Inflacion acumulada" value="  <%= bases[1][0].inflation%>" ></p> 
+                    <p display:none>-</p>
+                </div>
+                <div  class="tableroPromos2">
+                    <div class="promo1">
+                        <p>PROMO 1: <input type="number" step="0.01" name="promo1" id="promo1" placeholder="Promocion 1 descuento" value="<%= bases[2][0].promotions%>"  ></p> 
+                    </div>
+                    <div class="promo2">
+                        <p>PROMO 2: <input type="number" step="0.01" name="promo2" id="promo2" placeholder="Promocion 1 descuento" value="<%= bases[2][1].promotions%>"  ></p> 
+                    </div>
+                    <div class="promo3">
+                        <p>PROMO 3:  <input type="number"  step="0.01" name="promo3" id="promo3" placeholder="Promocion 1 descuento" value="<%= bases[2][2].promotions%>"  > </p> 
+                    </div>
+                </div>
+                </div>
+                <br>
+                <button class="formb" type="submit">Editar!</button>
+                <br>
+
+            </form>
+
+
+
+
+    </main>
+    <%- include('../partials/footer')%>
+</body>
+</html>
+

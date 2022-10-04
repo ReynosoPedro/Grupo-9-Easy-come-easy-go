@@ -80,7 +80,21 @@ module.exports = (sequelize, dataTypes)=>{
         Producto.belongsTo(models.Km_intervalos,{
             as:"km_intervals",
             foreignKey:"km_id"
+        }),
+        Producto.belongsTo(models.Exchangerate,{
+            as:"exchangerate",
+            foreignKey:"exchange_id"
+        }),
+        Producto.belongsTo(models.Inflacion,{
+            as:"inflation",
+            foreignKey:"inflation_id"
+        }),
+        Producto.belongsTo(models.Promos,{
+            as:"promotions",
+            foreignKey:"promos_id"
         })
+
+    
     }
     return Producto;
 }
